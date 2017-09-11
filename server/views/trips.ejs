@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<% include head.ejs %>
+<body>
+	<% include nav.ejs %>
+	<table>
+		<thead>
+    		<tr>
+        		<th>Название тура</th>
+        		<th>Маршрут</th>
+        		<th>Дата выезда</th>
+        		<th>Дата возвращения</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+			<% arrTrips.map((item, index, arr) => { %>
+				<tr>
+	        		<td><%= item.nameTrip %></td>
+	        		<td><%= item.route %></td>
+	        		<td><%= item.dateOfDeparture %></td>
+	        		<td><%= item.dateOfReturn %></td>
+	    		</tr>
+			<% })%>
+    	</tbody>	
+	</table>
+	<h4>Добавить маршрут</h4>
+	<form action="/trips" method="post">
+		<p>
+			<label for="nameTrip">Название Тура:</label>
+			<input type="text" name="nameTrip" id="nameTrip" title="nameTrip" required/>
+		</p>
+		<p>
+			<label for="route">Маршрут:</label>
+			<input type="text" name="route" id="route" title="route" required/>
+		</p>
+		<p>
+			<label for="dateOfDeparture">Дата выезда:</label>
+			<input type="date" name="dateOfDeparture" id="dateOfDeparture" title="dateOfDeparture" >
+		</p>
+		<p>
+			<label for="dateOfReturn">Дата возвращения:</label>
+			<input type="date" name="dateOfReturn" id="dateOfReturn" title="dateOfReturn" >
+		</p>
+		<button type ="submit">Добавить маршрут</button>
+	</form>
+</body>
+</html>
