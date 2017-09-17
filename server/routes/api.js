@@ -1,16 +1,12 @@
 const express = require("express");
 const router = express.Router();
+const routTrips = require("./routTrips");
+const routCustomers = require("./routCustomers");
+const routLocations = require("./routLocations");
 
-const tripsRouter = require("./tripsrout");
-const customersRouter = require("./customersrout");
-const locationsRouter = require ("./locationsrout");
-
-router.get('/', ((req,res) => {
-	res.render("index", { title: "Second progect"});
-}));
-
-router.use("/trips", tripsRouter);
-router.use("/customers", customersRouter);
-router.use("/locations", locationsRouter);
+router.use("/api", routTrips);
+router.use("/api", routCustomers);
+router.use("/api", routLocations);
 
 module.exports = router;
+
