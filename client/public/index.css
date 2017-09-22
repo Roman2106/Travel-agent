@@ -11,25 +11,38 @@
 	margin: 0 auto;
 }
 
-li{
-	list-style-type: none;
-}
-
-li:hover{
-	cursor: pointer;
-}
-
-.ulMenu{
-	padding: 0;
-	text-align: center;
-}
-
 .menu li{
 	display: inline-block;
+	position: relative;
+	list-style-type: none;
 }
 
 .menu li:nth-child(n+2){
 	margin-left: 40px;
+}
+
+.ulMenu{
+	text-align: center;
+	padding: 0;
+}
+
+nav a {
+	display: inline-block;
+	text-decoration: none;
+	font-size: 16px;
+	color: #303130;
+}
+
+nav a {
+  transition: transform .5s;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+}
+
+li.activeLi a{
+	font-size: 22px;
 }
 
 table{
@@ -48,7 +61,6 @@ table td, table th{
     text-align: center;
     border: 1px solid #393B37;
 }
-
 
 form{ 
 	width: 65%;
@@ -80,17 +92,46 @@ button{
 	width: 100%;
 }
 
-.forUpdate{
+.btnAddTrips{
+	width: 150px;
+	float: right;
+	margin-top: 10px;
+	margin-right: 10%;
+}
+
+.tripsButtons{
+	text-align: center;
+}
+
+.addEditTrips, .cancel{
 	width: 65%;
-	margin: 0 auto;
+	margin: 5px auto 0 auto;
 }
 
 .del{
 	width: 35%;
 }
 
-.up{
+.edit{
 	width: 60%;
 	margin-left: 3px;
+}
+
+.addLocations{
+	width: 65%;
+}
+
+.locationsButtons{
+	width: 80%;
+	margin:0 auto;
+	text-align: center;
+}
+
+div.locations form{
+	text-align: center;
+}
+
+div.locations button.del{
+	width: 90%;
 }
 

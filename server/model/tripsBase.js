@@ -4,7 +4,10 @@ mongoose.Promise = global.Promise;
 
 const TripSchema = mongoose.Schema({
 	 tripName: String,
-	 routName: String,
+	 routName: {
+	 	country: String,
+	 	city: String
+	 },
 	 dateDeparture: String,
 	 dateArrival: String
 });

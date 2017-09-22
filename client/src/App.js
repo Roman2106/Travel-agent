@@ -1,6 +1,7 @@
 import React from "react";
 import {Menu} from "./Menu";
-import Trips from "./Trips"
+import WrapperTrips from "./WrapperTrips";
+import WrapperLocations from "./WrapperLocations"
 
 class App extends React.Component {
   constructor(props){
@@ -10,34 +11,33 @@ class App extends React.Component {
       };
   };
 
-generateKey(){
-    this.uId = this.uId || 0;
-    return this.uId++;
-}
 
 pages(){
-    if(this.state.activeMenu == "Trips"){
+    if(this.state.activeMenu === "Trips"){
         return(
-          <Trips/>
+           <WrapperTrips />
+          )
+    }else if(this.state.activeMenu === "Locations"){
+        return(
+            <WrapperLocations />
           )
     }
 }
 
 render() {
-  let page = this.pages();
   return (
     <div className = "app">
       <div className = "wrapper">
           <nav className = "menu">
             <Menu items = {[
-                {id: "Trips", title: "Trips", key: this.generateKey()},
-                {id: "Customers", title: "Customers", key: this.generateKey()},
-                {id: "Locations", title: "Locations", key: this.generateKey()}
+                {id: "Trips", title: "Trips", key: "trips", isActive: this.state.activeMenu === "Trips"},
+                {id: "Customers", title: "Customers", key: "customers", isActive: this.state.activeMenu === "Customers"},
+                {id: "Locations", title: "Locations", key: "locations", isActive: this.state.activeMenu === "Locations"}
                 ]}
                 onClick = {id => this.setState({activeMenu: id})}
             />
           </nav>
-            {page}
+            {this.pages()}
         </div>
       </div>
     );
