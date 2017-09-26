@@ -1,4 +1,5 @@
 import React from "react";
+import {getAll} from "./api/api";
 
 class TripsForm extends React.Component{
 constructor(props){
@@ -7,11 +8,22 @@ constructor(props){
 		tripName: this.props.objForEdit ? this.props.objForEdit.tripName : this.tripName = "",
 		routName: this.props.objForEdit ? this.props.objForEdit.routName : this.routName = "",
 		dateDeparture: this.props.objForEdit ? this.props.objForEdit.dateDeparture : this.dateDeparture = "",
-		dateArrival: this.props.objForEdit ? this.props.objForEdit.dateArrival : this.dateArrival = ""
+		dateArrival: this.props.objForEdit ? this.props.objForEdit.dateArrival : this.dateArrival = "",
+		currentLocations: null
 		};
 	};
 
+componentDidMount(){
+	getAll("locations").then( locations =>{
+		this.setState({
+			currentLocations: locations
+		});
+	});
+}
+
 render(){
+	if(this.state.currentLocations){
+		console.log(this.state.routName);
 		return(
 			<div className = "tripsForm">
 				<form>
@@ -24,10 +36,14 @@ render(){
 					</p>
 					<p>
 						<label htmlFor="routName">Маршрут:</label>
-						<input type="text" name="routName" id="routName" title="routName" required
+						<select name = "routName" id = "routName" 
 						onChange = { e => this.setState({routName: e.target.value})}
-						value = {this.state.routName}
-						/>
+						value = {this.state.routName}>
+						<option>Выберите маршрут</option>
+							{this.state.currentLocations.map((item, index, key) =>
+								<option key = {item.id}>{`${item.country} - ${item.city}`}</option>
+							)}
+						</select>
 					</p>
 					<p>
 						<label htmlFor="dateDeparture">Дата выезда:</label>
@@ -65,6 +81,11 @@ render(){
 				</div>
 			</div>
 		)
+		}else{
+			return(
+			<div>Loading data</div>
+			)
+		}
 	};
 };
 

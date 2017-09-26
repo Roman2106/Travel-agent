@@ -40,7 +40,7 @@ render(){
                         objForEdit = {this.state.objForEdit}
                         onUpdate = {(id, trips) => update("trips", id, trips).then(() => {
                         	this.setState({
-                        		viewType: "Trips", btnVal: ""
+                        		viewType: "Trips", btnVal: "", objForEdit: ""
                         	})
                         })}
                     />
