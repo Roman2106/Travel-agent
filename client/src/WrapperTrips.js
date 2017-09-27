@@ -16,7 +16,9 @@ class WrapperTrips extends React.Component{
 render(){
 		return(
 			<div>
-                {this.state.viewType === "Trips" ?  
+                {this.state.viewType === "Trips" 
+
+                ?  
                     <Trips
                         onAdd = {() => this.setState({viewType: "TripsForm", btnVal: "add"})}
                         getTrips = {() => getAll("trips")}

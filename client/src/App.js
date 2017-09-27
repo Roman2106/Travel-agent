@@ -1,7 +1,8 @@
 import React from "react";
 import {Menu} from "./Menu";
 import WrapperTrips from "./WrapperTrips";
-import WrapperLocations from "./WrapperLocations"
+import WrapperLocations from "./WrapperLocations";
+import WrapperCustomers from "./WrapperCustomers";
 
 class App extends React.Component {
   constructor(props){
@@ -20,6 +21,10 @@ pages(){
     }else if(this.state.activeMenu === "Locations"){
         return(
             <WrapperLocations />
+          )
+    }else if(this.state.activeMenu === "Customers"){
+        return(
+            <WrapperCustomers />
           )
     }
 }

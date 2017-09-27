@@ -23,7 +23,6 @@ componentDidMount(){
 
 render(){
 	if(this.state.currentLocations){
-		console.log(this.state.routName);
 		return(
 			<div className = "tripsForm">
 				<form>

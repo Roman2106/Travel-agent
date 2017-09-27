@@ -20,7 +20,6 @@ componentDidMount(){
 
 
 render(){
-	console.log(this.state.country);
 		if(this.state.locations){
 			return(
 				<div className = "locations">
@@ -60,7 +59,7 @@ render(){
 						</p>
 						<p>
 							<label htmlFor="city">Название города:</label>
-							<input type="city" name="city" id="city" title="city" required
+							<input type="text" name="city" id="city" title="city" required
 							onChange = { e => this.setState({city: e.target.value})}
 							value = {this.state.city}
 							/>

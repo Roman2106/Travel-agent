@@ -135,3 +135,37 @@ div.locations button.del{
 	width: 90%;
 }
 
+.btnAddCustomer{
+	width: 65%;
+	margin: 5px auto 0 auto;
+}
+
+.customers{
+	text-align: center;
+}
+
+.customers th:last-child{
+	width: 180px;
+}
+
+.btnAddCustomer{
+	width: 150px;
+	float: right;
+	margin-top: 10px;
+	margin-right: 10%;
+}
+
+.addEditCustomer, .cancel{
+	width: 65%;
+	margin: 5px auto 0 auto;
+}
+
+.customersButtons{
+	text-align: center;
+}
+
+.customersForm textarea{
+	width: 80%;
+	height: 100px;
+}
+
