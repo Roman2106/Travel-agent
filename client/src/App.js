@@ -3,12 +3,14 @@ import {Menu} from "./Menu";
 import WrapperTrips from "./WrapperTrips";
 import WrapperLocations from "./WrapperLocations";
 import WrapperCustomers from "./WrapperCustomers";
+import Alert from "./Alert"
 
 class App extends React.Component {
   constructor(props){
     super(props);
       this.state = {
-        activeMenu: "Trips"
+        activeMenu: "Trips",
+        message: null
       };
   };
 
@@ -16,15 +18,24 @@ class App extends React.Component {
 pages(){
     if(this.state.activeMenu === "Trips"){
         return(
-           <WrapperTrips />
+           <WrapperTrips 
+            onError = {message => this.setState({message})}
+            onSuccess = {message => this.setState({message})}
+           />
           )
     }else if(this.state.activeMenu === "Locations"){
         return(
-            <WrapperLocations />
+            <WrapperLocations 
+            onError = {message => this.setState({message})}
+            onSuccess = {message => this.setState({message})}
+            />
           )
     }else if(this.state.activeMenu === "Customers"){
         return(
-            <WrapperCustomers />
+            <WrapperCustomers 
+            onError = {message => this.setState({message})}
+            onSuccess = {message => this.setState({message})}
+            />
           )
     }
 }
@@ -42,6 +53,13 @@ render() {
                 onClick = {id => this.setState({activeMenu: id})}
             />
           </nav>
+            {this.state.message ? <Alert 
+              text = {this.state.message.text} 
+              type = {this.state.message.type}
+              hideOnClick = {true}
+              hideAfter = {5}
+              onHide = {()=> this.setState({message: null})}
+              /> : null}
             {this.pages()}
         </div>
       </div>

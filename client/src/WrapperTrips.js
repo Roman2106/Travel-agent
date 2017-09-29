@@ -23,6 +23,8 @@ render(){
                         onAdd = {() => this.setState({viewType: "TripsForm", btnVal: "add"})}
                         getTrips = {() => getAll("trips")}
                         delSingle = {id => remove("trips", id)}
+                        onError = {this.props.onError}
+                        onSuccess = {this.props.onSuccess}
                         getById = {id => getById("trips", id).then(trips =>{
                         	this.setState({
 			        			objForEdit: trips,
@@ -32,19 +34,32 @@ render(){
                     /> 
                 :
                     <TripsForm
+                        onError = {this.props.onError}
+                        onSuccess = {this.props.onSuccess}
                         onCancel = {() => this.setState({viewType: "Trips", btnVal: ""})}
                         btnVal = {this.state.btnVal}
                         onAdd = {trips => {
                           add("trips", trips).then(() =>{
                           	this.setState({viewType: "Trips", btnVal: ""});
-                          });
+                          }).catch(error => this.props.onError({
+                            text: error.message || "Unexpected error.",
+                            type: "danger"
+                            }));
                         }}
                         objForEdit = {this.state.objForEdit}
                         onUpdate = {(id, trips) => update("trips", id, trips).then(() => {
                         	this.setState({
                         		viewType: "Trips", btnVal: "", objForEdit: ""
                         	})
-                        })}
+                            this.props.onSuccess({
+                                text: "Trip was successfully edited.",
+                                type: "success"
+                            })
+                        }).catch(error => this.props.onError({
+                            text: error.message || "Unexpected error.",
+                            type: "danger"
+                            }))
+                        }
                     />
                }
             </div>

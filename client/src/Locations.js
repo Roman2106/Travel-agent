@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "./Loader";
 
 class Location extends React.Component{
 	constructor(props){
@@ -43,7 +44,14 @@ render(){
 					        						this.setState({
 					        							locations: arr
 					        						});
-			        			});
+					        			this.props.onSuccess({
+								        	text: ` Location ${item.country}, ${item.city} was successfully deleted.`,
+								        	type: "success"
+								        })
+			        			}).catch(error => this.props.onError({
+									text: error.message || "Unexpected error.",
+									type: "danger"
+								}));
 			        		}}>Удалить</button></td>
 								</tr>
 							)}
@@ -73,21 +81,26 @@ render(){
 						}).then(() =>{
 							this.props.getLocations().then( locations =>{
 								this.setState({
-									locations
+									locations,
+									country: "",
+									city: ""
 								});
 							});
-							this.setState({
-								country: "",
-								city: ""
+							this.props.onSuccess({
+								text: ` Location ${this.state.country}, ${this.state.city} was successfully edded.`,
+								type: "success"
 							})
-						})}
+						}).catch(error => this.props.onError({
+							text: error.message || "Unexpected error.",
+							type: "danger"
+						}))}	
 						>Добавить место</button>
 					</div>
 				</div>
 			)
 		}else{
 			return(
-				<div>Loading data...</div>
+				<Loader />
 				)
 		}	
 	}

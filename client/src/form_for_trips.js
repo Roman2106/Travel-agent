@@ -1,5 +1,6 @@
 import React from "react";
 import {getAll} from "./api/api";
+import Loader from "./Loader";
 
 class TripsForm extends React.Component{
 constructor(props){
@@ -61,12 +62,17 @@ render(){
 				</form>
 				<div className = "tripsButtons">
 					<button className = "addEditTrips"
-						onClick = {this.props.btnVal === "add" ? () => this.props.onAdd({
+						onClick = {this.props.btnVal === "add" ? () => {this.props.onAdd({
 							tripName: this.state.tripName,
 							routName: this.state.routName,
 							dateDeparture: this.state.dateDeparture,
 							dateArrival: this.state.dateArrival
-						}): 
+						});
+							this.props.onSuccess({
+								text: ` Trip ${this.state.tripName}, ${this.state.routName} was successfully added.`,
+								type: "success"
+							});
+						}: 
 						() => this.props.onUpdate(this.props.objForEdit.id, {
 							tripName: this.state.tripName,
 							routName: this.state.routName,
@@ -82,7 +88,7 @@ render(){
 		)
 		}else{
 			return(
-			<div>Loading data</div>
+				<Loader />
 			)
 		}
 	};

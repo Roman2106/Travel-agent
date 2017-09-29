@@ -169,3 +169,27 @@ div.locations button.del{
 	height: 100px;
 }
 
+.alert-danger{
+	width: 80%;
+	height: 50px;
+	margin: 10px auto 10px auto;
+	background: rgba(195, 70, 64, .8);
+	border-radius: 5px;
+	text-align: center;
+}
+
+.alert-success{
+	width: 80%;
+	height: 50px;
+	margin: 10px auto 10px auto;
+	background: rgba(120, 205, 80, .8);
+	border-radius: 5px;
+	text-align: center;
+}
+
+.alertText{
+	padding-top: 16px;
+}
+
+
+

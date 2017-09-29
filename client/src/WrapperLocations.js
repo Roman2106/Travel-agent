@@ -15,6 +15,8 @@ render(){
 				getLocations = {() => getAll("locations")}
 				onAdd = {locations => add("locations", locations)}
 				delSingle = {id => remove("locations", id)}
+				onError = {this.props.onError}
+				onSuccess = {this.props.onSuccess}
 			/>
 		)
 	}

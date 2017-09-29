@@ -1,5 +1,6 @@
 import React from "react";
 import {getAll} from "./api/api";
+import Loader from "./Loader";
 
 class Customers extends React.Component{
 	constructor(props){
@@ -18,7 +19,6 @@ componentDidMount(){
 }
 
 render(){
-	console.log(this.state.customers);
 		if(this.state.customers){
 			return(
 				<div className = "customers">
@@ -37,9 +37,8 @@ render(){
 									<td>{item.firstName}</td>
 									<td>{item.lastName}</td>
 										<td>{item.customersTrips.map((item, index) =>
-											<tr key = {index}>{item}</tr>
+											<p key = {index}>{item}</p>
 										)}</td>
-									
 									<td><button className = "del" onClick = {() => {
 					        			this.props.delSingle(item.id, index).then(() =>{
 					        				let arr = this.state.customers;
@@ -47,10 +46,20 @@ render(){
 							        				this.setState({
 							        					customers: arr
 							        				});
-					        			});
+								        	this.props.onSuccess({
+								        		text: ` Customer ${item.firstName}, ${item.lastName} was successfully deleted.`,
+								        		type: "success"
+								        	})
+					        			}).catch(error => this.props.onError({
+											text: error.message || "Unexpected error.",
+											type: "danger"
+										}));
 					        		}}>X</button>
 					        		<button className = "edit" onClick = {() =>{
-					        				this.props.getById(item.id);
+					        				this.props.getById(item.id).catch(error => this.props.onError({
+												text: error.message || "Unexpected error.",
+												type: "danger"
+											}));
 					        		}}>Изменить</button>
 					        		</td>
 								</tr>
@@ -64,7 +73,7 @@ render(){
 			)
 		}else{
 			return(
-				<div>Loading data...</div>
+				<Loader />
 			)
 		}
 	}

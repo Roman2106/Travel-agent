@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "./Loader";
 
 class Trips extends React.Component{
 	constructor(props){
@@ -44,10 +45,20 @@ render(){
 					        				this.setState({
 					        					trips: arr
 					        				});
-			        			});
+					        		this.props.onSuccess({
+								        text: ` Trip ${item.tripName}, ${item.routName} was successfully deleted.`,
+								        type: "success"
+								    });
+			        			}).catch(error => this.props.onError({
+										text: error.message || "Unexpected error.",
+										type: "danger"
+									}));
 			        		}}>X</button>
 			        		<button className = "edit" onClick = {() =>{
-			        				this.props.getById(item.id);
+			        				this.props.getById(item.id).catch(error => this.props.onError({
+										text: error.message || "Unexpected error.",
+										type: "danger"
+									}));
 			        		}}>Изменить</button>
 			        		</td>
 			    		</tr>
@@ -60,9 +71,9 @@ render(){
 		</div>
 		)
 		}else{
-		return(
-			<div>Loading data...</div>
-			)
+			return(
+				<Loader />
+				)
 		}
 	}
 };
