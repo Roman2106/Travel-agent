@@ -36,11 +36,11 @@ render(){
                     <TripsForm
                         onError = {this.props.onError}
                         onSuccess = {this.props.onSuccess}
-                        onCancel = {() => this.setState({viewType: "Trips", btnVal: ""})}
+                        onCancel = {() => this.setState({viewType: "Trips", btnVal: "", objForEdit: null})}
                         btnVal = {this.state.btnVal}
                         onAdd = {trips => {
                           add("trips", trips).then(() =>{
-                          	this.setState({viewType: "Trips", btnVal: ""});
+                          	this.setState({viewType: "Trips", btnVal: "", objForEdit: null});
                           }).catch(error => this.props.onError({
                             text: error.message || "Unexpected error.",
                             type: "danger"
@@ -49,7 +49,7 @@ render(){
                         objForEdit = {this.state.objForEdit}
                         onUpdate = {(id, trips) => update("trips", id, trips).then(() => {
                         	this.setState({
-                        		viewType: "Trips", btnVal: "", objForEdit: ""
+                        		viewType: "Trips", btnVal: "", objForEdit: null
                         	})
                             this.props.onSuccess({
                                 text: "Trip was successfully edited.",

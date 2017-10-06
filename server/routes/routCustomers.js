@@ -25,16 +25,6 @@ router.get("/customers/:id", (req, res, next) =>{
 	}, next);
 });
 
-
-			// let tripsInBase = customersModel.customersTrips,
-			// 	apdateTrips = customersTrips,
-			// 	lastTripInArray = apdateTrips[apdateTrips.length-1];
-			// function isTrip(item){return item === lastTripInArray};
-			// let validateTrips = tripsInBase.some(isTrip);
-			// if(validateTrips){
-			// 	console.log("Такое путешествие уже существует в базе данных у этого клиента");
-			// }else{
-
 router.put("/customers/:id", (req, res, next) => {
 	CustomersModel.findById(req.params.id).then( customersModel => {
 		if(customersModel){

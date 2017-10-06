@@ -10,7 +10,9 @@ constructor(props){
 		routName: this.props.objForEdit ? this.props.objForEdit.routName : this.routName = "",
 		dateDeparture: this.props.objForEdit ? this.props.objForEdit.dateDeparture : this.dateDeparture = "",
 		dateArrival: this.props.objForEdit ? this.props.objForEdit.dateArrival : this.dateArrival = "",
-		currentLocations: null
+		currentLocations: null,
+		optionValue: this.props.objForEdit ? `${this.props.objForEdit.routName[0].country} - ${this.props.objForEdit.routName[0].city}` : this.optionValue = "Выберите путешествие",
+		disabled: false
 		};
 	};
 
@@ -37,11 +39,20 @@ render(){
 					<p>
 						<label htmlFor="routName">Маршрут:</label>
 						<select name = "routName" id = "routName" 
-						onChange = { e => this.setState({routName: e.target.value})}
-						value = {this.state.routName}>
-						<option>Выберите маршрут</option>
-							{this.state.currentLocations.map((item, index, key) =>
-								<option key = {item.id}>{`${item.country} - ${item.city}`}</option>
+						onChange = { (e) => {
+							let selectedLocationObject = JSON.parse(e.target.options[e.target.selectedIndex].value);
+							let selectedLocation = {
+								country: selectedLocationObject.country,
+								city: selectedLocationObject.city
+							};
+							this.setState({
+								routName: selectedLocation,
+								disabled: true
+							});
+						}}>	
+							<option disabled = {this.state.disabled} value = {this.state.optionValue}>{this.state.optionValue}</option>
+							{this.state.currentLocations.map((item, index, arr, key) =>
+								<option key = {item.id} value = {JSON.stringify(item)}>{`${item.country} - ${item.city}`}</option>
 							)}
 						</select>
 					</p>
@@ -62,16 +73,22 @@ render(){
 				</form>
 				<div className = "tripsButtons">
 					<button className = "addEditTrips"
-						onClick = {this.props.btnVal === "add" ? () => {this.props.onAdd({
+						onClick = {this.props.btnVal === "add" ? () => {
+							if(this.state.tripName && this.state.routName && this.state.dateDeparture && this.state.dateArrival){
+							this.props.onAdd({
 							tripName: this.state.tripName,
 							routName: this.state.routName,
 							dateDeparture: this.state.dateDeparture,
 							dateArrival: this.state.dateArrival
 						});
 							this.props.onSuccess({
-								text: ` Trip ${this.state.tripName}, ${this.state.routName} was successfully added.`,
+								text: ` Trip ${this.state.tripName}, ${this.state.routName.city} - ${this.state.routName.country} was successfully added.`,
 								type: "success"
 							});
+						}else{this.props.onError({
+							text: "Please fill all fields" || "Unexpected error.",
+							type: "danger"
+						})};
 						}: 
 						() => this.props.onUpdate(this.props.objForEdit.id, {
 							tripName: this.state.tripName,

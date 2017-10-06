@@ -19,6 +19,7 @@ componentDidMount(){
 
 render(){
 	if(this.state.trips){
+		// console.log(this.state.trips);
 		return(
 		<div className = "trips">
 			<table>
@@ -35,7 +36,7 @@ render(){
 		    		{this.state.trips.map((item, index, key) =>
 						<tr key = {item.id}>
 			        		<td>{item.tripName}</td>
-			        		<td>{item.routName}</td>
+			        		<td>{item.routName.map(item => `${item.country} - ${item.city}`)}</td>
 			        		<td>{item.dateDeparture}</td>
 			        		<td>{item.dateArrival}</td>
 			        		<td><button className = "del" onClick = {() => {
@@ -46,7 +47,7 @@ render(){
 					        					trips: arr
 					        				});
 					        		this.props.onSuccess({
-								        text: ` Trip ${item.tripName}, ${item.routName} was successfully deleted.`,
+								        text: ` Trip ${item.tripName}, was successfully deleted.`,
 								        type: "success"
 								    });
 			        			}).catch(error => this.props.onError({

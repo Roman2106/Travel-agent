@@ -30,7 +30,7 @@ router.put("/trips/:id", (req, res, next) => {
 		if(tripModel){
 			const { tripName, routName, dateDeparture, dateArrival } = req.body;
 			tripModel.tripName = tripName && tripName.trim() ? tripName.trim() : tripModel.tripName;
-			tripModel.routName = routName && routName.trim() ? routName.trim() : tripModel.routName;
+			tripModel.routName = routName;
 			tripModel.dateDeparture = dateDeparture && dateDeparture.trim() ? dateDeparture.trim() : tripModel.dateDeparture;
 			tripModel.dateArrival = dateArrival && dateArrival.trim() ? dateArrival.trim() : tripModel.dateArrival;
 			tripModel.save().then(model => res.json(transformId(model)), next);

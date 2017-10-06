@@ -20,6 +20,7 @@ componentDidMount(){
 
 render(){
 		if(this.state.customers){
+			// console.log(this.state.customers);
 			return(
 				<div className = "customers">
 					<table>
@@ -37,7 +38,7 @@ render(){
 									<td>{item.firstName}</td>
 									<td>{item.lastName}</td>
 										<td>{item.customersTrips.map((item, index) =>
-											<p key = {index}>{item}</p>
+											<p key = {index}>{`${item.tripName}. Дата отправления: ${item.dateDeparture}`}</p>
 										)}</td>
 									<td><button className = "del" onClick = {() => {
 					        			this.props.delSingle(item.id, index).then(() =>{

@@ -8,8 +8,9 @@ class CustomerForm extends React.Component{
 		this.state = {
 			firstName: this.props.objForEdit ? this.props.objForEdit.firstName : this.firstName = "",
 			lastName: this.props.objForEdit ? this.props.objForEdit.lastName : this.lastName = "",
-			customersTrips: null,
-			currentTrips: null
+			currentTrips: null,
+			customersTrips: this.props.objForEdit ? this.props.objForEdit.customersTrips : this.customersTrips = "",
+			disabled: false
 		}
 	}
 
@@ -20,6 +21,12 @@ componentDidMount(){
 		});
 	});
 };
+
+// onDisabled(){
+// 	this.setState({
+// 		disabledForAdd: true
+// 	})
+// }
 
 render(){
 		if(this.state.currentTrips){
@@ -42,49 +49,52 @@ render(){
 						</p>
 						{this.props.btnVal === "add" ? 
 							<p>
-								<label htmlFor="customersTrips">Название путешествия:</label>
-								<select name = "customersTrips" id = "customersTrips" 
+								<label htmlFor="customersTrips">Выберите путешествие:</label>
+								<select value = {this.state.valueAdd} name = "customersTrips" id = "customersTrips" 
 								onChange = { 
 									e => {
-										let itemTrip = e.target.value;
-										const customersTrips = new Array();
-										customersTrips.push(itemTrip);
-										this.setState({customersTrips})
+										let selectedTripObject = JSON.parse(e.target.options[e.target.selectedIndex].value);
+										this.setState({
+											customersTrips: selectedTripObject,
+											disabled: true
+										});
 									}
-								}
-								value = {this.state.customersTrips || ""}>
-								<option>Выберите путешествие</option>
+								}>
+									<option disabled = {this.state.disabled}>Выберите путешествие</option>
 									{this.state.currentTrips.map((item, index, key) =>
-										<option key = {item.id}>{`${item.tripName} - дата отправления: ${item.dateDeparture}, дата возвращения: ${item.dateArrival}.`}</option>
+										<option key = {item.id} value = {JSON.stringify(item)} >{`${item.tripName} - дата отправления: ${item.dateDeparture}, дата возвращения: ${item.dateArrival}.`}</option>
 									)}
 								</select>
 							</p>
 								:
 							<div>
-								<label htmlFor="customersTrips">Название путешествия:</label>
-								<select name = "customersTrips" id = "customersTrips" 
+								<label htmlFor="customersTrips">Добавить путешествие:</label>
+								<select name = "customersTrips" id = "customersTrips" value = {this.state.optionValueForEdit}
 								onChange = { 
 									e => {
-										let itemTrip = e.target.value;
-										const customersTrips = this.props.objForEdit.customersTrips;
-										function isTrip(item){return item === itemTrip};
-										let validateTrips = customersTrips.some(isTrip);
-										console.log(validateTrips);
-										if(validateTrips){
-											this.props.onError({
-												text: "Such a route already exists for this client.",
-												type: "danger"
-											})
-										}else{
-											customersTrips.push(itemTrip);
-											this.setState({customersTrips})
+										let selectedTripObject = JSON.parse(e.target.options[e.target.selectedIndex].value);
+										let arrayWithTrips = this.state.customersTrips;
+										let arrayWithTripsID = arrayWithTrips.map(item => {return(item.id)});
+										let bool = true;
+										for(let i =0; i < arrayWithTripsID.length; i++){
+											if(arrayWithTripsID[i] == selectedTripObject.id){
+												this.setState({disabled: true});
+												this.props.onError({
+													text: "Такое путешествие уже существует у клиента",
+													type: "danger"
+												});
+												bool = false;
+											}
+										}
+										if(bool){
+											arrayWithTrips.push(selectedTripObject);
+											this.setState({customersTrips: arrayWithTrips, disabled: true});
 										}
 									}
-								}
-								value = {this.state.customersTrips || ""}>
-								<option>Добавить путешествие</option>
+								}>
+									<option disabled = {this.state.disabled}>Добавить путешествие</option>
 									{this.state.currentTrips.map((item, index, key) =>
-										<option key = {item.id}>{`${item.tripName} - дата отправления: ${item.dateDeparture}, дата возвращения: ${item.dateArrival}. `}</option>
+										<option key = {item.id} value = {JSON.stringify(item)}>{`${item.tripName} - дата отправления: ${item.dateDeparture}, дата возвращения: ${item.dateArrival}. `}</option>
 									)}
 								</select>
 								<table>
@@ -97,7 +107,7 @@ render(){
 									<tbody>
 										{this.props.objForEdit.customersTrips.map((item, index, key) =>
 											<tr key = {index}>
-												<td>{item}</td>
+												<td>{`${item.tripName}. Дата отправления: ${item.dateDeparture}`}</td>
 													<td>
 														<button className = "del"
 															onClick = { e => {
@@ -140,7 +150,7 @@ render(){
 							() => {this.props.onUpdate(this.props.objForEdit.id, {
 									firstName: this.state.firstName,
 									lastName: this.state.lastName,
-									customersTrips: this.props.objForEdit.customersTrips
+									customersTrips: this.state.customersTrips
 							})
 						}
 					}>

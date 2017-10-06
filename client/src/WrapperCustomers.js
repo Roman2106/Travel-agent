@@ -17,7 +17,6 @@ render(){
 		return(
 			<div>
 				{this.state.viewType === "customers" 
-
 				?
 					<Customers 
 						getCustomers = {() => getAll("customers")}
@@ -34,7 +33,7 @@ render(){
 					/>
 				:
 					<CustomerForm 
-						onCancel = {() => this.setState({viewType: "customers", btnVal: ""})}
+						onCancel = {() => this.setState({viewType: "customers", btnVal: "", objForEdit: null})}
 						onAdd = { customers => {
                           add("customers", customers).then(() =>{
                           	this.setState({viewType: "customers", btnVal: ""});
@@ -49,7 +48,7 @@ render(){
 						btnVal = {this.state.btnVal}
 						onUpdate = {(id, customers) => update("customers", id, customers).then(() => {
                         	this.setState({
-                        		viewType: "customers", btnVal: "", objForEdit: ""
+                        		viewType: "customers", btnVal: "", objForEdit: null
                         	})
                         	this.props.onSuccess({
 								text: "Customer was successfully edited.",
