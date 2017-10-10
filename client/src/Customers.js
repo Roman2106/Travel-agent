@@ -1,5 +1,4 @@
 import React from "react";
-import {getAll} from "./api/api";
 import Loader from "./Loader";
 
 class Customers extends React.Component{
@@ -15,7 +14,7 @@ componentDidMount(){
 		this.setState({
 			customers
 		});
-	});
+  });
 }
 
 render(){

@@ -8,7 +8,7 @@
   },
   "author": "Roman",
   "license": "ISC",
-  "jest":{
+  "jest": {
     "testRegex": "(/tests/.*\\.tests)\\.(js)$"
   },
   "dependencies": {
