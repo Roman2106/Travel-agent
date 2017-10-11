@@ -1,8 +1,8 @@
 import React from "react";
 import {Menu} from "./Menu";
-import ScreenTrips from "../Trips/ScreenTrips";
+import {ScreenTrips} from "../Trips/ScreenTrips";
 import ScreenLocations from "../Locations/ScreenLocations";
-import ScreenCustomers from "../Customers/ScreenCustomers";
+import {ScreenCustomers} from "../Customers/ScreenCustomers";
 import Alert from "./Alert";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import "../../index.css";

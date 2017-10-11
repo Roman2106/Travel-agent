@@ -50,6 +50,6 @@ class Trips extends React.Component {
       )
     }
   }
-};
+}
 
 export default Trips;

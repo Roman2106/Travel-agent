@@ -80,5 +80,3 @@ export const ScreenTrips = withRouter(
       )
     }
   });
-
-export default ScreenTrips;
