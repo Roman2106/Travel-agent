@@ -1,6 +1,6 @@
 import React from "react";
 import Locations from "./Locations"
-import {getAll, add, remove, update, getById} from "./api/api";
+import {getAll, add, remove} from "../../api/api";
 
 class WrapperLocations extends React.Component {
   constructor(props) {

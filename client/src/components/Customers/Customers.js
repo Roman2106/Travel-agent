@@ -1,5 +1,5 @@
 import React from "react";
-import Loader from "./Loader";
+import Loader from "../Сommons/Loader";
 
 class Customers extends React.Component{
 	constructor(props){

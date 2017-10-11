@@ -1,7 +1,7 @@
 import React from "react";
 import Customers from "./Customers";
-import CustomerForm from "./formForCustomers";
-import {getAll, add, remove, update, getById} from "./api/api";
+import CustomerForm from "./FormForCustomers";
+import {getAll, add, remove, update, getById} from "../../api/api";
 
 class WrapperCustomers extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React from "react";
-import {getAll} from "./api/api";
-import Loader from "./Loader";
+import {getAll} from "../../api/api";
+import Loader from "../Сommons/Loader";
 
 class CustomerForm extends React.Component {
   constructor(props) {
