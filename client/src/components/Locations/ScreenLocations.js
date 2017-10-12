@@ -6,21 +6,58 @@ class WrapperLocations extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewType: "locations"
+      locations: []
     }
   }
+
+  componentDidMount() {
+    getAll("locations").then(locations => {
+      this.setState({
+        locations
+      });
+    });
+  }
+
+  delSingle = (id, index) => {
+    remove("locations", id).then(location => {
+      const arr = this.state.locations;
+      arr.splice(index, 1);
+      this.setState({
+        locations: arr
+      });
+      this.props.onSuccess({
+        text: `location ${location.country} ${location.city} was successfully deleted.`,
+        type: "success"
+      });
+    }).catch(error => this.props.onError({
+      text: error.message || "Unexpected error",
+      type: "danger"
+    }));
+  };
+
+  onAdd = (location) =>{
+    add("locations", location).then(location=>{
+      getAll("locations").then(locations => {
+        this.setState({locations});
+        this.props.onSuccess({
+          text: `Location ${location.country} ${location.city} was successfully saved.`,
+          type: "success"
+        });
+      })
+    }).catch(error => this.props.onError({
+      text: error.message || "Unexpected error",
+      type: "danger"
+    }));
+  };
 
   render() {
     return (
       <Locations
-        getLocations={() => getAll("locations")}
-        onAdd={locations => add("locations", locations)}
-        delSingle={id => remove("locations", id)}
-        onError={this.props.onError}
-        onSuccess={this.props.onSuccess}
+        locations = {this.state.locations}
+        delSingle={this.delSingle}
+        onAdd={this.onAdd}
       />
     )
   }
 }
-
 export default WrapperLocations;

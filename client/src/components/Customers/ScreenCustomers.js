@@ -58,7 +58,6 @@ export const ScreenCustomers = withRouter(
     };
 
     render() {
-      // console.log(this.state.customers.id);
       return (
         <div>
           <Switch>
@@ -74,6 +73,7 @@ export const ScreenCustomers = withRouter(
               customer={this.state.customers.find(customer => customer.id === match.params.id)}
               addEdit={this.addEdit}
               trips={this.state.trips}
+              onError={this.props.onError}
               />}/>
           </Switch>
         </div>

@@ -12,7 +12,6 @@ class Customers extends React.Component {
 
   render() {
     if (this.props.customers) {
-      // console.log(this.state.customers);
       return (
         <div className="customers">
           <table>

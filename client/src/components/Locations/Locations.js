@@ -5,23 +5,13 @@ class Location extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      locations: null,
       country: "",
       city: ""
     }
   }
 
-  componentDidMount() {
-    this.props.getLocations().then(locations => {
-      this.setState({
-        locations
-      });
-    });
-  }
-
-
   render() {
-    if (this.state.locations) {
+    if (this.props.locations) {
       return (
         <div className="locations">
           <table>
@@ -33,26 +23,13 @@ class Location extends React.Component {
             </tr>
             </thead>
             <tbody>
-            {this.state.locations.map((item, index, key) =>
+            {this.props.locations.map((item, index, key) =>
               <tr key={item.id}>
                 <td>{item.country}</td>
                 <td>{item.city}</td>
                 <td>
                   <button className="del" onClick={() => {
-                    this.props.delSingle(item.id, index).then(() => {
-                      let arr = this.state.locations;
-                      arr.splice(index, 1);
-                      this.setState({
-                        locations: arr
-                      });
-                      this.props.onSuccess({
-                        text: ` Location ${item.country}, ${item.city} was successfully deleted.`,
-                        type: "success"
-                      })
-                    }).catch(error => this.props.onError({
-                      text: error.message || "Unexpected error.",
-                      type: "danger"
-                    }));
+                    this.props.delSingle(item.id, index)
                   }}>Удалить
                   </button>
                 </td>
@@ -63,14 +40,14 @@ class Location extends React.Component {
           <form>
             <p>
               <label htmlFor="country">Название страны:</label>
-              <input type="text" name="country" id="country" title="country" required
+              <input type="text" name="country" id="country" title="country"
                      onChange={e => this.setState({country: e.target.value})}
                      value={this.state.country}
               />
             </p>
             <p>
               <label htmlFor="city">Название города:</label>
-              <input type="text" name="city" id="city" title="city" required
+              <input type="text" name="city" id="city" title="city"
                      onChange={e => this.setState({city: e.target.value})}
                      value={this.state.city}
               />
@@ -78,25 +55,12 @@ class Location extends React.Component {
           </form>
           <div className="locationsButtons">
             <button className="addLocations"
-                    onClick={() => this.props.onAdd({
+                    onClick={() => {
+                      this.props.onAdd({
                       country: this.state.country,
                       city: this.state.city
-                    }).then(() => {
-                      this.props.getLocations().then(locations => {
-                        this.setState({
-                          locations,
-                          country: "",
-                          city: ""
-                        });
-                      });
-                      this.props.onSuccess({
-                        text: ` Location ${this.state.country}, ${this.state.city} was successfully edded.`,
-                        type: "success"
-                      })
-                    }).catch(error => this.props.onError({
-                      text: error.message || "Unexpected error.",
-                      type: "danger"
-                    }))}
+                    });
+                      this.setState({country: "", city: ""})}}
             >Добавить место
             </button>
           </div>
@@ -109,5 +73,4 @@ class Location extends React.Component {
     }
   }
 }
-
 export default Location;

@@ -7,13 +7,69 @@ class CustomerForm extends React.Component {
     this.state = {
       firstName: this.props.customer && this.props.customer.firstName || "",
       lastName: this.props.customer && this.props.customer.lastName || "",
-      customersTrips: this.props.customer && this.props.customer.customersTrips || "",
+      customersTrips: this.props.customer && this.props.customer.customersTrips || [],
       disabled: false
     }
   }
 
+  addTrips = (e) => {
+    let selectedTripObject = JSON.parse(e.target.options[e.target.selectedIndex].value);
+    let arrayWithTrips = this.state.customersTrips;
+    let arrayWithTripsID = arrayWithTrips.map(item => {
+      return (item.id);
+    });
+    let bool = true;
+    for (let i = 0; i < arrayWithTripsID.length; i++) {
+      if (arrayWithTripsID[i] === selectedTripObject.id) {
+        this.setState({disabled: true});
+        this.props.onError({
+          text: "Such a trip already exists in the client",
+          type: "danger"
+        });
+        bool = false;
+      }
+    }
+    if (bool) {
+      arrayWithTrips.push(selectedTripObject);
+      this.setState({customersTrips: arrayWithTrips, disabled: true});
+    }
+  };
+
+  customerTrips = (customersTrips) => {
+    return (
+      <table>
+        <thead>
+        <tr>
+          <th>Все путешествия клиента</th>
+          <th>Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+        {customersTrips.map((item, index, key) =>
+          <tr key={index}>
+            <td>{`${item.tripName}. Дата отправления: ${item.dateDeparture}`}</td>
+            <td>
+              <button className="del" onClick={e => {
+                e.preventDefault();
+                let arr = customersTrips;
+                arr.splice(index, 1);
+                this.setState({
+                  customersTrips: arr
+                });
+              }}
+              >X
+              </button>
+            </td>
+          </tr>
+        )}
+        </tbody>
+      </table>
+    )
+  };
+
   render() {
-    // console.log(this.props.trips);
+    let customerTrips = this.state.customersTrips;
+    let tableTrips = this.state.customersTrips ? this.customerTrips(customerTrips) : null;
     return (
       <div className="customersForm">
         <form>
@@ -33,13 +89,9 @@ class CustomerForm extends React.Component {
           </p>
           <p>
             <label htmlFor="customersTrips">Выберите путешествие:</label>
-            <select name="customersTrips" id="customersTrips"
-                    onChange={e => {
-                      let selectedTripObject = JSON.parse(e.target.options[e.target.selectedIndex].value);
-                      this.setState({
-                        customersTrips: selectedTripObject,
-                        disabled: true
-                      })}}>
+            <select name="customersTrips" id="customersTrips" onChange={e => {
+              this.addTrips(e)
+            }}>
               <option disabled={this.state.disabled}>Добавить путешествие</option>
               {this.props.trips.map((item, index, key) =>
                 <option key={item.id} value={JSON.stringify(item)}>
@@ -59,6 +111,7 @@ class CustomerForm extends React.Component {
           </button>
           <Link className="cancel" to="/customers">Отменить</Link>
         </div>
+        {tableTrips}
       </div>
     )
   }
