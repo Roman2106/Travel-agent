@@ -57,7 +57,6 @@ export const ScreenTrips = withRouter(
     };
 
     render() {
-      // console.log(this.state.trips.find(match));
       return (
         <div>
           <Switch>
@@ -67,6 +66,7 @@ export const ScreenTrips = withRouter(
               delSingle={this.delSingle}
             />}/>
             <Route path="/trips/add" render={() => <TripsForm
+              history={this.props.history}
               locations={this.state.locations}
               addEdit={this.addEdit}
             />}/>

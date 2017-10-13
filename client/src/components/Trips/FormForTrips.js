@@ -14,7 +14,9 @@ class TripsForm extends React.Component {
     };
   };
 
+
   render() {
+    // console.log(this.props.history);
       return (
         <div className="tripsForm">
           <form>

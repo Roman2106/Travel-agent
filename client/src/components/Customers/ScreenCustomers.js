@@ -1,7 +1,7 @@
 import React from "react";
 import Customers from "./Customers";
 import CustomerForm from "./FormForCustomers";
-import {getAll, add, remove, update, getById} from "../../api/api";
+import {getAll, add, remove, update} from "../../api/api";
 import {Route, Switch, withRouter} from "react-router-dom";
 
 export const ScreenCustomers = withRouter(
@@ -24,7 +24,6 @@ export const ScreenCustomers = withRouter(
 
     addEdit = (customer) => {
       const promise = customer.id ? update("customers", customer.id, customer) : add("customers", customer);
-      // console.log(customer.id);
       promise.then(customer => {
         return getAll("customers").then(customers => {
           this.setState({customers});
