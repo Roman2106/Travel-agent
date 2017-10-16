@@ -12,6 +12,7 @@ class Trips extends React.Component {
 
   render() {
     if (this.props.trips) {
+      console.log(this.props.trips);
       return (
         <div className="trips">
           <table>

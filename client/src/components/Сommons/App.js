@@ -20,13 +20,11 @@ class App extends React.Component {
       <Router>
         <div className="app">
           <div className="wrapper">
-            <nav className="menu">
-              <Menu items={[
+              <Route path = "/"  render = {()=><Menu items={[
                 {id: "trips", title: "Trips", key: "trips"},
                 {id: "customers", title: "Customers", key: "customers"},
                 {id: "locations", title: "Locations", key: "locations"}
-              ]}
-              /></nav>
+              ]}/>}/>
             {this.state.message ? <Alert
               text={this.state.message.text}
               type={this.state.message.type}

@@ -60,7 +60,8 @@ export const ScreenCustomers = withRouter(
       return (
         <div>
           <Switch>
-            <Route exact path="/customers" render={() => <Customers
+            <Route exact path="/customers" render={(match) => <Customers
+              match={match}
               customers={this.state.customers}
               delSingle={this.delSingle}
             />}/>

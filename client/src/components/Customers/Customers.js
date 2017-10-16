@@ -28,7 +28,7 @@ class Customers extends React.Component {
               <tr key={customer.id}>
                 <td>{customer.firstName}</td>
                 <td>{customer.lastName}</td>
-                <td>{customer.customersTrips.map((item, index) =>
+                <td className = "withTrips">{customer.customersTrips.map((item, index) =>
                   <p key={index}>{`${item.tripName}. Дата отправления: ${item.dateDeparture}`}</p>
                 )}</td>
                 <td>
