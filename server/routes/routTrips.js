@@ -10,6 +10,11 @@ const transformId = trip => {
   return obj;
 }
 
+// const transformId = trip =>{
+//   const obj = trip.toObject();
+//   return obj;
+// }
+
 router.get("/trips", (req, res, next) => {
   TripModel.find().then(data => res.json(data.map(transformId)), next);
 });
