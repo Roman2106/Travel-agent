@@ -7,6 +7,11 @@ beforeEach(() => {
   return TripModel.remove({});
 });
 
+afterAll(() => {
+  return TripModel.remove({});
+});
+
+
 const obj = {
   tripName: "Поездка в Беларусь",
   routName: ["Минск-Беларусь"],
