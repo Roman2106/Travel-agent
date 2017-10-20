@@ -1,0 +1,195 @@
+#root {
+    max-width: 100%;
+}
+
+.app {
+    max-width: 100%;
+}
+
+.wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.menu li {
+    display: inline-block;
+    position: relative;
+    list-style-type: none;
+}
+
+.menu li:nth-child(n+2) {
+    margin-left: 40px;
+}
+
+.ulMenu {
+    text-align: center;
+    padding: 0;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    color: #303130;
+}
+
+nav a {
+    transition: transform .5s;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+}
+
+.isActive{
+    font-size: 22px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #393B37;
+}
+
+h4 {
+    text-align: center;
+}
+
+table td, table th {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #393B37;
+}
+
+form {
+    width: 65%;
+    margin: 0 auto;
+}
+
+form p {
+    display: block;
+}
+
+label {
+    display: inline-block;
+    width: 130px;
+    vertical-align: top;
+}
+
+input {
+    width: 75%;
+    height: 25px;
+    border: 1px solid #DCDEDC;
+    border-radius: 3px;
+    outline: none;
+}
+
+button {
+    padding: 5px;
+    border: 1px solid #DCDEDC;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.btnAddTrips {
+    width: 150px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10%;
+}
+
+.tripsButtons {
+    text-align: center;
+}
+
+.addEditTrips, .cancel {
+    width: 65%;
+    margin: 5px auto 0 auto;
+}
+
+.del {
+    width: 35%;
+}
+
+.edit {
+    width: 60%;
+    margin-left: 3px;
+}
+
+.addLocations {
+    width: 65%;
+}
+
+.locationsButtons {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div.locations form {
+    text-align: center;
+}
+
+div.locations button.del {
+    width: 90%;
+}
+
+.btnAddCustomer {
+    width: 65%;
+    margin: 5px auto 0 auto;
+}
+
+.customers {
+    text-align: center;
+}
+
+.customers th:last-child {
+    width: 180px;
+}
+
+.btnAddCustomer {
+    width: 150px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10%;
+}
+
+.addEditCustomer, .cancel {
+    width: 65%;
+    margin: 5px auto 0 auto;
+}
+
+.customersButtons {
+    text-align: center;
+}
+
+.customersForm textarea {
+    width: 80%;
+    height: 100px;
+}
+
+.alert-danger {
+    width: 80%;
+    height: 50px;
+    margin: 10px auto 10px auto;
+    background: rgba(195, 70, 64, .8);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alert-success {
+    width: 80%;
+    height: 50px;
+    margin: 10px auto 10px auto;
+    background: rgba(120, 205, 80, .8);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alertText {
+    padding-top: 16px;
+}
+
+
+
