@@ -1,0 +1,6 @@
+export const ActionType = {
+  LOADED_LOCATIONS: "Locations/LOADED_LOCATIONS",
+  ADD_LOCATION: "Locations/ADD_LOCATION",
+  EDIT_LOCATION: "Locations/EDIT_LOCATION",
+  DELETE_LOCATION: "Locations/DELETE_LOCATION"
+};

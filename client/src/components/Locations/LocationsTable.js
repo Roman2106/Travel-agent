@@ -1,7 +1,8 @@
 import React from "react";
 import Loader from "../Сommons/Loader";
+import {Link} from "react-router-dom";
 
-class Location extends React.Component {
+class LocationTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +12,7 @@ class Location extends React.Component {
   }
 
   render() {
-    if (this.props.locations) {
+    if (this.props.locations.showLoading === false) {
       return (
         <div className="locations">
           <table>
@@ -23,47 +24,22 @@ class Location extends React.Component {
             </tr>
             </thead>
             <tbody>
-            {this.props.locations.map((item, index, key) =>
+            {this.props.locations.listLocations.map((item, index, key) =>
               <tr key={item.id}>
                 <td>{item.country}</td>
                 <td>{item.city}</td>
                 <td>
                   <button className="del" onClick={() => {
-                    this.props.delSingle(item.id, index)
-                  }}>Удалить
+                    this.props.onDeleteLocation(item.id, item)
+                  }}>X
                   </button>
+                  <Link className="edit" to={`/locations/${item.id}`}>Edit</Link>
                 </td>
               </tr>
             )}
             </tbody>
           </table>
-          <form>
-            <p>
-              <label htmlFor="country">Название страны:</label>
-              <input type="text" name="country" id="country" title="country"
-                     onChange={e => this.setState({country: e.target.value})}
-                     value={this.state.country}
-              />
-            </p>
-            <p>
-              <label htmlFor="city">Название города:</label>
-              <input type="text" name="city" id="city" title="city"
-                     onChange={e => this.setState({city: e.target.value})}
-                     value={this.state.city}
-              />
-            </p>
-          </form>
-          <div className="locationsButtons">
-            <button className="addLocations"
-                    onClick={() => {
-                      this.props.onAdd({
-                      country: this.state.country,
-                      city: this.state.city
-                    });
-                      this.setState({country: "", city: ""})}}
-            >Добавить место
-            </button>
-          </div>
+          <Link className="btnAddTrips" to="/locations/add">Add location</Link>
         </div>
       )
     } else {
@@ -73,4 +49,4 @@ class Location extends React.Component {
     }
   }
 }
-export default Location;
+export default LocationTable;

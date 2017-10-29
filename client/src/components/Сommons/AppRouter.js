@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {CustomersScreen} from "../Customers/CustomersScreen";
-import LocationsScreen from "../Locations/LocationsScreen";
+import {LocationsScreen} from "../Locations/LocationsScreen";
 import {TripsScreen} from "../Trips/TripsScreen";
 import Alert from "./Alert";
 import {Menu} from "./Menu";
@@ -22,11 +22,11 @@ export class AppRouter extends React.Component {
             {id: "locations", title: "Locations", key: "locations"}
           ]}/>}/>
           {this.props.messages ? <Alert
-              text={this.props.messages.message}
-              type={this.props.messages.type}
-              hideAfter={4}
-              onHide={() => this.setState({message: null})}
-              delMessage={this.props.delMessage}
+            text={this.props.messages.message}
+            type={this.props.messages.type}
+            hideAfter={3}
+            onHide={() => this.setState({message: null})}
+            delMessage={this.props.delMessage}
           /> : null}
           <Switch>
             <Route path="/trips" render={() => <TripsScreen
@@ -36,7 +36,12 @@ export class AppRouter extends React.Component {
               onDeleteTrip={this.props.onDeleteTrip}
             />}/>
             <Route path="/customers" render={() => <CustomersScreen/>}/>
-            <Route path="/locations" render={() => <LocationsScreen/>}/>
+            <Route path="/locations" render={() => <LocationsScreen
+              getLocations={this.props.getLocations}
+              onSaveLocation={this.props.onSaveLocation}
+              onDeleteLocation={this.props.onDeleteLocation}
+              locations={this.props.locations}
+            />}/>
           </Switch>
         </div>
       </Router>

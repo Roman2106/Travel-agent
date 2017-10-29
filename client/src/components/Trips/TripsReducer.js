@@ -28,7 +28,6 @@ export const TripsReducer = (state = initialState, action) => {
 
     case ActionType.EDIT_TRIP:
       let editTrips = state.listTrips.concat([]);
-      // console.log(action.payload.trip.id);
       let index = editTrips.findIndex(item => item.id === action.payload.trip.id);
       editTrips.splice(index, 1, action.payload.trip);
       return {
@@ -48,37 +47,3 @@ export const TripsReducer = (state = initialState, action) => {
   }
 };
 
-
-// case ActionType.LOADED_TRIPS: {
-//   return {...state, listTrips: action.payload.trips}
-// }
-// case ActionType.ADD_TRIP:
-// return {
-//   ...state,
-//   trips: state.trips.concat({...action.payload.trip})
-// };
-// case ActionType.DELETE_TRIP: {
-//   const index = state.trips.findIndex(trip => trip.id === action.payload.tripId);
-//   return {
-//     ...state,
-//     trips: [
-//       ...state.trips.slice(0, index),
-//       ...state.trips.slice(index + 1)
-//     ]
-//   };
-// }
-// case ActionType.EDIT_TRIP: {
-//   const index = state.trips.findIndex(trip => trip.id === action.payload.trip.id);
-//   return {
-//     ...state,
-//     trips: [
-//       ...state.trips.slice(0, index),
-//       action.payload.trips,
-//       ...state.trips.slice(index + 1)
-//     ]
-//   };
-// }
-//
-// case ActionType.SET_LOADING: {
-//   return {...state, isLoading: action.payload.isLoading}
-// }

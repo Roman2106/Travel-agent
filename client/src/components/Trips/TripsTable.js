@@ -36,7 +36,7 @@ class TripsTable extends React.Component {
                     this.props.onDeleteTrip(trip.id, trip.tripName)
                   }}>X
                   </button>
-                  <Link className="edit" to={`/trips/${trip.id}`}>Изменить</Link>
+                  <Link className="edit" to={`/trips/${trip.id}`}>Edit</Link>
                 </td>
               </tr>
             )}

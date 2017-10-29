@@ -3,7 +3,6 @@ import {showTrips, addTrip, editTrip, deleteTrip} from "./TripsReducer";
 import {setError, setMessage} from "../Сommons/UserMessages/MessageReducer";
 
 export const TripsService = {
-
   getTrips: () => {
     return dispatch => {
       getAll("trips").then(trips => {
@@ -23,7 +22,7 @@ export const TripsService = {
         : add("trips", trip).then(trip => [
           dispatch(addTrip(trip)), dispatch(setMessage(`${trip.tripName} was successfully add.`, "success"))
         ]);
-      promise.catch(error=>
+      promise.catch(error =>
         dispatch(setError(error.message, "danger"))
       )
     }
@@ -31,13 +30,11 @@ export const TripsService = {
 
   onDeleteTrip: (id, tripName) => {
     return dispatch => {
-      remove("trips", id).then(id=>[
+      remove("trips", id).then(id => [
         dispatch(deleteTrip(id)), dispatch(setMessage(`${tripName} was successfully deleted.`, "success"))
       ]).catch(error => dispatch(setError(error.message, "danger")));
     }
   }
-
-
 };
 
 // addEdit = (trip) => {
