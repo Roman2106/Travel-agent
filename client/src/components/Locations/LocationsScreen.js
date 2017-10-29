@@ -1,8 +1,8 @@
 import React from "react";
-import Locations from "./Locations"
+import Locations from "./LocationsTable"
 import {getAll, add, remove} from "../../api/api";
 
-class WrapperLocations extends React.Component {
+class LocationsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,4 +60,4 @@ class WrapperLocations extends React.Component {
     )
   }
 }
-export default WrapperLocations;
+export default LocationsScreen;

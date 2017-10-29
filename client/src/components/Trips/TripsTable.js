@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Loader from "../Сommons/Loader";
+import {Loader} from "../Сommons/Loader";
 
-class Trips extends React.Component {
+class TripsTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,8 +11,7 @@ class Trips extends React.Component {
   };
 
   render() {
-    if (this.props.trips) {
-      console.log(this.props.trips);
+    if (this.props.trips.showLoading === false) {
       return (
         <div className="trips">
           <table>
@@ -26,23 +25,24 @@ class Trips extends React.Component {
             </tr>
             </thead>
             <tbody>
-            {this.props.trips.map((trip, index, key) =>
+            {this.props.trips.listTrips.map((trip, index, key) =>
               <tr key={trip.id}>
                 <td>{trip.tripName}</td>
-                <td>{trip.routName.map(item => `${item.country} - ${item.city}`)}</td>
+                {/*<td>{trip.routName.map(item => `${item.country} - ${item.city}`)}</td>*/}
                 <td>{trip.dateDeparture}</td>
                 <td>{trip.dateArrival}</td>
                 <td>
                   <button className="del" onClick={() => {
-                    this.props.delSingle(trip.id, index)
-                  }}>X</button>
+                    this.props.onDeleteTrip(trip.id, trip.tripName)
+                  }}>X
+                  </button>
                   <Link className="edit" to={`/trips/${trip.id}`}>Изменить</Link>
                 </td>
               </tr>
             )}
             </tbody>
           </table>
-          <Link className="btnAddTrips" to = "/trips/add">Добавить маршрут</Link>
+          <Link className="btnAddTrips" to="trips/add">Add trip</Link>
         </div>
       )
     } else {
@@ -53,4 +53,4 @@ class Trips extends React.Component {
   }
 }
 
-export default Trips;
+export default TripsTable;

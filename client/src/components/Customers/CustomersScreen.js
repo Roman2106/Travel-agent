@@ -1,10 +1,10 @@
 import React from "react";
-import Customers from "./Customers";
-import CustomerForm from "./FormForCustomers";
+import Customers from "./CustomersTable";
+import CustomerForm from "./CustomersForm";
 import {getAll, add, remove, update} from "../../api/api";
 import {Route, Switch, withRouter} from "react-router-dom";
 
-export const ScreenCustomers = withRouter(
+export const CustomersScreen = withRouter(
   class extends React.Component {
     constructor(props) {
       super(props);

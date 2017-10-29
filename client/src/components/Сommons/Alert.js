@@ -9,7 +9,7 @@ class Alert extends React.Component {
   componentDidMount() {
     if (this.props.hideAfter) {
       setTimeout(() => {
-        this.props.onHide()
+        this.props.delMessage()
       }, this.props.hideAfter * 1000);
     }
   }
@@ -18,7 +18,7 @@ class Alert extends React.Component {
     return (
       <div
         className={`alert alert-${this.props.type}`}
-        onClick={this.props.hideOnClick ? () => this.props.onHide() : null}
+        onClick={this.props.delMessage}
       >
         <p className="alertText">{this.props.text}</p>
       </div>
