@@ -12,6 +12,7 @@ class TripsTable extends React.Component {
 
   render() {
     if (this.props.trips.showLoading === false) {
+      // console.log(this.props.trips);
       return (
         <div className="trips">
           <table>
@@ -28,7 +29,7 @@ class TripsTable extends React.Component {
             {this.props.trips.listTrips.map((trip, index, key) =>
               <tr key={trip.id}>
                 <td>{trip.tripName}</td>
-                {/*<td>{trip.routName.map(item => `${item.country} - ${item.city}`)}</td>*/}
+                <td>{trip.routName.map(item => `${item.country} - ${item.city}`)}</td>
                 <td>{trip.dateDeparture}</td>
                 <td>{trip.dateArrival}</td>
                 <td>

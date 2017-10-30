@@ -22,10 +22,7 @@ class CustomerForm extends React.Component {
     for (let i = 0; i < arrayWithTripsID.length; i++) {
       if (arrayWithTripsID[i] === selectedTripObject.id) {
         this.setState({disabled: true});
-        this.props.onError({
-          text: "Such a trip already exists in the client",
-          type: "danger"
-        });
+        this.props.showMessage("Такое путешествие уже существует у клиента", "danger");
         bool = false;
       }
     }
@@ -67,6 +64,19 @@ class CustomerForm extends React.Component {
     )
   };
 
+  componentWillMount() {
+    let oldId = this.props.customer.customersTrips.map(item => {
+      return item.id
+    });
+    let newCustomerTrips = this.props.trips.listTrips;
+    let updateCustomersTrips = oldId.map(item => {
+      return newCustomerTrips.find(trip => trip.id === item)
+    });
+    this.setState({
+      customersTrips: updateCustomersTrips
+    });
+  };
+
   render() {
     let customerTrips = this.state.customersTrips;
     let tableTrips = this.state.customersTrips ? this.customerTrips(customerTrips) : null;
@@ -93,7 +103,7 @@ class CustomerForm extends React.Component {
               this.addTrips(e)
             }}>
               <option disabled={this.state.disabled}>Добавить путешествие</option>
-              {this.props.trips.map((item, index, key) =>
+              {this.props.trips.listTrips.map((item, index, key) =>
                 <option key={item.id} value={JSON.stringify(item)}>
                   {`${item.tripName} - дата отправления: ${item.dateDeparture}, дата возвращения: ${item.dateArrival}.`}
                 </option>
@@ -102,14 +112,17 @@ class CustomerForm extends React.Component {
           </p>
         </form>
         <div className="customersButtons">
-          <button className="addEditCustomer" onClick={() => this.props.addEdit({
-            id: this.props.customer && this.props.customer.id || null,
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            customersTrips: this.state.customersTrips
-          })}>Сохранить
+          <button className="addEditCustomer" onClick={() => {
+            this.props.history.push("/customers");
+            this.props.onSaveCustomer({
+              id: this.props.customer && this.props.customer.id || null,
+              firstName: this.state.firstName,
+              lastName: this.state.lastName,
+              customersTrips: this.state.customersTrips
+            })
+          }}>Save
           </button>
-          <Link className="cancel" to="/customers">Отменить</Link>
+          <Link className="cancel" to="/customers">Cancel</Link>
         </div>
         {tableTrips}
       </div>

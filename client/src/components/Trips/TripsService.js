@@ -36,20 +36,3 @@ export const TripsService = {
     }
   }
 };
-
-// addEdit = (trip) => {
-//       const promise = trip.id ? update("trips", trip.id, trip) : add("trips", trip);
-//       promise.then(trip => {
-//         return getAll("trips").then(trips => {
-//           this.setState({trips});
-//           this.props.history.push("/trips");
-//           this.props.onSuccess({
-//             text: `Trip ${trip.tripName} was successfully saved.`,
-//             type: "success"
-//           });
-//         });
-//       }).catch(error => this.props.onError({
-//         text: error.message || "Unexpected error",
-//         type: "danger"
-//       }));
-//     };

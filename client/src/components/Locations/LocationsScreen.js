@@ -10,12 +10,7 @@ export const LocationsScreen = withRouter(
       this.state = {}
     }
 
-    componentDidMount() {
-      this.props.getLocations();
-    }
-
     render() {
-console.log(this.props.locations.listLocations);
       return (
         <Switch>
           <Route exact path="/locations" render={() => <LocationTable

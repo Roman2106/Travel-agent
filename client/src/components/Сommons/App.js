@@ -5,12 +5,13 @@ import {store} from "../../store";
 import {TripsService} from "../Trips/TripsService";
 import {LocationService} from "../Locations/LocationService";
 import {MessagesService} from "./UserMessages/MessageService";
+import {CustomersService} from "../Customers/CustomersService";
 import "../../index.css";
 
 const actionCreators = {
   ...LocationService,
   ...TripsService,
-  // ...CustomersService
+  ...CustomersService,
   ...MessagesService
 };
 

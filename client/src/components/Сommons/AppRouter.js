@@ -12,6 +12,12 @@ export class AppRouter extends React.Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    this.props.getTrips();
+    this.props.getLocations();
+    this.props.getCustomers();
+  }
+
   render() {
     return (
       <Router>
@@ -22,25 +28,33 @@ export class AppRouter extends React.Component {
             {id: "locations", title: "Locations", key: "locations"}
           ]}/>}/>
           {this.props.messages ? <Alert
-            text={this.props.messages.message}
-            type={this.props.messages.type}
             hideAfter={3}
-            onHide={() => this.setState({message: null})}
+            type={this.props.messages.type}
+            text={this.props.messages.message}
             delMessage={this.props.delMessage}
+            onHide={() => this.setState({message: null})}
           /> : null}
           <Switch>
             <Route path="/trips" render={() => <TripsScreen
               trips={this.props.trips}
               getTrips={this.props.getTrips}
+              locations={this.props.locations}
               onSaveTrip={this.props.onSaveTrip}
               onDeleteTrip={this.props.onDeleteTrip}
             />}/>
-            <Route path="/customers" render={() => <CustomersScreen/>}/>
+            <Route path="/customers" render={() => <CustomersScreen
+              trips={this.props.trips}
+              customers={this.props.customers}
+              showMessage={this.props.showMessage}
+              getCustomers={this.props.getCustomers}
+              onSaveCustomer={this.props.onSaveCustomer}
+              onDeleteCustomer={this.props.onDeleteCustomer}
+            />}/>
             <Route path="/locations" render={() => <LocationsScreen
+              locations={this.props.locations}
               getLocations={this.props.getLocations}
               onSaveLocation={this.props.onSaveLocation}
               onDeleteLocation={this.props.onDeleteLocation}
-              locations={this.props.locations}
             />}/>
           </Switch>
         </div>

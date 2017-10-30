@@ -5,12 +5,11 @@ import {Link} from "react-router-dom";
 class Customers extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      customers: null
-    }
+    this.state = {}
   }
 
   render() {
+    console.log(this.props);
     if (this.props.customers) {
       return (
         <div className="customers">
@@ -24,7 +23,7 @@ class Customers extends React.Component {
             </tr>
             </thead>
             <tbody>
-            {this.props.customers.map((customer, index, key) =>
+            {this.props.customers.listCustomers.map((customer, index, key) =>
               <tr key={customer.id}>
                 <td>{customer.firstName}</td>
                 <td>{customer.lastName}</td>
@@ -33,15 +32,16 @@ class Customers extends React.Component {
                 )}</td>
                 <td>
                   <button className="del" onClick={() => {
-                    this.props.delSingle(customer.id, index)
+                    // console.log(customer.customersTrips);
+                    this.props.onDeleteCustomer(customer.id, customer)
                   }}>X</button>
-                  <Link className="edit" to={`/customers/${customer.id}`}>Изменить</Link>
+                  <Link className="edit" to={`/customers/${customer.id}`}>Edit</Link>
                 </td>
               </tr>
             )}
             </tbody>
           </table>
-          <Link className="btnAddCustomer" to="customers/add">Добавить клиента</Link>
+          <Link className="btnAddCustomer" to="customers/add">Add Customer</Link>
         </div>
       )
     } else {
