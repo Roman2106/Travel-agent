@@ -3,20 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c3c5e847-63f8-42ff-ae5f-cc36983e7a29" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersConst.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersConst.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersService.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsService.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Сommons/App.js" afterPath="$PROJECT_DIR$/client/src/components/Сommons/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js" afterPath="$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Сommons/UserMessages/MessageService.js" afterPath="$PROJECT_DIR$/client/src/components/Сommons/UserMessages/MessageService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +27,8 @@
       <file leaf-file-name="CustomersService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            <state relative-caret-position="792">
+              <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -48,8 +39,8 @@
       <file leaf-file-name="CustomersReducer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="331">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -58,8 +49,8 @@
       <file leaf-file-name="CustomersScreen.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="29" column="53" lean-forward="false" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+            <state relative-caret-position="264">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <marker date="1509379320000" expanded="true" signature="403:1493" ph="..." />
@@ -72,48 +63,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomersTable.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CustomersTable.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+            <state relative-caret-position="198">
+              <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selenium.tests.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/tests/selenium.tests.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="85" column="3" lean-forward="false" selection-start-line="85" selection-start-column="3" selection-end-line="85" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomersForm.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CustomersForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-659">
-              <caret line="69" column="7" lean-forward="true" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
+            <state relative-caret-position="1341">
+              <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <marker date="1509378443000" expanded="true" signature="1207:1448" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="1223:1337" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="1236:1320" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="1353:1448" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="1430:1448" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="1530:1866" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="2514:3620" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="2529:3620" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="2543:2849" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="2694:2724" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="2863:3167" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="3014:3044" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="3181:3620" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="3600:3620" ph="..." />
-                <marker date="1509378443000" expanded="true" signature="3860:4368" ph="..." />
               </folding>
             </state>
           </provider>
@@ -122,11 +88,21 @@
       <file leaf-file-name="AppRouter.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
+            <state relative-caret-position="330">
               <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TripsReducer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -181,7 +157,6 @@
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsConst.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationService.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersConst.js" />
@@ -189,15 +164,16 @@
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersService.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/UserMessages/MessageService.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsService.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
       </list>
     </option>
   </component>
@@ -281,19 +257,22 @@
             <path>
               <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
               <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
               <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Trips" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -310,6 +289,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -490,9 +470,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Jest.Trip is removed from the db" />
-        <item index="1" class="java.lang.String" itemvalue="Jest.Return trip with db,trip has correct id, and has't __v" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.server1" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.server1" />
+        <item index="1" class="java.lang.String" itemvalue="Jest.Trip is removed from the db" />
+        <item index="2" class="java.lang.String" itemvalue="Jest.Return trip with db,trip has correct id, and has't __v" />
         <item index="3" class="java.lang.String" itemvalue="Jest.Should call addEdit, by pressing the button" />
         <item index="4" class="java.lang.String" itemvalue="Jest.Should call onAdd, by pressing the button" />
       </list>
@@ -541,7 +521,8 @@
       <workItem from="1509272016561" duration="91000" />
       <workItem from="1509272307486" duration="2000000" />
       <workItem from="1509292638646" duration="149000" />
-      <workItem from="1509292875560" duration="51594000" />
+      <workItem from="1509292875560" duration="51788000" />
+      <workItem from="1509434770911" duration="1901000" />
     </task>
     <servers />
   </component>
@@ -578,7 +559,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="397909000" />
+    <option name="totallyTimeSpent" value="400004000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -810,7 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,9 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="593">
           <caret line="41" column="79" lean-forward="true" selection-start-line="41" selection-start-column="79" selection-end-line="41" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -828,7 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="25" lean-forward="true" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,19 +818,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsConst.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="2" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -862,7 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,7 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
           <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -904,7 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,9 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1743">
           <caret line="89" column="25" lean-forward="false" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -930,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -939,14 +897,14 @@
         <state relative-caret-position="504">
           <caret line="37" column="2" lean-forward="false" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#58#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
+        <state relative-caret-position="330">
           <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -954,19 +912,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,65 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-659">
-          <caret line="69" column="7" lean-forward="true" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <marker date="1509378443000" expanded="true" signature="1207:1448" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="1223:1337" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="1236:1320" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="1353:1448" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="1430:1448" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="1530:1866" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="2514:3620" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="2529:3620" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="2543:2849" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="2694:2724" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="2863:3167" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="3014:3044" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="3181:3620" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="3600:3620" ph="..." />
-            <marker date="1509378443000" expanded="true" signature="3860:4368" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="29" column="53" lean-forward="false" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <marker date="1509379320000" expanded="true" signature="403:1493" ph="..." />
-            <marker date="1509379320000" expanded="true" signature="422:1478" ph="..." />
-            <marker date="1509379320000" expanded="true" signature="501:690" ph="..." />
-            <marker date="1509379320000" expanded="true" signature="763:1014" ph="..." />
-            <marker date="1509379320000" expanded="true" signature="1094:1403" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,13 +930,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
           <caret line="75" column="36" lean-forward="false" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/tests/selenium.tests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
+        <state relative-caret-position="1870">
           <caret line="85" column="3" lean-forward="false" selection-start-line="85" selection-start-column="3" selection-end-line="85" selection-end-column="3" />
           <folding />
         </state>
@@ -1056,7 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,11 +956,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="30" column="6" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1509379320000" expanded="true" signature="403:1493" ph="..." />
+            <marker date="1509379320000" expanded="true" signature="422:1478" ph="..." />
+            <marker date="1509379320000" expanded="true" signature="501:690" ph="..." />
+            <marker date="1509379320000" expanded="true" signature="763:1014" ph="..." />
+            <marker date="1509379320000" expanded="true" signature="1094:1403" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state relative-caret-position="198">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1341">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

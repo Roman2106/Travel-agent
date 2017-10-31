@@ -65,7 +65,7 @@ class CustomerForm extends React.Component {
   };
 
   componentWillMount() {
-    let oldId = this.props.customer.customersTrips.map(item => {
+    let oldId = this.state.customersTrips.map(item => {
       return item.id
     });
     let newCustomerTrips = this.props.trips.listTrips;

@@ -2,7 +2,6 @@ import {ActionType} from "./TripsConst";
 
 const initialState = {
   listTrips: [],
-  listLocations: [],
   showLoading: true
 };
 

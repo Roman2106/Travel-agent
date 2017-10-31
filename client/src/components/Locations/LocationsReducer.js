@@ -28,7 +28,7 @@ export const LocationsReducer = (state = initialState, action) => {
     case ActionType.EDIT_LOCATION:
       let editLocations = state.listLocations.concat([]);
       let index = editLocations.findIndex(item => item.id === action.payload.location.id);
-      console.log(action.payload.location.id);
+      // console.log(action.payload.location.id);
       editLocations.splice(index, 1, action.payload.location);
       return {
         ...state, listLocations: editLocations

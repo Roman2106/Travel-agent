@@ -9,7 +9,7 @@ class Customers extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     if (this.props.customers) {
       return (
         <div className="customers">

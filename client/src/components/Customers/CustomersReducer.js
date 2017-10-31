@@ -2,7 +2,6 @@ import {ActionType} from "./CustomersConst";
 
 const initialState = {
   listCustomers: [],
-  customerTrips:[],
   showLoading: true
 };
 
@@ -28,6 +27,7 @@ export const CustomersReducer = (state = initialState, action) => {
 
     case ActionType.EDIT_CUSTOMER:
       let editCustomers = state.listCustomers.concat([]);
+      // console.log({...state});
       let index = editCustomers.findIndex(item => item.id === action.payload.customer.id);
       editCustomers.splice(index, 1, action.payload.customer);
       return{
