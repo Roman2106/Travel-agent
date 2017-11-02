@@ -11,6 +11,7 @@ class Customers extends React.Component {
   render() {
     if (this.props.customers && this.props.trips) {
       let trips = this.props.trips;
+      let tripsArr = Object.keys(trips).reduce((arr, key) => ([...arr, {...trips[key]}]), []);
       return (
         <div className="customers">
           <table>
@@ -28,8 +29,10 @@ class Customers extends React.Component {
                 <td>{customer.firstName}</td>
                 <td>{customer.lastName}</td>
                 <td className="withTrips">{customer.customersTripsID.map((id, index) => {
-                  // console.log(trips[id]);
-                  return <p key={index}>{trips[id].tripName}</p>;
+                  for (let i = 0; i < tripsArr.length; i++) {
+                    if (id !== tripsArr[i].id) continue;
+                    return <p key={index}>{trips[id].tripName}</p>
+                  }
                 })}</td>
                 <td>
                   <button className="del" onClick={() => {

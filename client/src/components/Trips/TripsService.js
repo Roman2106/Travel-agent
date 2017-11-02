@@ -1,6 +1,5 @@
 import {getAll, add, update, remove} from "../../api/api";
 import {showTrips, addTrip, editTrip, deleteTrip} from "./TripsReducer";
-import {deleteCustomerTripsId} from "../Customers/CustomersReducer";
 import {setError, setMessage} from "../Сommons/UserMessages/MessageReducer";
 
 export const TripsService = {
@@ -33,8 +32,7 @@ export const TripsService = {
   onDeleteTrip: (id, tripName) => {
     return dispatch => {
       remove("trips", id).then(id => [
-        dispatch(deleteTrip(id)), dispatch(setMessage(`${tripName} was successfully deleted.`, "success")),
-        dispatch(deleteCustomerTripsId(id))
+        dispatch(deleteTrip(id)), dispatch(setMessage(`${tripName} was successfully deleted.`, "success"))
       ]).catch(error => dispatch(setError(error.message, "danger")));
     }
   }
