@@ -27,8 +27,7 @@ const bindActionCreators = (dispatch, actionCreators) =>{
 
 const mapStateToProps = state => state;
 const ConnectedAppRouter =
-  connect(mapStateToProps, dispatch => bindActionCreators(dispatch, actionCreators))
-  (AppRouter);
+  connect(mapStateToProps, dispatch => bindActionCreators(dispatch, actionCreators))(AppRouter);
 
 export const App = () =>(
   <div className="app">
@@ -37,49 +36,3 @@ export const App = () =>(
     </Provider>
   </div>
 );
-
-// class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       message: null
-//     };
-//   };
-//
-//   render() {
-//     return (
-//       <Router>
-//         <div className="app">
-//           <div className="wrapper">
-//               <Route path = "/"  render = {()=><Menu items={[
-//                 {id: "trips", title: "Trips", key: "trips"},
-//                 {id: "customers", title: "Customers", key: "customers"},
-//                 {id: "locations", title: "Locations", key: "locations"}
-//               ]}/>}/>
-//             {this.state.message ? <Alert
-//               text={this.state.message.text}
-//               type={this.state.message.type}
-//               hideOnClick={true}
-//               hideAfter={4}
-//               onHide={() => this.setState({message: null})}/> : null}
-//             <Switch>
-//               <Route path="/trips" render={() => <ScreenTrips
-//                 onError={message => this.setState({message})}
-//                 onSuccess={message => this.setState({message})}
-//               />}/>
-//               <Route path="/customers" render={() => <ScreenCustomers
-//                 onError={message => this.setState({message})}
-//                 onSuccess={message => this.setState({message})}
-//               />}/>
-//               <Route path="/locations" render={() => <ScreenLocations
-//                 onError={message => this.setState({message})}
-//                 onSuccess={message => this.setState({message})}
-//               />}/>
-//             </Switch>
-//           </div>
-//         </div>
-//       </Router>
-//     );
-//   }
-// }
-// export default App;

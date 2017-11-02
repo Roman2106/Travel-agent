@@ -32,7 +32,6 @@ class TripsForm extends React.Component {
               <select name="routName" id="routName"
                       onChange={(e) => {
                         let selectedLocationObject = JSON.parse(e.target.options[e.target.selectedIndex].value);
-                        // console.log(selectedLocationObject);
                         let selectedLocation = {
                           country: selectedLocationObject.country,
                           city: selectedLocationObject.city

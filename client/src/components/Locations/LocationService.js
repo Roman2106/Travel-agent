@@ -8,7 +8,7 @@ export const LocationService = {
     return dispatch => {
       getAll("locations").then(locations => {
         setTimeout(() => [
-          dispatch(showLocations(locations)), dispatch(setMessage(`Data was successfully loaded.`, "success"))
+          dispatch(showLocations(locations))
         ], 1200);
       }).catch(error=>dispatch(setError(error.message, "danger")));
     }

@@ -7,79 +7,20 @@ class CustomerForm extends React.Component {
     this.state = {
       firstName: this.props.customer && this.props.customer.firstName || "",
       lastName: this.props.customer && this.props.customer.lastName || "",
-      customersTrips: this.props.customer && this.props.customer.customersTrips || [],
+      customersTripsID: this.props.customer && this.props.customer.customersTripsID || [],
       disabled: false
     }
   }
 
-  addTrips = (e) => {
-    let selectedTripObject = JSON.parse(e.target.options[e.target.selectedIndex].value);
-    let arrayWithTrips = this.state.customersTrips;
-    let arrayWithTripsID = arrayWithTrips.map(item => {
-      return (item.id);
-    });
-    let bool = true;
-    for (let i = 0; i < arrayWithTripsID.length; i++) {
-      if (arrayWithTripsID[i] === selectedTripObject.id) {
-        this.setState({disabled: true});
-        this.props.showMessage("Такое путешествие уже существует у клиента", "danger");
-        bool = false;
-      }
-    }
-    if (bool) {
-      arrayWithTrips.push(selectedTripObject);
-      this.setState({customersTrips: arrayWithTrips, disabled: true});
-    }
-  };
-
-  customerTrips = (customersTrips) => {
-    return (
-      <table>
-        <thead>
-        <tr>
-          <th>Все путешествия клиента</th>
-          <th>Удалить</th>
-        </tr>
-        </thead>
-        <tbody>
-        {customersTrips.map((item, index, key) =>
-          <tr key={index}>
-            <td>{`${item.tripName}. Дата отправления: ${item.dateDeparture}`}</td>
-            <td>
-              <button className="del" onClick={e => {
-                e.preventDefault();
-                let arr = customersTrips;
-                arr.splice(index, 1);
-                this.setState({
-                  customersTrips: arr
-                });
-              }}
-              >X
-              </button>
-            </td>
-          </tr>
-        )}
-        </tbody>
-      </table>
-    )
-  };
-
-  componentWillMount() {
-    let oldId = this.state.customersTrips.map(item => {
-      return item.id
-    });
-    let newCustomerTrips = this.props.trips.listTrips;
-    let updateCustomersTrips = oldId.map(item => {
-      return newCustomerTrips.find(trip => trip.id === item)
-    });
-    this.setState({
-      customersTrips: updateCustomersTrips
-    });
+  getCustomersTripsID = (e) => {
+    let selTripId = JSON.parse(e.target.options[e.target.selectedIndex].value).id;
+    let currentTripID = this.state.customersTripsID;
+    currentTripID.push(selTripId);
+    this.setState({customersTripsID: currentTripID});
   };
 
   render() {
-    let customerTrips = this.state.customersTrips;
-    let tableTrips = this.state.customersTrips ? this.customerTrips(customerTrips) : null;
+    let trips = this.props.trips.listTrips;
     return (
       <div className="customersForm">
         <form>
@@ -100,12 +41,12 @@ class CustomerForm extends React.Component {
           <p>
             <label htmlFor="customersTrips">Выберите путешествие:</label>
             <select name="customersTrips" id="customersTrips" onChange={e => {
-              this.addTrips(e)
+              this.getCustomersTripsID(e);
             }}>
               <option disabled={this.state.disabled}>Добавить путешествие</option>
-              {this.props.trips.listTrips.map((item, index, key) =>
-                <option key={item.id} value={JSON.stringify(item)}>
-                  {`${item.tripName} - дата отправления: ${item.dateDeparture}, дата возвращения: ${item.dateArrival}.`}
+              {Object.keys(trips).map(item =>
+                <option key={trips[item].id} value={JSON.stringify(trips[item])}>
+                  {`${trips[item].tripName}. Date departure: ${trips[item].dateDeparture}.`}
                 </option>
               )}
             </select>
@@ -118,13 +59,12 @@ class CustomerForm extends React.Component {
               id: this.props.customer && this.props.customer.id || null,
               firstName: this.state.firstName,
               lastName: this.state.lastName,
-              customersTrips: this.state.customersTrips
+              customersTripsID: this.state.customersTripsID
             })
           }}>Save
           </button>
           <Link className="cancel" to="/customers">Cancel</Link>
         </div>
-        {tableTrips}
       </div>
     )
   }

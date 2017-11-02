@@ -2,24 +2,25 @@ import React from "react";
 import CustomersTable from "./CustomersTable";
 import CustomerForm from "./CustomersForm";
 import {Route, Switch, withRouter} from "react-router-dom";
+import _ from "lodash";
 
 export const CustomersScreen = withRouter(
   class extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {
-        customers: null
-      }
+      this.state = {}
     }
 
     render() {
+      let trips = this.props.trips.listTrips;
+      let tripsWithKeys = _.keyBy(trips, trip => trip.id);
       return (
         <div>
           <Switch>
-            <Route exact path="/customers" render={(match) => <CustomersTable
-              match={match}
-              trips={this.props.trips}
+            <Route exact path="/customers" render={() => <CustomersTable
+              trips={tripsWithKeys}
               customers={this.props.customers}
+              getTrips = {this.props.getTrips}
               onDeleteCustomer={this.props.onDeleteCustomer}
             />}/>
             <Route path="/customers/add" render={() => <CustomerForm
@@ -42,45 +43,3 @@ export const CustomersScreen = withRouter(
       )
     }
   });
-
-// componentDidMount() {
-//   getAll("customers").then(customers => {
-//     getAll("trips").then(trips => {
-//       this.setState({customers, trips})
-//     });
-//   });
-// };
-//
-// addEdit = (customer) => {
-//   const promise = customer.id ? update("customers", customer.id, customer) : add("customers", customer);
-//   promise.then(customer => {
-//     return getAll("customers").then(customers => {
-//       this.setState({customers});
-//       this.props.history.push("/customers");
-//       this.props.onSuccess({
-//         text: `Customer ${customer.firstName} ${customer.lastName} was successfully saved.`,
-//         type: "success"
-//       });
-//     });
-//   }).catch(error => this.props.onError({
-//     text: error.message || "Unexpected error",
-//     type: "danger"
-//   }));
-// };
-//
-// delSingle = (id, index) => {
-//   remove("customers", id).then(customer => {
-//     const arr = this.state.customers;
-//     arr.splice(index, 1);
-//     this.setState({
-//       customers: arr
-//     });
-//     this.props.onSuccess({
-//       text: `Customer ${customer.firstName} ${customer.lastName} was successfully deleted.`,
-//       type: "success"
-//     });
-//   }).catch(error => this.props.onError({
-//     text: error.message || "Unexpected error",
-//     type: "danger"
-//   }));
-// };

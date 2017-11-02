@@ -1,4 +1,6 @@
 import {ActionType} from "./TripsConst";
+import clone from "clone";
+import _ from "lodash";
 
 const initialState = {
   listTrips: [],
@@ -14,31 +16,37 @@ export const TripsReducer = (state = initialState, action) => {
   switch (action.type) {
 
     case ActionType.LOADED_TRIPS:
+      let newlistTrips = clone(state.listTrips);
+      let customerWithId = _.keyBy(action.payload.trips, trip => trip.id);
+      newlistTrips = customerWithId;
       return {
-        ...state, listTrips: action.payload.trips, showLoading: false
+        ...state, listTrips: customerWithId, showLoading: false
       };
 
     case ActionType.ADD_TRIP:
-      let newTrips = state.listTrips.concat([]);
-      newTrips.push(action.payload.trip);
+      let newTrips = clone(state.listTrips);
+      let newTripsArr = Object.keys(newTrips).reduce((arr, key) => ([...arr, { ...newTrips[key] }]), []);
+      newTripsArr.push(action.payload.trip);
       return {
-        ...state, listTrips: newTrips
+        ...state, listTrips: newTripsArr
       };
 
     case ActionType.EDIT_TRIP:
-      let editTrips = state.listTrips.concat([]);
-      let index = editTrips.findIndex(item => item.id === action.payload.trip.id);
-      editTrips.splice(index, 1, action.payload.trip);
+      let editTrips = clone(state.listTrips);
+      let editTripsArr = Object.keys(editTrips).reduce((arr, key) => ([...arr, { ...editTrips[key] }]), []);
+      let index = editTripsArr.findIndex(item => item.id === action.payload.trip.id);
+      editTripsArr.splice(index, 1, action.payload.trip);
       return {
-        ...state, listTrips: editTrips
+        ...state, listTrips: editTripsArr
       };
 
     case ActionType.DELETE_TRIP:
-      let newTripsList = state.listTrips.concat([]);
-      let index1 = newTripsList.findIndex(item => item.id === action.payload.id);
-      newTripsList.splice(index1, 1);
-      return{
-        ...state, listTrips: newTripsList
+      let newTripsList = clone(state.listTrips);
+      let newTripsListArr = Object.keys(newTripsList).reduce((arr, key) => ([...arr, { ...newTripsList[key] }]), []);
+      let index1 = newTripsListArr.findIndex(item => item.id === action.payload.id);
+      newTripsListArr.splice(index1, 1);
+      return {
+        ...state, listTrips: newTripsListArr
       };
 
     default:

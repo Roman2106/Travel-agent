@@ -11,6 +11,8 @@ export const TripsScreen = withRouter(
     };
 
     render() {
+      let trips = this.props.trips.listTrips;
+      let tripsArr = Object.keys(trips).reduce((arr, key) => ([...arr, {...trips[key]}]), []);
       return (
         <Switch>
           <Route
@@ -29,7 +31,7 @@ export const TripsScreen = withRouter(
             history={this.props.history}
             locations={this.props.locations}
             onSaveTrip={this.props.onSaveTrip}
-            trip={this.props.trips.listTrips.find(trip => trip.id === match.params.id)}
+            trip={tripsArr.find(item => item.id === match.params.id)}
           />}/>
         </Switch>
       )

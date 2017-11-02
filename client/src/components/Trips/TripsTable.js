@@ -12,7 +12,8 @@ class TripsTable extends React.Component {
 
   render() {
     if (this.props.trips.showLoading === false) {
-      // console.log(this.props.trips);
+      let trips = this.props.trips.listTrips;
+      // console.log(trips);
       return (
         <div className="trips">
           <table>
@@ -26,18 +27,18 @@ class TripsTable extends React.Component {
             </tr>
             </thead>
             <tbody>
-            {this.props.trips.listTrips.map((trip, index, key) =>
-              <tr key={trip.id}>
-                <td>{trip.tripName}</td>
-                <td>{trip.routName.map(item => `${item.country} - ${item.city}`)}</td>
-                <td>{trip.dateDeparture}</td>
-                <td>{trip.dateArrival}</td>
+            {Object.keys(trips).map(item =>
+              <tr key={trips[item].id}>
+                <td>{trips[item].tripName}</td>
+                <td>{trips[item].routName.map(item => `${item.country} - ${item.city}`)}</td>
+                <td>{trips[item].dateDeparture}</td>
+                <td>{trips[item].dateArrival}</td>
                 <td>
                   <button className="del" onClick={() => {
-                    this.props.onDeleteTrip(trip.id, trip.tripName)
+                    this.props.onDeleteTrip(trips[item].id, trips[item].tripName)
                   }}>X
                   </button>
-                  <Link className="edit" to={`/trips/${trip.id}`}>Edit</Link>
+                  <Link className="edit" to={`/trips/${trips[item].id}`}>Edit</Link>
                 </td>
               </tr>
             )}

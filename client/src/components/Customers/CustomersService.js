@@ -3,12 +3,11 @@ import {showCustomers, addCustomer, editCustomer, deleteCustomer} from "./Custom
 import {setError, setMessage} from "../Сommons/UserMessages/MessageReducer";
 
 export const CustomersService = {
-
   getCustomers: () => {
     return dispatch => {
       getAll("customers").then(customers => {
         setTimeout(() => [
-          dispatch(showCustomers(customers)), dispatch(setMessage("Data was successfully loaded.", "success"))
+          dispatch(showCustomers(customers))
         ], 1200)
       }).catch(error => dispatch(setError(error.message, "danger")));
     }
@@ -35,6 +34,5 @@ export const CustomersService = {
         dispatch(deleteCustomer(id)), dispatch(setMessage(`${customer.firstName} - ${customer.lastName} was successfully deleted.`, "success"))
       ]).catch(error=>dispatch(setError(error.message, "danger")));
     }
-  }
-
+  },
 };

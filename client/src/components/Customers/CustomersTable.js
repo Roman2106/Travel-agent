@@ -9,8 +9,8 @@ class Customers extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
-    if (this.props.customers) {
+    if (this.props.customers && this.props.trips) {
+      let trips = this.props.trips;
       return (
         <div className="customers">
           <table>
@@ -27,14 +27,15 @@ class Customers extends React.Component {
               <tr key={customer.id}>
                 <td>{customer.firstName}</td>
                 <td>{customer.lastName}</td>
-                <td className = "withTrips">{customer.customersTrips.map((item, index) =>
-                  <p key={index}>{`${item.tripName}. Дата отправления: ${item.dateDeparture}`}</p>
-                )}</td>
+                <td className="withTrips">{customer.customersTripsID.map((id, index) => {
+                  // console.log(trips[id]);
+                  return <p key={index}>{trips[id].tripName}</p>;
+                })}</td>
                 <td>
                   <button className="del" onClick={() => {
-                    // console.log(customer.customersTrips);
                     this.props.onDeleteCustomer(customer.id, customer)
-                  }}>X</button>
+                  }}>X
+                  </button>
                   <Link className="edit" to={`/customers/${customer.id}`}>Edit</Link>
                 </td>
               </tr>

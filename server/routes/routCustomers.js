@@ -8,7 +8,7 @@ const transformId = trip => {
   delete obj.__v;
   delete obj._id;
   return obj;
-}
+};
 
 router.get("/customers", (req, res, next) => {
   CustomersModel.find().then(data => res.json(data.map(transformId)), next);
@@ -28,10 +28,10 @@ router.get("/customers/:id", (req, res, next) => {
 router.put("/customers/:id", (req, res, next) => {
   CustomersModel.findById(req.params.id).then(customersModel => {
     if (customersModel) {
-      const {firstName, lastName, customersTrips} = req.body;
+      const {firstName, lastName, customersTripsID} = req.body;
       customersModel.firstName = firstName && firstName.trim() ? firstName.trim() : customersModel.firstName;
       customersModel.lastName = lastName && lastName.trim() ? lastName.trim() : customersModel.lastName;
-      customersModel.customersTrips = customersTrips;
+      customersModel.customersTripsID = customersTripsID;
       customersModel.save().then(model => res.json(transformId(model)), next);
     } else {
       res.status(404);
@@ -41,11 +41,11 @@ router.put("/customers/:id", (req, res, next) => {
 });
 
 router.post("/customers", (req, res, next) => {
-  const {firstName, lastName, customersTrips} = req.body;
+  const {firstName, lastName, customersTripsID} = req.body;
   const customer = new CustomersModel({
     firstName,
     lastName,
-    customersTrips
+    customersTripsID
   });
   customer.save().then(model => res.json(transformId(model)), next);
 });

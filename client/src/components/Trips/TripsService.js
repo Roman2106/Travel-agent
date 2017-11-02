@@ -1,5 +1,6 @@
 import {getAll, add, update, remove} from "../../api/api";
 import {showTrips, addTrip, editTrip, deleteTrip} from "./TripsReducer";
+import {deleteCustomerTripsId} from "../Customers/CustomersReducer";
 import {setError, setMessage} from "../Сommons/UserMessages/MessageReducer";
 
 export const TripsService = {
@@ -7,7 +8,8 @@ export const TripsService = {
     return dispatch => {
       getAll("trips").then(trips => {
         setTimeout(() => [
-          dispatch(showTrips(trips)), dispatch(setMessage(`Data was successfully loaded.`, "success"))
+          dispatch(showTrips(trips)),
+          dispatch(setMessage(`Data was successfully loaded.`, "success"))
         ], 1200)
       }).catch(error => dispatch(setError(error.message, "danger")));
     };
@@ -31,7 +33,8 @@ export const TripsService = {
   onDeleteTrip: (id, tripName) => {
     return dispatch => {
       remove("trips", id).then(id => [
-        dispatch(deleteTrip(id)), dispatch(setMessage(`${tripName} was successfully deleted.`, "success"))
+        dispatch(deleteTrip(id)), dispatch(setMessage(`${tripName} was successfully deleted.`, "success")),
+        dispatch(deleteCustomerTripsId(id))
       ]).catch(error => dispatch(setError(error.message, "danger")));
     }
   }

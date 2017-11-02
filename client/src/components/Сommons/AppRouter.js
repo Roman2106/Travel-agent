@@ -45,6 +45,7 @@ export class AppRouter extends React.Component {
             <Route path="/customers" render={() => <CustomersScreen
               trips={this.props.trips}
               customers={this.props.customers}
+              getTrips = {this.props.getTrips}
               showMessage={this.props.showMessage}
               getCustomers={this.props.getCustomers}
               onSaveCustomer={this.props.onSaveCustomer}

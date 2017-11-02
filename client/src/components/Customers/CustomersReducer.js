@@ -1,4 +1,6 @@
 import {ActionType} from "./CustomersConst";
+import {update} from "../../api/api";
+import clone from "clone";
 
 const initialState = {
   listCustomers: [],
@@ -9,6 +11,7 @@ export const showCustomers = customers => ({type: ActionType.LOADED_CUSTOMERS, p
 export const addCustomer = customer => ({type: ActionType.ADD_CUSTOMER, payload: {customer}});
 export const editCustomer = customer => ({type: ActionType.EDIT_CUSTOMER, payload: {customer}});
 export const deleteCustomer = (id, customer) => ({type: ActionType.DELETE_CUSTOMER, payload: id});
+export const deleteCustomerTripsId = id => ({type: ActionType.DELETE_CUSTOMERS_TRIPS_ID, payload: id});
 
 export const CustomersReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -16,6 +19,19 @@ export const CustomersReducer = (state = initialState, action) => {
     case ActionType.LOADED_CUSTOMERS:
       return {
         ...state, listCustomers: action.payload.customers, showLoading: false
+      };
+
+    case ActionType.DELETE_CUSTOMERS_TRIPS_ID:
+      let newListCustomers = clone(state.listCustomers);
+      newListCustomers.map(item => {
+        let index = item.customersTripsID.findIndex(item => item === action.payload.id);
+        item.customersTripsID.splice(index, 1);
+        if (index > -1) {
+          update("customers", item.id, item).catch(error => console.log(error.message));
+        }
+      });
+      return {
+        ...state, listCustomers: newListCustomers
       };
 
     case ActionType.ADD_CUSTOMER:
@@ -27,10 +43,9 @@ export const CustomersReducer = (state = initialState, action) => {
 
     case ActionType.EDIT_CUSTOMER:
       let editCustomers = state.listCustomers.concat([]);
-      // console.log({...state});
       let index = editCustomers.findIndex(item => item.id === action.payload.customer.id);
       editCustomers.splice(index, 1, action.payload.customer);
-      return{
+      return {
         ...state, listCustomers: editCustomers
       };
 
@@ -38,7 +53,7 @@ export const CustomersReducer = (state = initialState, action) => {
       let newCustomersList = state.listCustomers.concat([]);
       let index1 = newCustomersList.findIndex(item => item.id === action.payload.id);
       newCustomersList.splice(index1, 1);
-      return{
+      return {
         ...state, listCustomers: newCustomersList
       };
 
