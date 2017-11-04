@@ -16,6 +16,7 @@ class TripsForm extends React.Component {
   };
 
   render() {
+    console.log(this.props.history);
     if (this.props.trips.showLoading === false) {
       return (
         <div className="tripsForm">

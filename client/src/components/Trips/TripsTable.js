@@ -1,19 +1,24 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {Loader} from "../Сommons/Loader";
+import {Paging, setPageWithItems} from "../Сommons/Paging";
+import queryString from "query-string";
+import _ from "lodash";
 
 class TripsTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      trips: null
+      pageSize: 3
     };
   };
 
   render() {
     if (this.props.trips.showLoading === false) {
-      let trips = this.props.trips.listTrips;
-      // console.log(trips);
+      let trips1 = this.props.trips.listTrips;
+      let trips = _.keyBy(trips1, trip => trip.id);
+      let queryParams = queryString.parse(window.location.search.substr(1));
+      let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
       return (
         <div className="trips">
           <table>
@@ -27,24 +32,30 @@ class TripsTable extends React.Component {
             </tr>
             </thead>
             <tbody>
-            {Object.keys(trips).map(item =>
-              <tr key={trips[item].id}>
-                <td>{trips[item].tripName}</td>
-                <td>{trips[item].routName.map(item => `${item.country} - ${item.city}`)}</td>
-                <td>{trips[item].dateDeparture}</td>
-                <td>{trips[item].dateArrival}</td>
+            {setPageWithItems(trips, currentPage, this.state.pageSize, Object.keys(trips).length).map((item, index) =>
+              <tr key={item.id}>
+                <td>{item.tripName}</td>
+                <td>{item.routName.map(item => `${item.country} - ${item.city}`)}</td>
+                <td>{item.dateDeparture}</td>
+                <td>{item.dateArrival}</td>
                 <td>
                   <button className="del" onClick={() => {
-                    this.props.onDeleteTrip(trips[item].id, trips[item].tripName)
+                    this.props.onDeleteTrip(item.id, item.tripName)
                   }}>X
                   </button>
-                  <Link className="edit" to={`/trips/${trips[item].id}`}>Edit</Link>
+                  <Link className="edit" to={`/trips/${item.id}`}>Edit</Link>
                 </td>
               </tr>
             )}
             </tbody>
           </table>
           <Link className="btnAddTrips" to="trips/add">Add trip</Link>
+          <Paging
+            urlPrefix={"/trips"}
+            totalItems={Object.keys(trips)}
+            currentPage={currentPage}
+            pageSize={3}
+          />
         </div>
       )
     } else {

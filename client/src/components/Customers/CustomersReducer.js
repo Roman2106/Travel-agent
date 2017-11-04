@@ -1,6 +1,4 @@
 import {ActionType} from "./CustomersConst";
-import {update} from "../../api/api";
-import clone from "clone";
 
 const initialState = {
   listCustomers: [],
