@@ -20,7 +20,8 @@ export const TripsScreen = withRouter(
             trips={this.props.trips}
             onDeleteTrip={this.props.onDeleteTrip}
           />}/>
-          <Route path="/trips/add" render={() => <TripsForm
+          <Route path="/trips/add" render={({match}) => <TripsForm
+            page={match}
             trips={this.props.trips}
             history={this.props.history}
             locations={this.props.locations}

@@ -43,7 +43,7 @@ class TripsTable extends React.Component {
                     this.props.onDeleteTrip(item.id, item.tripName)
                   }}>X
                   </button>
-                  <Link className="edit" to={`/trips/${item.id}`}>Edit</Link>
+                  <Link className="edit" to={`/trips/${item.id}?page=${String(currentPage)}`}>Edit</Link>
                 </td>
               </tr>
             )}
