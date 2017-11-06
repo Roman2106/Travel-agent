@@ -1,7 +1,8 @@
 import {ActionType} from "./CustomersConst";
+import _ from "lodash";
 
 const initialState = {
-  listCustomers: [],
+  listCustomers: {},
   showLoading: true
 };
 
@@ -10,30 +11,22 @@ export const CustomersReducer = (state = initialState, action) => {
 
     case ActionType.LOADED_CUSTOMERS:
       return {
-        ...state, listCustomers: action.payload.customers, showLoading: false
+        ...state, listCustomers: _.keyBy(action.payload.customers, customer=>customer.id), showLoading: false
       };
 
     case ActionType.ADD_CUSTOMER:
-      let newCustomers = state.listCustomers.concat([]);
-      newCustomers.push(action.payload.customer);
       return {
-        ...state, listCustomers: newCustomers
+        ...state, listCustomers: {...state.listCustomers, [action.payload.customer.id]: action.payload.customer}
       };
 
     case ActionType.EDIT_CUSTOMER:
-      let editCustomers = state.listCustomers.concat([]);
-      let index = editCustomers.findIndex(item => item.id === action.payload.customer.id);
-      editCustomers.splice(index, 1, action.payload.customer);
       return {
-        ...state, listCustomers: editCustomers
+        ...state, listCustomers: {...state.listCustomers, [action.payload.customer.id]: action.payload.customer}
       };
 
     case ActionType.DELETE_CUSTOMER:
-      let newCustomersList = state.listCustomers.concat([]);
-      let index1 = newCustomersList.findIndex(item => item.id === action.payload.id);
-      newCustomersList.splice(index1, 1);
       return {
-        ...state, listCustomers: newCustomersList
+        ...state, listCustomers: _.omit(state.listCustomers, action.payload.id)
       };
 
     default:

@@ -14,6 +14,8 @@ export const CustomersScreen = withRouter(
     render() {
       let trips = this.props.trips.listTrips;
       let tripsWithKeys = _.keyBy(trips, trip => trip.id);
+      let customers = this.props.customers.listCustomers;
+      let customersArr = Object.keys(customers).reduce((arr, key) => ([...arr, {...customers[key]}]), []);
       return (
         <div>
           <Switch>
@@ -36,7 +38,7 @@ export const CustomersScreen = withRouter(
               customers={this.props.customers}
               showMessage={this.props.showMessage}
               onSaveCustomer={this.props.onSaveCustomer}
-              customer={this.props.customers.listCustomers.find(customer => customer.id === match.params.id)}
+              customer={customersArr.find(customer => customer.id === match.params.id)}
             />}/>
           </Switch>
         </div>

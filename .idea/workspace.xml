@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3c5e847-63f8-42ff-ae5f-cc36983e7a29" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationActionCreators.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationActionCreators.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationForm.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationForm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/model/tripsBase.js" afterPath="$PROJECT_DIR$/server/model/tripsBase.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/routTrips.js" afterPath="$PROJECT_DIR$/server/routes/routTrips.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,71 +25,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Paging.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/Paging.js">
+      <file leaf-file-name="CustomersScreen.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="23" />
+            <state relative-caret-position="308">
+              <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1509979863000" expanded="true" signature="666:1745" ph="..." />
+                <marker date="1509979863000" expanded="true" signature="685:1730" ph="..." />
+                <marker date="1509979863000" expanded="true" signature="772:964" ph="..." />
+                <marker date="1509979863000" expanded="true" signature="1037:1288" ph="..." />
+                <marker date="1509979863000" expanded="true" signature="1368:1655" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocationsScreen.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="14" column="106" lean-forward="false" selection-start-line="14" selection-start-column="106" selection-end-line="14" selection-end-column="106" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocationForm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="35" column="42" lean-forward="true" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomersTable.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomersForm.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="68" column="68" lean-forward="false" selection-start-line="68" selection-start-column="68" selection-end-line="68" selection-end-column="68" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocationsTable.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TripsTable.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsTable.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <marker date="1509976167000" expanded="true" signature="1824:2048" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -146,13 +98,11 @@
         <option value="$PROJECT_DIR$/client/src/components/Сommons/App.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsConst.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersConst.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/1.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/oldPaging.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/Paging2.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsService.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersService.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationService.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersActionCreators.js" />
@@ -160,18 +110,20 @@
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsActionCreators.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationActionCreators.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" />
         <option value="$PROJECT_DIR$/server/model/tripsBase.js" />
         <option value="$PROJECT_DIR$/server/routes/routTrips.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/Paging.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" />
       </list>
     </option>
   </component>
@@ -195,7 +147,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/client/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="4" />
     <option name="y" value="24" />
     <option name="width" value="1280" />
@@ -564,7 +516,7 @@
       <workItem from="1509292875560" duration="51788000" />
       <workItem from="1509434770911" duration="32830000" />
       <workItem from="1509512059718" duration="102117000" />
-      <workItem from="1509892033823" duration="26553000" />
+      <workItem from="1509892033823" duration="28232000" />
     </task>
     <servers />
   </component>
@@ -601,7 +553,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="559603000" />
+    <option name="totallyTimeSpent" value="561282000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -613,7 +565,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="24" width="1280" height="773" extended-state="1" />
+    <frame x="4" y="24" width="1280" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16136725" sideWeight="0.60627675" order="0" side_tool="false" content_ui="combo" />
@@ -822,28 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersConst.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="48" lean-forward="false" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-            <marker date="1509610829000" expanded="true" signature="501:1602" ph="..." />
-            <marker date="1509610829000" expanded="true" signature="520:1587" ph="..." />
-            <marker date="1509610829000" expanded="true" signature="607:799" ph="..." />
-            <marker date="1509610829000" expanded="true" signature="872:1123" ph="..." />
-            <marker date="1509610829000" expanded="true" signature="1203:1512" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/1.js" />
     <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/oldPaging.js" />
     <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/Paging.js">
@@ -907,24 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersActionCreators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsActionCreators.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -951,16 +863,6 @@
           <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="38" column="35" lean-forward="false" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1005,34 +907,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-525">
-          <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
           <caret line="35" column="42" lean-forward="true" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/Paging.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -1050,38 +946,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersConst.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        <state relative-caret-position="88">
+          <caret line="4" column="48" lean-forward="false" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/Paging.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="23" />
+        <state relative-caret-position="-200">
+          <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersActionCreators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="76" column="51" lean-forward="true" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="418">
+          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="68" column="68" lean-forward="false" selection-start-line="68" selection-start-column="68" selection-end-line="68" selection-end-column="68" />
+        <state relative-caret-position="-100">
+          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="14" column="106" lean-forward="false" selection-start-line="14" selection-start-column="106" selection-end-line="14" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1509979863000" expanded="true" signature="666:1745" ph="..." />
+            <marker date="1509979863000" expanded="true" signature="685:1730" ph="..." />
+            <marker date="1509979863000" expanded="true" signature="772:964" ph="..." />
+            <marker date="1509979863000" expanded="true" signature="1037:1288" ph="..." />
+            <marker date="1509979863000" expanded="true" signature="1368:1655" ph="..." />
           </folding>
         </state>
       </provider>

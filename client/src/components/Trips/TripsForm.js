@@ -68,6 +68,7 @@ class TripsForm extends React.Component {
           <div className="tripsButtons">
             <button className="addEditTrips" onClick={() => {
               this.props.history.push(`/trips?page=${String(currentPage)}`);
+              console.log(this.props.trip);
               this.props.onSaveTrip({
                 id: this.props.trip && this.props.trip.id || null,
                 tripName: this.state.tripName,

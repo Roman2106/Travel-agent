@@ -58,6 +58,7 @@ class CustomerForm extends React.Component {
         <div className="customersButtons">
           <button className="addEditCustomer" onClick={() => {
             this.props.history.push(`/customers?page=${String(currentPage)}`);
+            console.log(this.props.customer);
             this.props.onSaveCustomer({
               id: this.props.customer && this.props.customer.id || null,
               firstName: this.state.firstName,

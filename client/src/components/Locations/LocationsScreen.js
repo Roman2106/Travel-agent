@@ -13,7 +13,6 @@ export const LocationsScreen = withRouter(
     render() {
       let locations = this.props.locations.listLocations;
       let locationsArr = Object.keys(locations).reduce((arr, key) => ([...arr, {...locations[key]}]), []);
-      // console.log(this.props.locations);
       return (
         <Switch>
           <Route exact path="/locations" render={() => <LocationTable
