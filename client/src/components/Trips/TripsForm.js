@@ -19,7 +19,7 @@ class TripsForm extends React.Component {
   render() {
     let queryParams = queryString.parse(window.location.search.substr(1));
     let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
-    console.log(currentPage);
+    // console.log(totalPages);
     if (this.props.trips.showLoading === false) {
       return (
         <div className="tripsForm">
@@ -91,8 +91,3 @@ class TripsForm extends React.Component {
 }
 
 export default TripsForm;
-
-// if(this.props.trip.id){this.props.history.push("/trips")}
-// this.props.history.push(`/trips?page=${String(currentPage)`);
-//`/trips/${item.id}?page=${+ String(currentPage)}`
-//this.props.history.push("/trips")

@@ -42,11 +42,8 @@ class LocationTable extends React.Component {
           <Link className="btnAddTrips" to="/locations/add">Add location</Link>
         </div>
       )
-    } else {
-      return (
-        <Loader/>
-      )
     }
+      return <Loader/>
   }
 }
 export default LocationTable;

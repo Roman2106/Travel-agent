@@ -58,11 +58,8 @@ class TripsTable extends React.Component {
           />
         </div>
       )
-    } else {
-      return (
-        <Loader/>
-      )
     }
+      return <Loader/>
   }
 }
 

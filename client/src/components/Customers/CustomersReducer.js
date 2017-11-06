@@ -5,11 +5,6 @@ const initialState = {
   showLoading: true
 };
 
-export const showCustomers = customers => ({type: ActionType.LOADED_CUSTOMERS, payload: {customers}});
-export const addCustomer = customer => ({type: ActionType.ADD_CUSTOMER, payload: {customer}});
-export const editCustomer = customer => ({type: ActionType.EDIT_CUSTOMER, payload: {customer}});
-export const deleteCustomer = (id, customer) => ({type: ActionType.DELETE_CUSTOMER, payload: id});
-
 export const CustomersReducer = (state = initialState, action) => {
   switch (action.type) {
 

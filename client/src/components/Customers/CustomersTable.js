@@ -48,11 +48,8 @@ class Customers extends React.Component {
           <Link className="btnAddCustomer" to="customers/add">Add Customer</Link>
         </div>
       )
-    } else {
-      return (
-        <Loader/>
-      )
     }
+    return <Loader/>
   }
 }
 

@@ -4,7 +4,7 @@ import {TripsReducer} from "./components/Trips/TripsReducer";
 import {LocationsReducer} from "./components/Locations/LocationsReducer";
 import {CustomersReducer} from "./components/Customers/CustomersReducer";
 import {MessagesReducer} from "./components/Сommons/UserMessages/MessageReducer";
-import {reduxBatch} from "@manaflair/redux-batch";
+import {enableBatching} from 'redux-batched-actions';
 import thunk from "redux-thunk";
 
 const CombinedReducer = combineReducers({
@@ -15,4 +15,4 @@ const CombinedReducer = combineReducers({
 });
 
 export const store =
-  createStore(CombinedReducer, composeWithDevTools(reduxBatch, applyMiddleware(thunk)),reduxBatch);
+  createStore(enableBatching(CombinedReducer), composeWithDevTools(applyMiddleware(thunk)));

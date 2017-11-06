@@ -5,11 +5,6 @@ const initialState = {
   showLoading: true
 };
 
-export const showLocations = locations => ({type: ActionType.LOADED_LOCATIONS, payload: {locations}});
-export const addLocation = location => ({type: ActionType.ADD_LOCATION, payload: {location}});
-export const editLocation = location => ({type: ActionType.EDIT_LOCATION, payload: {location}});
-export const deleteLocation = (id, location) => ({type: ActionType.DELETE_LOCATION, payload: id});
-
 export const LocationsReducer = (state = initialState, action) => {
   switch (action.type) {
 

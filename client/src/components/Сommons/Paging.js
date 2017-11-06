@@ -7,19 +7,19 @@ const calculateTotalPages = (totalItems, pageSize) => Math.ceil(totalItems / pag
 const getPages = (totalPages, currentPage) => {
   currentPage = currentPage || 1;
   let startPage, endPage;
-  if (totalPages <= 10) {
+  if (totalPages <= 5) {
     startPage = 1;
     endPage = totalPages;
   } else {
-    if (currentPage <= 10) {
+    if (currentPage <= 5) {
       startPage = 1;
-      endPage = 10;
-    } else if (currentPage + 4 >= totalPages) {
-      startPage = totalPages - 9;
+      endPage = 5;
+    } else if (currentPage + 3 >= totalPages) {
+      startPage = totalPages - 4;
       endPage = totalPages;
     } else {
-      startPage = currentPage - 5;
-      endPage = currentPage + 4;
+      startPage = currentPage - 3;
+      endPage = currentPage + 3;
     }
   }
   return _.range(startPage, endPage + 1);
@@ -33,7 +33,6 @@ export const setPageWithItems = (items, currentPage, pageSize, totalItems) =>{
 };
 
 export const Paging = ({urlPrefix, totalItems, currentPage, pageSize}) => {
-  // console.log(currentPage, totalItems.length);
   const totalPages = calculateTotalPages(totalItems.length, pageSize);
   return (
     <div className="paging">

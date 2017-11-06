@@ -2,10 +2,10 @@ import React from "react";
 import {connect, Provider} from "react-redux";
 import {AppRouter} from "./AppRouter";
 import {store} from "../../store";
-import {TripsService} from "../Trips/TripsService";
-import {LocationService} from "../Locations/LocationService";
+import {TripsService} from "../Trips/TripsActionCreators";
+import {LocationService} from "../Locations/LocationActionCreators";
 import {MessagesService} from "./UserMessages/MessageService";
-import {CustomersService} from "../Customers/CustomersService";
+import {CustomersService} from "../Customers/CustomersActionCreators";
 import "../../index.css";
 
 const actionCreators = {
