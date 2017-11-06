@@ -18,15 +18,61 @@ class TripsForm extends React.Component {
   getTripsLocationsID = e => {
     let selLocationID = JSON.parse(e.target.options[e.target.selectedIndex].value).id;
     let currentLocationID = this.state.tripsLocationsID;
-    currentLocationID.push(selLocationID);
-    this.setState({tripsLocationsID: currentLocationID});
+    let bool = true;
+    for (let i = 0; i < currentLocationID.length; i++) {
+      if (currentLocationID[i] === selLocationID) {
+        this.setState({disabled:true});
+        this.props.showMessage("Such a location already exists in the trip","danger")
+      }
+      bool = false;
+    }
+    if(bool){
+      currentLocationID.push(selLocationID);
+      this.setState({
+        tripsLocationsID: currentLocationID,
+        disabled: true
+      });
+    }
+  };
+
+  tripsLocationsTable = (tripsLocationsID, locationsArr, locations) => {
+    return (
+      <table>
+        <thead>
+        <tr>
+          <th>Все локации путешествия</th>
+          <th>Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+        {tripsLocationsID.map((id, index) =>
+          <tr key={index}>
+            <td>{`${locations[id].city} - ${locations[id].country}`}</td>
+            <td>
+              <button className="del" onClick={e => {
+                e.preventDefault();
+                let arr = tripsLocationsID;
+                arr.splice(index, 1);
+                this.setState({
+                  tripsLocationsID: arr
+                })
+              }}>X
+              </button>
+            </td>
+          </tr>
+        )}
+        </tbody>
+      </table>
+    )
   };
 
   render() {
     let queryParams = queryString.parse(window.location.search.substr(1));
     let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
     let locations = this.props.locations.listLocations;
-    // console.log(this.state.tripsLocationsID);
+    let locationsArr = Object.keys(locations).reduce((arr, key) => ([...arr, {...locations[key]}]), []);
+    let tableLocations = this.tripsLocationsTable(this.state.tripsLocationsID, locationsArr, locations);
+    console.log(locations);
     if (this.props.trips.showLoading === false) {
       return (
         <div className="tripsForm">
@@ -46,7 +92,9 @@ class TripsForm extends React.Component {
                       }}>
                 <option disabled={this.state.disabled}>Добавить локацию</option>
                 {Object.keys(locations).map(item =>
-                  <option key={locations[item].id} value={JSON.stringify(locations[item])}>{`${locations[item].country} - ${locations[item].city}`}</option>
+                  <option key={locations[item].id}
+                          value={JSON.stringify(locations[item])}
+                  >{`${locations[item].country} - ${locations[item].city}`}</option>
                 )}
               </select>
             </p>
@@ -68,7 +116,6 @@ class TripsForm extends React.Component {
           <div className="tripsButtons">
             <button className="addEditTrips" onClick={() => {
               this.props.history.push(`/trips?page=${String(currentPage)}`);
-              console.log(this.props.trip);
               this.props.onSaveTrip({
                 id: this.props.trip && this.props.trip.id || null,
                 tripName: this.state.tripName,
@@ -78,8 +125,13 @@ class TripsForm extends React.Component {
               })
             }}>Save
             </button>
-            <Link className="cancel" to={`/trips?page=${String(currentPage)}`}>Cancel</Link>
+            <Link className="cancel" to={`/trips?page=${String(currentPage)}`}
+                  onClick={() => {
+                    this.props.getTrips();
+                  }}
+            >Cancel</Link>
           </div>
+          {tableLocations}
         </div>
       )
     } else {

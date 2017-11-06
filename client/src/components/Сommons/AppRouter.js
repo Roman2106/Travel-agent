@@ -41,6 +41,7 @@ export class AppRouter extends React.Component {
               locations={this.props.locations}
               onSaveTrip={this.props.onSaveTrip}
               onDeleteTrip={this.props.onDeleteTrip}
+              showMessage={this.props.showMessage}
             />}/>
             <Route path="/customers" render={() => <CustomersScreen
               trips={this.props.trips}

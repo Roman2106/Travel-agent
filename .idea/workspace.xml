@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3c5e847-63f8-42ff-ae5f-cc36983e7a29" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js" afterPath="$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,28 +22,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CustomersScreen.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js">
+      <file leaf-file-name="TripsForm.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+            <state relative-caret-position="-374">
+              <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <marker date="1509979863000" expanded="true" signature="666:1745" ph="..." />
-                <marker date="1509979863000" expanded="true" signature="685:1730" ph="..." />
-                <marker date="1509979863000" expanded="true" signature="772:964" ph="..." />
-                <marker date="1509979863000" expanded="true" signature="1037:1288" ph="..." />
-                <marker date="1509979863000" expanded="true" signature="1368:1655" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LocationsScreen.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js">
+      <file leaf-file-name="TripsActionCreators.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsActionCreators.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="14" column="106" lean-forward="false" selection-start-line="14" selection-start-column="106" selection-end-line="14" selection-end-column="106" />
+            <state relative-caret-position="399">
+              <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageReducer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/UserMessages/MessageReducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/UserMessages/MessageService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,7 +111,6 @@
         <option value="$PROJECT_DIR$/client/src/api/api.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/App.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsConst.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersConst.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/1.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/oldPaging.js" />
@@ -112,18 +125,19 @@
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationActionCreators.js" />
         <option value="$PROJECT_DIR$/server/model/tripsBase.js" />
         <option value="$PROJECT_DIR$/server/routes/routTrips.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/Paging.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
       </list>
     </option>
   </component>
@@ -259,6 +273,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Сommons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Сommons" type="462c0819:PsiDirectoryNode" />
+              <item name="UserMessages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
@@ -516,7 +539,7 @@
       <workItem from="1509292875560" duration="51788000" />
       <workItem from="1509434770911" duration="32830000" />
       <workItem from="1509512059718" duration="102117000" />
-      <workItem from="1509892033823" duration="28232000" />
+      <workItem from="1509892033823" duration="32760000" />
     </task>
     <servers />
   </component>
@@ -553,7 +576,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="561282000" />
+    <option name="totallyTimeSpent" value="565810000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -643,7 +666,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -705,21 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="2" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/UserMessages/MessageReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/UserMessages/MessageService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -793,14 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/Loader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -833,16 +833,6 @@
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#0#68#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsActionCreators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -935,17 +925,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <marker date="1509976167000" expanded="true" signature="1824:2048" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersConst.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -984,14 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="76" column="51" lean-forward="true" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -1012,26 +983,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="14" column="106" lean-forward="false" selection-start-line="14" selection-start-column="106" selection-end-line="14" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        <state relative-caret-position="-90">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <marker date="1509979863000" expanded="true" signature="666:1745" ph="..." />
@@ -1039,6 +994,77 @@
             <marker date="1509979863000" expanded="true" signature="772:964" ph="..." />
             <marker date="1509979863000" expanded="true" signature="1037:1288" ph="..." />
             <marker date="1509979863000" expanded="true" signature="1368:1655" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsActionCreators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="40" column="18" lean-forward="true" selection-start-line="40" selection-start-column="18" selection-end-line="43" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1509990556000" expanded="true" signature="1823:2047" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/UserMessages/MessageService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/UserMessages/MessageReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-374">
+          <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

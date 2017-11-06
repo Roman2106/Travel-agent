@@ -18,7 +18,6 @@ class TripsTable extends React.Component {
       let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
       let locations = this.props.locations.listLocations;
       let locationsArr = Object.keys(locations).reduce((arr, key) => ([...arr, {...locations[key]}]), []);
-
       return (
         <div className="trips">
           <table>

@@ -10,6 +10,10 @@ export const TripsScreen = withRouter(
       this.state = {};
     };
 
+    componentDidMount() {
+      this.props.getTrips();
+    }
+
     render() {
       let trips = this.props.trips.listTrips;
       let tripsArr = Object.keys(trips).reduce((arr, key) => ([...arr, {...trips[key]}]), []);
@@ -27,6 +31,7 @@ export const TripsScreen = withRouter(
             history={this.props.history}
             locations={this.props.locations}
             onSaveTrip={this.props.onSaveTrip}
+            getTrips={this.props.getTrips}
           />}/>
           <Route path="/trips/:id" render={({match}) => <TripsForm
             trips={this.props.trips}
@@ -34,6 +39,8 @@ export const TripsScreen = withRouter(
             locations={this.props.locations}
             onSaveTrip={this.props.onSaveTrip}
             trip={tripsArr.find(item => item.id === match.params.id)}
+            getTrips={this.props.getTrips}
+            showMessage={this.props.showMessage}
           />}/>
         </Switch>
       )
