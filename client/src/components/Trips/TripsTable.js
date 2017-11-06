@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import {Loader} from "../Сommons/Loader";
 import {Paging, setPageWithItems} from "../Сommons/Paging";
 import queryString from "query-string";
-import _ from "lodash";
 
 class TripsTable extends React.Component {
   constructor(props) {
@@ -14,11 +13,12 @@ class TripsTable extends React.Component {
   };
 
   render() {
-    if (this.props.trips.showLoading === false) {
-      let trips1 = this.props.trips.listTrips;
-      let trips = _.keyBy(trips1, trip => trip.id);
+    if (this.props.trips.showLoading === false && this.props.locations) {
       let queryParams = queryString.parse(window.location.search.substr(1));
       let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
+      let locations = this.props.locations.listLocations;
+      let locationsArr = Object.keys(locations).reduce((arr, key) => ([...arr, {...locations[key]}]), []);
+
       return (
         <div className="trips">
           <table>
@@ -32,10 +32,18 @@ class TripsTable extends React.Component {
             </tr>
             </thead>
             <tbody>
-            {setPageWithItems(trips, currentPage, this.state.pageSize, Object.keys(trips).length).map((item, index) =>
+            {setPageWithItems(this.props.trips.listTrips,
+              currentPage,
+              this.state.pageSize,
+              Object.keys(this.props.trips.listTrips).length).map((item, index) =>
               <tr key={item.id}>
                 <td>{item.tripName}</td>
-                <td>{item.routName.map(item => `${item.country} - ${item.city}`)}</td>
+                <td>{item.tripsLocationsID.map((id, index) => {
+                  for (let i = 0; i < locationsArr.length; i++) {
+                    if (id !== locationsArr[i].id) continue;
+                    return <p key={index}>{`${locations[id].city} - ${locations[id].country}`}</p>
+                  }
+                })}</td>
                 <td>{item.dateDeparture}</td>
                 <td>{item.dateArrival}</td>
                 <td>
@@ -52,14 +60,14 @@ class TripsTable extends React.Component {
           <Link className="btnAddTrips" to="trips/add">Add trip</Link>
           <Paging
             urlPrefix={"/trips"}
-            totalItems={Object.keys(trips)}
+            totalItems={Object.keys(this.props.trips.listTrips)}
             currentPage={currentPage}
-            pageSize={3}
+            pageSize={this.state.pageSize}
           />
         </div>
       )
     }
-      return <Loader/>
+    return <Loader/>
   }
 }
 

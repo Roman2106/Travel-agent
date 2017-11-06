@@ -18,6 +18,7 @@ export const TripsScreen = withRouter(
           <Route
             exact path="/trips" render={() => <TripsTable
             trips={this.props.trips}
+            locations={this.props.locations}
             onDeleteTrip={this.props.onDeleteTrip}
           />}/>
           <Route path="/trips/add" render={({match}) => <TripsForm

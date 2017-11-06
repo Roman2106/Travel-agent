@@ -8,18 +8,25 @@ class TripsForm extends React.Component {
     super(props);
     this.state = {
       tripName: this.props.trip && this.props.trip.tripName || "",
-      routName: this.props.trip && this.props.trip.routName || "",
       dateDeparture: this.props.trip && this.props.trip.dateDeparture || "",
       dateArrival: this.props.trip && this.props.trip.dateArrival || "",
-      optionValue: this.props.trip && `${this.props.trip.routName[0].country} - ${this.props.trip.routName[0].city}` || "Выберите путешествие",
+      tripsLocationsID: this.props.trip && this.props.trip.tripsLocationsID || [],
       disabled: false
     };
+  };
+
+  getTripsLocationsID = e => {
+    let selLocationID = JSON.parse(e.target.options[e.target.selectedIndex].value).id;
+    let currentLocationID = this.state.tripsLocationsID;
+    currentLocationID.push(selLocationID);
+    this.setState({tripsLocationsID: currentLocationID});
   };
 
   render() {
     let queryParams = queryString.parse(window.location.search.substr(1));
     let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
-    // console.log(totalPages);
+    let locations = this.props.locations.listLocations;
+    // console.log(this.state.tripsLocationsID);
     if (this.props.trips.showLoading === false) {
       return (
         <div className="tripsForm">
@@ -35,19 +42,11 @@ class TripsForm extends React.Component {
               <label htmlFor="routName">Маршрут:</label>
               <select name="routName" id="routName"
                       onChange={(e) => {
-                        let selectedLocationObject = JSON.parse(e.target.options[e.target.selectedIndex].value);
-                        let selectedLocation = {
-                          country: selectedLocationObject.country,
-                          city: selectedLocationObject.city
-                        };
-                        this.setState({
-                          routName: selectedLocation,
-                          disabled: true
-                        });
+                        this.getTripsLocationsID(e)
                       }}>
-                <option disabled={this.state.disabled} value={this.state.optionValue}>{this.state.optionValue}</option>
-                {this.props.locations.listLocations.map((item, index, arr, key) =>
-                  <option key={item.id} value={JSON.stringify(item)}>{`${item.country} - ${item.city}`}</option>
+                <option disabled={this.state.disabled}>Добавить локацию</option>
+                {Object.keys(locations).map(item =>
+                  <option key={locations[item].id} value={JSON.stringify(locations[item])}>{`${locations[item].country} - ${locations[item].city}`}</option>
                 )}
               </select>
             </p>
@@ -72,7 +71,7 @@ class TripsForm extends React.Component {
               this.props.onSaveTrip({
                 id: this.props.trip && this.props.trip.id || null,
                 tripName: this.state.tripName,
-                routName: this.state.routName,
+                tripsLocationsID: this.state.tripsLocationsID,
                 dateDeparture: this.state.dateDeparture,
                 dateArrival: this.state.dateArrival
               })

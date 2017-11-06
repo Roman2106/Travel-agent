@@ -11,6 +11,9 @@ export const LocationsScreen = withRouter(
     }
 
     render() {
+      let locations = this.props.locations.listLocations;
+      let locationsArr = Object.keys(locations).reduce((arr, key) => ([...arr, {...locations[key]}]), []);
+      // console.log(this.props.locations);
       return (
         <Switch>
           <Route exact path="/locations" render={() => <LocationTable
@@ -22,7 +25,7 @@ export const LocationsScreen = withRouter(
             history={this.props.history}
           />}/>
           <Route path="/locations/:id" render={({match}) => <LocationForm
-            location={this.props.locations.listLocations.find(location => location.id === match.params.id)}
+            location={locationsArr.find(location => location.id === match.params.id)}
             onSaveLocation={this.props.onSaveLocation}
             history={this.props.history}
           />}/>
@@ -30,44 +33,3 @@ export const LocationsScreen = withRouter(
       )
     }
   });
-
-
-// componentDidMount() {
-//   getAll("locations").then(locations => {
-//     this.setState({
-//       locations
-//     });
-//   });
-// }
-//
-// delSingle = (id, index) => {
-//   remove("locations", id).then(location => {
-//     const arr = this.state.locations;
-//     arr.splice(index, 1);
-//     this.setState({
-//       locations: arr
-//     });
-//     this.props.onSuccess({
-//       text: `location ${location.country} ${location.city} was successfully deleted.`,
-//       type: "success"
-//     });
-//   }).catch(error => this.props.onError({
-//     text: error.message || "Unexpected error",
-//     type: "danger"
-//   }));
-// };
-//
-// onAdd = (location) =>{
-//   add("locations", location).then(location=>{
-//     getAll("locations").then(locations => {
-//       this.setState({locations});
-//       this.props.onSuccess({
-//         text: `Location ${location.country} ${location.city} was successfully saved.`,
-//         type: "success"
-//       });
-//     })
-//   }).catch(error => this.props.onError({
-//     text: error.message || "Unexpected error",
-//     type: "danger"
-//   }));
-// };

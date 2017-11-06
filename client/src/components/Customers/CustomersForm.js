@@ -1,4 +1,5 @@
 import React from "react";
+import queryString from "query-string";
 import {Link} from "react-router-dom";
 
 class CustomerForm extends React.Component {
@@ -20,6 +21,8 @@ class CustomerForm extends React.Component {
   };
 
   render() {
+    let queryParams = queryString.parse(window.location.search.substr(1));
+    let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
     let trips = this.props.trips.listTrips;
     return (
       <div className="customersForm">
@@ -54,7 +57,7 @@ class CustomerForm extends React.Component {
         </form>
         <div className="customersButtons">
           <button className="addEditCustomer" onClick={() => {
-            this.props.history.push("/customers");
+            this.props.history.push(`/customers?page=${String(currentPage)}`);
             this.props.onSaveCustomer({
               id: this.props.customer && this.props.customer.id || null,
               firstName: this.state.firstName,
@@ -63,7 +66,7 @@ class CustomerForm extends React.Component {
             })
           }}>Save
           </button>
-          <Link className="cancel" to="/customers">Cancel</Link>
+          <Link className="cancel" to={`/customers?page=${String(currentPage)}`}>Cancel</Link>
         </div>
       </div>
     )

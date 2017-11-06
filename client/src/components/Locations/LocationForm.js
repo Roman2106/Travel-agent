@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import queryString from "query-string"
 
 class LocationForm extends React.Component {
   constructor(props) {
@@ -11,6 +12,8 @@ class LocationForm extends React.Component {
   };
 
   render() {
+    let queryParams = queryString.parse(window.location.search.substr(1));
+    let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
     // console.log(this.props.location.id);
     return (
       <div className="locationsForm">
@@ -33,7 +36,7 @@ class LocationForm extends React.Component {
         <div className="locationsButtons">
           <button className="addLocations"
                   onClick={() => {
-                    this.props.history.push("/locations");
+                    this.props.history.push(`/locations?page=${String(currentPage)}`);
                     this.props.onSaveLocation({
                       id: this.props.location && this.props.location.id || null,
                       country: this.state.country,
@@ -41,7 +44,7 @@ class LocationForm extends React.Component {
                     })
                   }}>Save
           </button>
-          <Link to="/locations" className="cancel">Cancel</Link>
+          <Link to={`/locations?page=${String(currentPage)}`} className="cancel">Cancel</Link>
         </div>
       </div>
     )

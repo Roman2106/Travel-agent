@@ -13,9 +13,7 @@ export const LocationService = {
   getLocations: () => {
     return dispatch => {
       getAll("locations").then(locations => {
-        setTimeout(() => [
           dispatch(showLocations(locations))
-        ], 1200);
       }).catch(error=>dispatch(setError(error.message, "danger")));
     }
   },
