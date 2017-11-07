@@ -20,7 +20,7 @@ class CustomerForm extends React.Component {
       for (let i = 0; i < currentTripID.length; i++) {
         if (currentTripID[i] === selTripId) {
           this.setState({disabled: true});
-          this.props.showMessage("Such a location already exists in the trip", "danger");
+          this.props.showMessage("Such a trip already exists in the customer", "danger");
           bool = false;
         }
       }

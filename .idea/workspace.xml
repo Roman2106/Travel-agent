@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3c5e847-63f8-42ff-ae5f-cc36983e7a29" name="Default" comment="" />
+    <list default="true" id="c3c5e847-63f8-42ff-ae5f-cc36983e7a29" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/index.html" afterPath="$PROJECT_DIR$/client/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,36 +23,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TripsForm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsForm.js">
+      <file leaf-file-name="ConfirmationDelete.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/Confirmation/ConfirmationDelete.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="35" selection-end-column="4" />
+            <state relative-caret-position="176">
+              <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <marker date="1510049002000" expanded="true" signature="2765:5278" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="2782:4451" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="2798:3103" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="2942:3023" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="3119:3742" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="3229:3264" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="3532:3682" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="3758:4091" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="3920:4006" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="4107:4433" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="4266:4350" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="4492:5236" ph="..." />
-                <marker date="1510049002000" expanded="true" signature="5094:5123" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomersForm.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js">
+      <file leaf-file-name="CustomersTable.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="82" column="47" lean-forward="true" selection-start-line="82" selection-start-column="47" selection-end-line="82" selection-end-column="47" />
+            <state relative-caret-position="387">
+              <caret line="29" column="101" lean-forward="true" selection-start-line="29" selection-start-column="101" selection-end-line="29" selection-end-column="101" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -57,11 +50,23 @@
       <file leaf-file-name="TripsTable.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="43" column="19" lean-forward="true" selection-start-line="40" selection-start-column="18" selection-end-line="43" selection-end-column="19" />
+            <state relative-caret-position="414">
+              <caret line="59" column="20" lean-forward="false" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="55" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <marker date="1509990556000" expanded="true" signature="1823:2047" ph="..." />
+                <marker date="1510057147000" expanded="true" signature="2361:2573" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocationsTable.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="661">
+              <caret line="49" column="20" lean-forward="true" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,11 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/package.json" />
-        <option value="$PROJECT_DIR$/server/tests/trips.tests.js" />
-        <option value="$PROJECT_DIR$/server/tests/selenium.tests.js" />
-        <option value="$PROJECT_DIR$/client/public/index.html" />
-        <option value="$PROJECT_DIR$/client/src/__tests__/Customers.tests/Customers-test.js" />
         <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/Trips.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/ScreenTrips.js" />
@@ -128,17 +128,22 @@
         <option value="$PROJECT_DIR$/server/routes/routTrips.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/Paging.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationForm.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/AppRouter.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
+        <option value="$PROJECT_DIR$/client/public/index.html" />
+        <option value="$PROJECT_DIR$/client/src/components/Сommons/Confirmation/Modal.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Locations/ConfirmationDelete.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Trips/ConfirmationDelete.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Сommons/Confirmation/ConfirmationDelete.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
       </list>
     </option>
   </component>
@@ -266,40 +271,6 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Trips" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Сommons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Сommons" type="462c0819:PsiDirectoryNode" />
-              <item name="UserMessages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -338,11 +309,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components/Сommons/Confirmation" />
       <recent name="$PROJECT_DIR$/client/src/components/Сommons" />
       <recent name="$PROJECT_DIR$/client/src" />
       <recent name="$PROJECT_DIR$/client/src/components" />
       <recent name="$PROJECT_DIR$/server/tests/selenium" />
-      <recent name="$PROJECT_DIR$/server/tests/api" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -539,7 +510,7 @@
       <workItem from="1509292875560" duration="51788000" />
       <workItem from="1509434770911" duration="32830000" />
       <workItem from="1509512059718" duration="102117000" />
-      <workItem from="1509892033823" duration="41739000" />
+      <workItem from="1509892033823" duration="46048000" />
     </task>
     <servers />
   </component>
@@ -576,7 +547,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="574789000" />
+    <option name="totallyTimeSpent" value="579098000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -671,22 +642,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/model/locationsBase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/selenium/selenium.tests.js" />
-    <entry file="file://$PROJECT_DIR$/server/tests/api/trips.tests.js" />
-    <entry file="file://$PROJECT_DIR$/client/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/__tests__/Customers.tests/Customers-test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1848">
@@ -915,16 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersConst.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -959,16 +904,6 @@
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1038,21 +973,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsTable.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="43" column="19" lean-forward="true" selection-start-line="40" selection-start-column="18" selection-end-line="43" selection-end-column="19" />
+        <state relative-caret-position="550">
+          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1509990556000" expanded="true" signature="1823:2047" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="35" selection-end-column="4" />
+        <state relative-caret-position="148">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <marker date="1510049002000" expanded="true" signature="2765:5278" ph="..." />
@@ -1072,10 +1006,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js">
+    <entry file="file://$PROJECT_DIR$/client/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="82" column="47" lean-forward="true" selection-start-line="82" selection-start-column="47" selection-end-line="82" selection-end-column="47" />
+        <state relative-caret-position="220">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/Confirmation/Modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/ConfirmationDelete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="49" column="20" lean-forward="true" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/Confirmation/ConfirmationDelete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="59" column="20" lean-forward="false" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1510057147000" expanded="true" signature="2361:2573" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="29" column="101" lean-forward="true" selection-start-line="29" selection-start-column="101" selection-end-line="29" selection-end-column="101" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

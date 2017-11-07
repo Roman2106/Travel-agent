@@ -2,14 +2,16 @@ import React from "react";
 import Loader from "../Сommons/Loader";
 import queryString from "query-string";
 import {Link} from "react-router-dom";
-import _ from "lodash";
 import {Paging, setPageWithItems} from "../Сommons/Paging";
+import {ConfirmationDelete} from "../Сommons/Confirmation/ConfirmationDelete";
+
 
 class Customers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pageSize: 3
+      pageSize: 3,
+      customerToDelete: null
     }
   }
 
@@ -21,6 +23,14 @@ class Customers extends React.Component {
       let tripsArr = Object.keys(trips).reduce((arr, key) => ([...arr, {...trips[key]}]), []);
       return (
         <div className="customers">
+          {this.state.customerToDelete ? <ConfirmationDelete
+            onNo={() => this.setState({customerToDelete: null})}
+            onYes={() => {
+              this.setState({customerToDelete: null});
+              this.props.onDeleteCustomer(this.state.customerToDelete.id, this.state.customerToDelete);
+            }}
+            item={`${this.state.customerToDelete.firstName} - ${this.state.customerToDelete.lastName}`}
+          /> : null}
           <table>
             <thead>
             <tr>
@@ -47,7 +57,9 @@ class Customers extends React.Component {
                 })}</td>
                 <td>
                   <button className="del" onClick={() => {
-                    this.props.onDeleteCustomer(customer.id, customer)
+                    // this.props.onDeleteCustomer(customer.id, customer)
+                    console.log(customer);
+                    this.setState({customerToDelete: customer})
                   }}>X
                   </button>
                   <Link className="edit" to={`/customers/${customer.id}?page=${String(currentPage)}`}>Edit</Link>

@@ -3,12 +3,14 @@ import {Link} from "react-router-dom";
 import {Loader} from "../Сommons/Loader";
 import {Paging, setPageWithItems} from "../Сommons/Paging";
 import queryString from "query-string";
+import {ConfirmationDelete} from "../Сommons/Confirmation/ConfirmationDelete";
 
 class TripsTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pageSize: 3
+      pageSize: 3,
+      tripToDelete: null
     };
   };
 
@@ -20,6 +22,14 @@ class TripsTable extends React.Component {
       let locationsArr = Object.keys(locations).reduce((arr, key) => ([...arr, {...locations[key]}]), []);
       return (
         <div className="trips">
+          {this.state.tripToDelete ? <ConfirmationDelete
+            onNo={() => this.setState({tripToDelete: null})}
+            onYes={() => {
+              this.setState({tripToDelete: null});
+              this.props.onDeleteTrip(this.state.tripToDelete.id, this.state.tripToDelete.tripName);
+            }}
+            item={`${this.state.tripToDelete.tripName} - ${this.state.tripToDelete.dateDeparture}`}
+          /> : null}
           <table>
             <thead>
             <tr>
@@ -47,7 +57,7 @@ class TripsTable extends React.Component {
                 <td>{item.dateArrival}</td>
                 <td>
                   <button className="del" onClick={() => {
-                    this.props.onDeleteTrip(item.id, item.tripName)
+                    this.setState({tripToDelete: item})
                   }}>X
                   </button>
                   <Link className="edit" to={`/trips/${item.id}?page=${String(currentPage)}`}>Edit</Link>
