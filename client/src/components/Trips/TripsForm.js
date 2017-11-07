@@ -21,12 +21,12 @@ class TripsForm extends React.Component {
     let bool = true;
     for (let i = 0; i < currentLocationID.length; i++) {
       if (currentLocationID[i] === selLocationID) {
-        this.setState({disabled:true});
-        this.props.showMessage("Such a location already exists in the trip","danger")
+        this.setState({disabled: true});
+        this.props.showMessage("Such a location already exists in the trip", "danger");
+        bool = false;
       }
-      bool = false;
     }
-    if(bool){
+    if (bool) {
       currentLocationID.push(selLocationID);
       this.setState({
         tripsLocationsID: currentLocationID,
@@ -35,7 +35,7 @@ class TripsForm extends React.Component {
     }
   };
 
-  tripsLocationsTable = (tripsLocationsID, locationsArr, locations) => {
+  tripsLocationsTable = (tripsLocationsID, locations, locationsArr) => {
     return (
       <table>
         <thead>
@@ -45,23 +45,26 @@ class TripsForm extends React.Component {
         </tr>
         </thead>
         <tbody>
-        {tripsLocationsID.map((id, index) =>
-          <tr key={index}>
-            <td>{`${locations[id].city} - ${locations[id].country}`}</td>
-            <td>
-              <button className="del" onClick={e => {
-                e.preventDefault();
-                let arr = tripsLocationsID;
-                arr.splice(index, 1);
-                this.setState({
-                  tripsLocationsID: arr
-                })
-              }}>X
-              </button>
-            </td>
-          </tr>
-        )}
-        </tbody>
+        {tripsLocationsID.map((id, index) => {
+            for (let i = 0; i < locationsArr.length; i++) {
+              if (id !== locationsArr[i].id) continue;
+              return <tr key={index}>
+                <td>{`${locations[id].country} - ${locations[id].city}`}</td>
+                <td>
+                  <button className="del" onClick={e => {
+                    e.preventDefault();
+                    let arr = tripsLocationsID;
+                    arr.splice(index, 1);
+                    this.setState({
+                      tripsLocationsID: arr
+                    })
+                  }}>X
+                  </button>
+                </td>
+              </tr>
+            }
+          }
+        )}</tbody>
       </table>
     )
   };
@@ -71,8 +74,7 @@ class TripsForm extends React.Component {
     let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
     let locations = this.props.locations.listLocations;
     let locationsArr = Object.keys(locations).reduce((arr, key) => ([...arr, {...locations[key]}]), []);
-    let tableLocations = this.tripsLocationsTable(this.state.tripsLocationsID, locationsArr, locations);
-    console.log(locations);
+    let tableLocations = this.tripsLocationsTable(this.state.tripsLocationsID, locations, locationsArr);
     if (this.props.trips.showLoading === false) {
       return (
         <div className="tripsForm">

@@ -16,14 +16,63 @@ class CustomerForm extends React.Component {
   getCustomersTripsID = (e) => {
     let selTripId = JSON.parse(e.target.options[e.target.selectedIndex].value).id;
     let currentTripID = this.state.customersTripsID;
-    currentTripID.push(selTripId);
-    this.setState({customersTripsID: currentTripID});
+    let bool = true;
+      for (let i = 0; i < currentTripID.length; i++) {
+        if (currentTripID[i] === selTripId) {
+          this.setState({disabled: true});
+          this.props.showMessage("Such a location already exists in the trip", "danger");
+          bool = false;
+        }
+      }
+    if (bool) {
+      currentTripID.push(selTripId);
+      this.setState({
+        customersTripsID: currentTripID,
+        disabled: true
+      });
+    }
+  };
+
+  customerTripsTable = (customersTripsID, trips, tripsArr) => {
+    return (
+      <table>
+        <thead>
+        <tr>
+          <th>Все путешествия клиента</th>
+          <th>Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+        {customersTripsID.map((id, index) => {
+          for (let i = 0; i < tripsArr.length; i++) {
+            if (id !== tripsArr[i].id) continue;
+            return <tr key={index}>
+              <td>{`${trips[id].tripName} - ${trips[id].dateDeparture}`}</td>
+              <td>
+                <button className="del" onClick={e => {
+                  e.preventDefault();
+                  let arr = customersTripsID;
+                  arr.splice(index, 1);
+                  this.setState({
+                    customersTripsID: arr
+                  })
+                }}>X
+                </button>
+              </td>
+            </tr>
+          }
+        })}
+        </tbody>
+      </table>
+    )
   };
 
   render() {
     let queryParams = queryString.parse(window.location.search.substr(1));
     let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
     let trips = this.props.trips.listTrips;
+    let tripsArr = Object.keys(trips).reduce((arr, key) => ([...arr, {...trips[key]}]), []);
+    let tableTrips = this.customerTripsTable(this.state.customersTripsID, trips, tripsArr);
     return (
       <div className="customersForm">
         <form>
@@ -69,6 +118,7 @@ class CustomerForm extends React.Component {
           </button>
           <Link className="cancel" to={`/customers?page=${String(currentPage)}`}>Cancel</Link>
         </div>
+        {tableTrips}
       </div>
     )
   }
