@@ -8,7 +8,7 @@ export const addCustomer = customer => ({type: ActionType.ADD_CUSTOMER, payload:
 export const editCustomer = customer => ({type: ActionType.EDIT_CUSTOMER, payload: {customer}});
 export const deleteCustomer = (id, customer) => ({type: ActionType.DELETE_CUSTOMER, payload: id});
 
-export const CustomersService = {
+export const CustomersActionCreators = {
   getCustomers: () => {
     return dispatch => {
       getAll("customers").then(customers => {

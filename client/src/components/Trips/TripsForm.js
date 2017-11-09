@@ -4,6 +4,7 @@ import {Loader} from "../Сommons/Loader";
 import queryString from "query-string";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import Select from 'react-styled-select';
 import moment from 'moment';
 
 class TripsForm extends React.Component {
@@ -30,8 +31,9 @@ class TripsForm extends React.Component {
     });
   };
 
+
   getTripsLocationsID = e => {
-    let selLocationID = JSON.parse(e.target.options[e.target.selectedIndex].value).id;
+    let selLocationID = JSON.parse(e).id;
     let currentLocationID = this.state.tripsLocationsID;
     let bool = true;
     for (let i = 0; i < currentLocationID.length; i++) {
@@ -84,12 +86,19 @@ class TripsForm extends React.Component {
     )
   };
 
+  select = (locationsArr) => {
+    return locationsArr.map(item => {
+      return {label: `${item.country} - ${item.city}`, value:JSON.stringify(item)};
+    })
+  };
+
   render() {
     let queryParams = queryString.parse(window.location.search.substr(1));
     let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
     let locations = this.props.locations.listLocations;
     let locationsArr = Object.keys(locations).reduce((arr, key) => ([...arr, {...locations[key]}]), []);
     let tableLocations = this.tripsLocationsTable(this.state.tripsLocationsID, locations, locationsArr);
+    let options = this.select(locationsArr);
     if (this.props.trips.showLoading === false) {
       return (
         <div className="tripsForm">
@@ -101,38 +110,33 @@ class TripsForm extends React.Component {
                      onChange={e => this.setState({tripName: e.target.value})}
               />
             </p>
-            <p>
               <label htmlFor="routName">Маршрут:</label>
-              <select name="routName" id="routName"
-                      onChange={(e) => {
-                        this.getTripsLocationsID(e)
-                      }}>
-                <option disabled={this.state.disabled}>Добавить локацию</option>
-                {Object.keys(locations).map(item =>
-                  <option key={locations[item].id}
-                          value={JSON.stringify(locations[item])}
-                  >{`${locations[item].country} - ${locations[item].city}`}</option>
-                )}
-              </select>
-            </p>
-              <label htmlFor="dateDeparture">Дата выезда:</label>
-              <DatePicker
-                selected={this.state.dateDeparture}
-                selectsStart
-                startDate={this.state.dateDeparture}
-                endDate={this.state.dateArrival}
-                onChange={this.handleChangeStart}
-                dateFormat="DD-MM-YYYY"
+              <Select
+                className={"dark-theme"}
+                options={options}
+                disabled={this.state.disabled}
+                onChange={ e => {
+                  this.getTripsLocationsID(e)
+                }}
               />
-              <label htmlFor="dateArrival">Дата возвращения:</label>
-              <DatePicker
-                selected={this.state.dateArrival}
-                selectsEnd
-                startDate={this.state.dateDeparture}
-                endDate={this.state.dateArrival}
-                onChange={this.handleChangeEnd}
-                dateFormat="DD-MM-YYYY"
-              />
+            <label htmlFor="dateDeparture">Дата выезда:</label>
+            <DatePicker
+              selected={this.state.dateDeparture}
+              selectsStart
+              startDate={this.state.dateDeparture}
+              endDate={this.state.dateArrival}
+              onChange={this.handleChangeStart}
+              dateFormat="DD-MM-YYYY"
+            />
+            <label htmlFor="dateArrival">Дата возвращения:</label>
+            <DatePicker
+              selected={this.state.dateArrival}
+              selectsEnd
+              startDate={this.state.dateDeparture}
+              endDate={this.state.dateArrival}
+              onChange={this.handleChangeEnd}
+              dateFormat="DD-MM-YYYY"
+            />
           </form>
           <div className="tripsButtons">
             <button className="addEditTrips" onClick={() => {

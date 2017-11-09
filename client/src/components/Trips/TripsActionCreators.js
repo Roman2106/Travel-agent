@@ -8,7 +8,7 @@ export const addTrip = trip => ({type: ActionType.ADD_TRIP, payload: {trip}});
 export const editTrip = trip => ({type: ActionType.EDIT_TRIP, payload: {trip}});
 export const deleteTrip = (id, trip) => ({type: ActionType.DELETE_TRIP, payload: id});
 
-export const TripsService = {
+export const TripsActionCreators = {
   getTrips: () => {
     return dispatch => {
       getAll("trips").then(trips => {

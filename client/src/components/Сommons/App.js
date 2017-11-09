@@ -2,16 +2,16 @@ import React from "react";
 import {connect, Provider} from "react-redux";
 import {AppRouter} from "./AppRouter";
 import {store} from "../../store";
-import {TripsService} from "../Trips/TripsActionCreators";
-import {LocationService} from "../Locations/LocationActionCreators";
+import {TripsActionCreators} from "../Trips/TripsActionCreators";
+import {LocationActionCreators} from "../Locations/LocationActionCreators";
 import {MessagesService} from "./UserMessages/MessageService";
-import {CustomersService} from "../Customers/CustomersActionCreators";
+import {CustomersActionCreators} from "../Customers/CustomersActionCreators";
 import "../../index.css";
 
 const actionCreators = {
-  ...LocationService,
-  ...TripsService,
-  ...CustomersService,
+  ...LocationActionCreators,
+  ...TripsActionCreators,
+  ...CustomersActionCreators,
   ...MessagesService
 };
 

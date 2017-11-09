@@ -8,7 +8,7 @@ export const addLocation = location => ({type: ActionType.ADD_LOCATION, payload:
 export const editLocation = location => ({type: ActionType.EDIT_LOCATION, payload: {location}});
 export const deleteLocation = (id, location) => ({type: ActionType.DELETE_LOCATION, payload: id});
 
-export const LocationService = {
+export const LocationActionCreators = {
 
   getLocations: () => {
     return dispatch => {
