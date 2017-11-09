@@ -57,7 +57,6 @@ class Customers extends React.Component {
                 })}</td>
                 <td>
                   <button className="del" onClick={() => {
-                    // this.props.onDeleteCustomer(customer.id, customer)
                     console.log(customer);
                     this.setState({customerToDelete: customer})
                   }}>X

@@ -4,6 +4,7 @@ import {Loader} from "../Сommons/Loader";
 import {Paging, setPageWithItems} from "../Сommons/Paging";
 import queryString from "query-string";
 import {ConfirmationDelete} from "../Сommons/Confirmation/ConfirmationDelete";
+import moment from 'moment';
 
 class TripsTable extends React.Component {
   constructor(props) {
@@ -53,8 +54,8 @@ class TripsTable extends React.Component {
                     return <p key={index}>{`${locations[id].city} - ${locations[id].country}`}</p>
                   }
                 })}</td>
-                <td>{item.dateDeparture}</td>
-                <td>{item.dateArrival}</td>
+                <td>{moment(item.dateDeparture).format("DD-MM-YYYY")}</td>
+                <td>{moment(item.dateArrival).format("DD-MM-YYYY")}</td>
                 <td>
                   <button className="del" onClick={() => {
                     this.setState({tripToDelete: item})

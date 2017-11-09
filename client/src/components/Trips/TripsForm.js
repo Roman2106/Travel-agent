@@ -2,17 +2,32 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {Loader} from "../Сommons/Loader";
 import queryString from "query-string";
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import moment from 'moment';
 
 class TripsForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       tripName: this.props.trip && this.props.trip.tripName || "",
-      dateDeparture: this.props.trip && this.props.trip.dateDeparture || "",
-      dateArrival: this.props.trip && this.props.trip.dateArrival || "",
+      dateDeparture: this.props.trip && moment(this.props.trip.dateDeparture) || moment(),
+      dateArrival: this.props.trip && moment(this.props.trip.dateArrival) || moment(),
       tripsLocationsID: this.props.trip && this.props.trip.tripsLocationsID || [],
       disabled: false
     };
+  };
+
+  handleChangeStart = (date) => {
+    this.setState({
+      dateDeparture: moment(date)
+    });
+  };
+
+  handleChangeEnd = (date) => {
+    this.setState({
+      dateArrival: moment(date)
+    });
   };
 
   getTripsLocationsID = e => {
@@ -100,20 +115,24 @@ class TripsForm extends React.Component {
                 )}
               </select>
             </p>
-            <p>
               <label htmlFor="dateDeparture">Дата выезда:</label>
-              <input type="date" name="dateDeparture" id="dateDeparture" title="dateDeparture"
-                     value={this.state.dateDeparture}
-                     onChange={e => this.setState({dateDeparture: e.target.value})}
+              <DatePicker
+                selected={this.state.dateDeparture}
+                selectsStart
+                startDate={this.state.dateDeparture}
+                endDate={this.state.dateArrival}
+                onChange={this.handleChangeStart}
+                dateFormat="DD-MM-YYYY"
               />
-            </p>
-            <p>
               <label htmlFor="dateArrival">Дата возвращения:</label>
-              <input type="date" name="dateArrival" id="dateArrival" title="dateArrival"
-                     value={this.state.dateArrival}
-                     onChange={e => this.setState({dateArrival: e.target.value})}
+              <DatePicker
+                selected={this.state.dateArrival}
+                selectsEnd
+                startDate={this.state.dateDeparture}
+                endDate={this.state.dateArrival}
+                onChange={this.handleChangeEnd}
+                dateFormat="DD-MM-YYYY"
               />
-            </p>
           </form>
           <div className="tripsButtons">
             <button className="addEditTrips" onClick={() => {
