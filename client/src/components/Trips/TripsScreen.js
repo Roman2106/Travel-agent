@@ -1,46 +1,40 @@
 import React from "react";
 import TripsTable from "./TripsTable";
 import TripsForm from "./TripsForm";
+import queryString from "query-string";
 import {Route, Switch, withRouter} from "react-router-dom";
 
 export const TripsScreen = withRouter(
   class extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {};
-    };
-
-    componentDidMount() {
-      this.props.getTrips();
-    }
 
     render() {
-      let trips = this.props.trips.listTrips;
-      let tripsArr = Object.keys(trips).reduce((arr, key) => ([...arr, {...trips[key]}]), []);
+      let queryParams = queryString.parse(this.props.history.location.search.substr(1));
+      let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
       return (
         <Switch>
           <Route
             exact path="/trips" render={() => <TripsTable
             trips={this.props.trips}
+            currentPage={currentPage}
             locations={this.props.locations}
             onDeleteTrip={this.props.onDeleteTrip}
           />}/>
-          <Route path="/trips/add" render={({match}) => <TripsForm
-            page={match}
+          <Route path="/trips/add" render={() => <TripsForm
             trips={this.props.trips}
-            history={this.props.history}
+            currentPage={currentPage}
+            getTrips={this.props.getTrips}
             locations={this.props.locations}
             onSaveTrip={this.props.onSaveTrip}
-            getTrips={this.props.getTrips}
+            showMessage={this.props.showMessage}
           />}/>
           <Route path="/trips/:id" render={({match}) => <TripsForm
             trips={this.props.trips}
-            history={this.props.history}
+            currentPage={currentPage}
+            getTrips={this.props.getTrips}
             locations={this.props.locations}
             onSaveTrip={this.props.onSaveTrip}
-            trip={tripsArr.find(item => item.id === match.params.id)}
-            getTrips={this.props.getTrips}
             showMessage={this.props.showMessage}
+            trip={Object.values(this.props.trips.listTrips).find(item => item.id === match.params.id)}
           />}/>
         </Switch>
       )

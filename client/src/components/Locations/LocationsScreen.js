@@ -1,32 +1,30 @@
 import React from "react";
 import LocationTable from "./LocationsTable"
 import LocationForm from "./LocationForm";
+import queryString from "query-string";
 import {Route, Switch, withRouter} from "react-router-dom";
 
 export const LocationsScreen = withRouter(
   class extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {}
-    }
 
     render() {
-      let locations = this.props.locations.listLocations;
-      let locationsArr = Object.keys(locations).reduce((arr, key) => ([...arr, {...locations[key]}]), []);
+      let queryParams = queryString.parse(this.props.history.location.search.substr(1));
+      let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
       return (
         <Switch>
           <Route exact path="/locations" render={() => <LocationTable
+            currentPage={currentPage}
             locations={this.props.locations}
             onDeleteLocation={this.props.onDeleteLocation}
           />}/>
           <Route path="/locations/add" render={() => <LocationForm
+            currentPage={currentPage}
             onSaveLocation={this.props.onSaveLocation}
-            history={this.props.history}
           />}/>
           <Route path="/locations/:id" render={({match}) => <LocationForm
-            location={locationsArr.find(location => location.id === match.params.id)}
+            currentPage={currentPage}
             onSaveLocation={this.props.onSaveLocation}
-            history={this.props.history}
+            location={Object.values(this.props.locations.listLocations).find(location => location.id === match.params.id)}
           />}/>
         </Switch>
       )

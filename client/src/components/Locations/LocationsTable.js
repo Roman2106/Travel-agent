@@ -1,7 +1,6 @@
 import React from "react";
 import Loader from "../Сommons/Loader";
 import {Paging, setPageWithItems} from "../Сommons/Paging";
-import queryString from "query-string";
 import {Link} from "react-router-dom";
 import {ConfirmationDelete} from "../Сommons/Confirmation/ConfirmationDelete";
 
@@ -16,8 +15,6 @@ class LocationTable extends React.Component {
 
   render() {
     if (this.props.locations.showLoading === false) {
-      let queryParams = queryString.parse(window.location.search.substr(1));
-      let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
       return (
         <div className="locations">
           {this.state.locationToDelete ? <ConfirmationDelete
@@ -38,7 +35,7 @@ class LocationTable extends React.Component {
             </thead>
             <tbody>
             {setPageWithItems(this.props.locations.listLocations,
-              currentPage,
+              this.props.currentPage,
               this.state.pageSize,
               Object.keys(this.props.locations.listLocations).length
             ).map((item, index, key) =>
@@ -50,17 +47,17 @@ class LocationTable extends React.Component {
                     this.setState({locationToDelete: item})
                   }}>X
                   </button>
-                  <Link className="edit" to={`/locations/${item.id}?page=${String(currentPage)}`}>Edit</Link>
+                  <Link className="edit" to={`/locations/${item.id}?page=${String(this.props.currentPage)}`}>Edit</Link>
                 </td>
               </tr>
             )}
             </tbody>
           </table>
-          <Link className="btnAddTrips" to="/locations/add">Add location</Link>
+          <Link className="btnAddTrips" to={`/locations/add?page=${String(this.props.currentPage)}`}>Add location</Link>
           <Paging
             urlPrefix={"/locations"}
             totalItems={Object.keys(this.props.locations.listLocations)}
-            currentPage={currentPage}
+            currentPage={this.props.currentPage}
             pageSize={3}
           />
         </div>

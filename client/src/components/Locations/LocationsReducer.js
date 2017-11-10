@@ -7,6 +7,7 @@ const initialState = {
 };
 
 export const LocationsReducer = (state = initialState, action) => {
+
   switch (action.type) {
 
     case ActionType.LOADED_LOCATIONS:
@@ -32,4 +33,5 @@ export const LocationsReducer = (state = initialState, action) => {
     default:
       return state;
   }
+
 };

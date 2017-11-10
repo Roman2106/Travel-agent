@@ -2,43 +2,40 @@ import React from "react";
 import CustomersTable from "./CustomersTable";
 import CustomerForm from "./CustomersForm";
 import {Route, Switch, withRouter} from "react-router-dom";
-import _ from "lodash";
+import queryString from "query-string";
 
 export const CustomersScreen = withRouter(
   class extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {}
-    }
 
     render() {
-      let trips = this.props.trips.listTrips;
-      let tripsWithKeys = _.keyBy(trips, trip => trip.id);
-      let customers = this.props.customers.listCustomers;
-      let customersArr = Object.keys(customers).reduce((arr, key) => ([...arr, {...customers[key]}]), []);
+      let queryParams = queryString.parse(this.props.history.location.search.substr(1));
+      let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
       return (
         <div>
           <Switch>
             <Route exact path="/customers" render={() => <CustomersTable
-              trips={tripsWithKeys}
+              trips={this.props.trips.listTrips}
+              currentPage={currentPage}
               customers={this.props.customers}
               getTrips = {this.props.getTrips}
               onDeleteCustomer={this.props.onDeleteCustomer}
             />}/>
             <Route path="/customers/add" render={() => <CustomerForm
               trips={this.props.trips}
-              history={this.props.history}
+              currentPage={currentPage}
               customers={this.props.customers}
               showMessage={this.props.showMessage}
+              getCustomers={this.props.getCustomers}
               onSaveCustomer={this.props.onSaveCustomer}
             />}/>
             <Route path="/customers/:id" render={({match}) => <CustomerForm
               trips={this.props.trips}
-              history={this.props.history}
+              currentPage={currentPage}
               customers={this.props.customers}
               showMessage={this.props.showMessage}
+              getCustomers={this.props.getCustomers}
               onSaveCustomer={this.props.onSaveCustomer}
-              customer={customersArr.find(customer => customer.id === match.params.id)}
+              customer={Object.values(this.props.customers.listCustomers).find(customer => customer.id === match.params.id)}
             />}/>
           </Switch>
         </div>

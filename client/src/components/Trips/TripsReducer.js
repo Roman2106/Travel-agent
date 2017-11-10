@@ -7,6 +7,7 @@ const initialState = {
 };
 
 export const TripsReducer = (state = initialState, action) => {
+
   switch (action.type) {
 
     case ActionType.LOADED_TRIPS:
@@ -32,5 +33,6 @@ export const TripsReducer = (state = initialState, action) => {
     default:
       return state;
   }
+
 };
 

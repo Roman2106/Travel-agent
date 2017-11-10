@@ -1,7 +1,7 @@
 import React from "react";
 import Loader from "../Сommons/Loader";
-import queryString from "query-string";
 import {Link} from "react-router-dom";
+import moment from 'moment';
 import {Paging, setPageWithItems} from "../Сommons/Paging";
 import {ConfirmationDelete} from "../Сommons/Confirmation/ConfirmationDelete";
 
@@ -17,10 +17,6 @@ class Customers extends React.Component {
 
   render() {
     if (this.props.customers && this.props.trips) {
-      let queryParams = queryString.parse(window.location.search.substr(1));
-      let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
-      let trips = this.props.trips;
-      let tripsArr = Object.keys(trips).reduce((arr, key) => ([...arr, {...trips[key]}]), []);
       return (
         <div className="customers">
           {this.state.customerToDelete ? <ConfirmationDelete
@@ -42,7 +38,7 @@ class Customers extends React.Component {
             </thead>
             <tbody>
             {setPageWithItems(this.props.customers.listCustomers,
-              currentPage,
+              this.props.currentPage,
               this.state.pageSize,
               Object.keys(this.props.customers.listCustomers).length
             ).map((customer, index, key) =>
@@ -50,28 +46,31 @@ class Customers extends React.Component {
                 <td>{customer.firstName}</td>
                 <td>{customer.lastName}</td>
                 <td className="withTrips">{customer.customersTripsID.map((id, index) => {
-                  for (let i = 0; i < tripsArr.length; i++) {
-                    if (id !== tripsArr[i].id) continue;
-                    return <p key={index}>{trips[id].tripName}</p>
+                  for (let i = 0; i < Object.values(this.props.trips).length; i++) {
+                    if (id !== Object.values(this.props.trips)[i].id) continue;
+                    return <p key={index}>
+                      {`${this.props.trips[id].tripName} - ${moment(this.props.trips[id].dateDeparture).format("DD-MM-YYYY")}`}
+                    </p>
                   }
                 })}</td>
                 <td>
                   <button className="del" onClick={() => {
-                    console.log(customer);
                     this.setState({customerToDelete: customer})
                   }}>X
                   </button>
-                  <Link className="edit" to={`/customers/${customer.id}?page=${String(currentPage)}`}>Edit</Link>
+                  <Link className="edit"
+                        to={`/customers/${customer.id}?page=${String(this.props.currentPage)}`}>Edit</Link>
                 </td>
               </tr>
             )}
             </tbody>
           </table>
-          <Link className="btnAddCustomer" to="customers/add">Add Customer</Link>
+          <Link className="btnAddCustomer" to={`customers/add?page=${String(this.props.currentPage)}`}>Add
+            Customer</Link>
           <Paging
             urlPrefix={"customers"}
             totalItems={Object.keys(this.props.customers.listCustomers)}
-            currentPage={currentPage}
+            currentPage={this.props.currentPage}
             pageSize={this.state.pageSize}
           />
         </div>

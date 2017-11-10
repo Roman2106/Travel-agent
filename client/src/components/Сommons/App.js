@@ -25,7 +25,9 @@ const bindActionCreators = (dispatch, actionCreators) =>{
   return bound;
 };
 
-const mapStateToProps = state => state;
+const mapStateToProps = state => {
+  return state
+};
 const ConnectedAppRouter =
   connect(mapStateToProps, dispatch => bindActionCreators(dispatch, actionCreators))(AppRouter);
 

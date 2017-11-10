@@ -1,11 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {Loader} from "../Сommons/Loader";
-import queryString from "query-string";
 import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
-import Select from 'react-styled-select';
+import Select from 'react-select';
 import moment from 'moment';
+import _ from "lodash";
+import 'react-select/dist/react-select.css';
+import "react-datepicker/dist/react-datepicker.css";
 
 class TripsForm extends React.Component {
   constructor(props) {
@@ -32,27 +33,15 @@ class TripsForm extends React.Component {
   };
 
 
-  getTripsLocationsID = e => {
-    let selLocationID = JSON.parse(e).id;
-    let currentLocationID = this.state.tripsLocationsID;
-    let bool = true;
-    for (let i = 0; i < currentLocationID.length; i++) {
-      if (currentLocationID[i] === selLocationID) {
-        this.setState({disabled: true});
-        this.props.showMessage("Such a location already exists in the trip", "danger");
-        bool = false;
-      }
-    }
-    if (bool) {
-      currentLocationID.push(selLocationID);
-      this.setState({
-        tripsLocationsID: currentLocationID,
-        disabled: true
-      });
-    }
+  getTripsLocationsID = item => {
+    let selLocationId = item.value;
+    console.log(item.value);
+    this.setState(({tripsLocationsID}) =>
+      ({tripsLocationsID: [...tripsLocationsID, selLocationId], disabled: true})
+    );
   };
 
-  tripsLocationsTable = (tripsLocationsID, locations, locationsArr) => {
+  tripsLocationsTable = (tripsLocationsID, locations) => {
     return (
       <table>
         <thead>
@@ -63,8 +52,8 @@ class TripsForm extends React.Component {
         </thead>
         <tbody>
         {tripsLocationsID.map((id, index) => {
-            for (let i = 0; i < locationsArr.length; i++) {
-              if (id !== locationsArr[i].id) continue;
+            for (let i = 0; i < Object.values(locations).length; i++) {
+              if (id !== Object.values(locations)[i].id) continue;
               return <tr key={index}>
                 <td>{`${locations[id].country} - ${locations[id].city}`}</td>
                 <td>
@@ -86,19 +75,19 @@ class TripsForm extends React.Component {
     )
   };
 
-  select = (locationsArr) => {
-    return locationsArr.map(item => {
-      return {label: `${item.country} - ${item.city}`, value:JSON.stringify(item)};
-    })
+  select = (locations) => {
+    let arr = _.without(Object.keys(locations), ...this.state.tripsLocationsID);
+    return arr.map(id => {
+      return {
+        label: `${locations[id].country} - ${locations[id].city}`,
+        value: locations[id].id
+      }
+    });
   };
 
   render() {
-    let queryParams = queryString.parse(window.location.search.substr(1));
-    let currentPage = queryParams.page >= 1 ? parseInt(queryParams.page, 10) : 1;
     let locations = this.props.locations.listLocations;
-    let locationsArr = Object.keys(locations).reduce((arr, key) => ([...arr, {...locations[key]}]), []);
-    let tableLocations = this.tripsLocationsTable(this.state.tripsLocationsID, locations, locationsArr);
-    let options = this.select(locationsArr);
+    let tableLocations = this.tripsLocationsTable(this.state.tripsLocationsID, locations);
     if (this.props.trips.showLoading === false) {
       return (
         <div className="tripsForm">
@@ -110,15 +99,14 @@ class TripsForm extends React.Component {
                      onChange={e => this.setState({tripName: e.target.value})}
               />
             </p>
-              <label htmlFor="routName">Маршрут:</label>
-              <Select
-                className={"dark-theme"}
-                options={options}
-                disabled={this.state.disabled}
-                onChange={ e => {
-                  this.getTripsLocationsID(e)
-                }}
-              />
+            <label htmlFor="routName">Маршрут:</label>
+            <Select
+              placeholder={"Search"}
+              options={this.select(this.props.locations.listLocations)}
+              onChange={item => {
+                this.getTripsLocationsID(item)
+              }}
+            />
             <label htmlFor="dateDeparture">Дата выезда:</label>
             <DatePicker
               selected={this.state.dateDeparture}
@@ -139,18 +127,18 @@ class TripsForm extends React.Component {
             />
           </form>
           <div className="tripsButtons">
-            <button className="addEditTrips" onClick={() => {
-              this.props.history.push(`/trips?page=${String(currentPage)}`);
-              this.props.onSaveTrip({
-                id: this.props.trip && this.props.trip.id || null,
-                tripName: this.state.tripName,
-                tripsLocationsID: this.state.tripsLocationsID,
-                dateDeparture: this.state.dateDeparture,
-                dateArrival: this.state.dateArrival
-              })
-            }}>Save
-            </button>
-            <Link className="cancel" to={`/trips?page=${String(currentPage)}`}
+            <Link className="addEditTrips" to={`/trips?page=${String(this.props.currentPage)}`}
+                  onClick={() => {
+                    this.props.onSaveTrip({
+                      id: this.props.trip && this.props.trip.id || null,
+                      tripName: this.state.tripName,
+                      tripsLocationsID: this.state.tripsLocationsID,
+                      dateDeparture: this.state.dateDeparture,
+                      dateArrival: this.state.dateArrival
+                    })
+                  }}>Save
+            </Link>
+            <Link className="cancel" to={`/trips?page=${String(this.props.currentPage)}`}
                   onClick={() => {
                     this.props.getTrips();
                   }}

@@ -7,6 +7,7 @@ const initialState = {
 };
 
 export const CustomersReducer = (state = initialState, action) => {
+
   switch (action.type) {
 
     case ActionType.LOADED_CUSTOMERS:
@@ -32,4 +33,5 @@ export const CustomersReducer = (state = initialState, action) => {
     default:
       return state;
   }
+
 };
