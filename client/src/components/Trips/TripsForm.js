@@ -5,8 +5,6 @@ import DatePicker from 'react-datepicker';
 import Select from 'react-select';
 import moment from 'moment';
 import _ from "lodash";
-import 'react-select/dist/react-select.css';
-import "react-datepicker/dist/react-datepicker.css";
 
 class TripsForm extends React.Component {
   constructor(props) {
@@ -15,8 +13,7 @@ class TripsForm extends React.Component {
       tripName: this.props.trip && this.props.trip.tripName || "",
       dateDeparture: this.props.trip && moment(this.props.trip.dateDeparture) || moment(),
       dateArrival: this.props.trip && moment(this.props.trip.dateArrival) || moment(),
-      tripsLocationsID: this.props.trip && this.props.trip.tripsLocationsID || [],
-      disabled: false
+      tripsLocationsID: this.props.trip && this.props.trip.tripsLocationsID || []
     };
   };
 
@@ -37,7 +34,7 @@ class TripsForm extends React.Component {
     let selLocationId = item.value;
     console.log(item.value);
     this.setState(({tripsLocationsID}) =>
-      ({tripsLocationsID: [...tripsLocationsID, selLocationId], disabled: true})
+      ({tripsLocationsID: [...tripsLocationsID, selLocationId]})
     );
   };
 
@@ -52,9 +49,10 @@ class TripsForm extends React.Component {
         </thead>
         <tbody>
         {tripsLocationsID.map((id, index) => {
-            for (let i = 0; i < Object.values(locations).length; i++) {
-              if (id !== Object.values(locations)[i].id) continue;
-              return <tr key={index}>
+            let arrLocations = Object.values(locations);
+            for (let i = 0; i < arrLocations.length; i++) {
+              if (id !== arrLocations[i].id) continue;
+              return <tr key={id}>
                 <td>{`${locations[id].country} - ${locations[id].city}`}</td>
                 <td>
                   <button className="del" onClick={e => {
@@ -76,7 +74,7 @@ class TripsForm extends React.Component {
   };
 
   select = (locations) => {
-    let arr = _.without(Object.keys(locations), ...this.state.tripsLocationsID);
+    const arr = _.without(Object.keys(locations), ...this.state.tripsLocationsID);
     return arr.map(id => {
       return {
         label: `${locations[id].country} - ${locations[id].city}`,
@@ -127,7 +125,7 @@ class TripsForm extends React.Component {
             />
           </form>
           <div className="tripsButtons">
-            <Link className="addEditTrips" to={`/trips?page=${String(this.props.currentPage)}`}
+            <Link className="addEditTrips" to={this.props.returnUrl}
                   onClick={() => {
                     this.props.onSaveTrip({
                       id: this.props.trip && this.props.trip.id || null,
@@ -138,7 +136,7 @@ class TripsForm extends React.Component {
                     })
                   }}>Save
             </Link>
-            <Link className="cancel" to={`/trips?page=${String(this.props.currentPage)}`}
+            <Link className="cancel" to={this.props.returnUrl}
                   onClick={() => {
                     this.props.getTrips();
                   }}

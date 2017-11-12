@@ -6,7 +6,6 @@ import {TripsActionCreators} from "../Trips/TripsActionCreators";
 import {LocationActionCreators} from "../Locations/LocationActionCreators";
 import {MessagesService} from "./UserMessages/MessageService";
 import {CustomersActionCreators} from "../Customers/CustomersActionCreators";
-import "../../index.css";
 
 const actionCreators = {
   ...LocationActionCreators,

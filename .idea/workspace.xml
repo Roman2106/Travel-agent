@@ -3,21 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c3c5e847-63f8-42ff-ae5f-cc36983e7a29" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/package-lock.json" afterPath="$PROJECT_DIR$/client/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/package.json" afterPath="$PROJECT_DIR$/client/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationForm.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationsTable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Сommons/App.js" afterPath="$PROJECT_DIR$/client/src/components/Сommons/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.js" afterPath="$PROJECT_DIR$/client/src/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,7 +24,37 @@
     <favorites_list name="secondProgect" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CustomersScreen.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="39" column="76" lean-forward="true" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1510424582000" expanded="true" signature="512:1851" ph="..." />
+                <marker date="1510424582000" expanded="true" signature="531:1836" ph="..." />
+                <marker date="1510424582000" expanded="true" signature="618:863" ph="..." />
+                <marker date="1510424582000" expanded="true" signature="936:1296" ph="..." />
+                <marker date="1510424582000" expanded="true" signature="1376:1800" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TripsScreen.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="34" column="44" lean-forward="true" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,13 +75,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/components/Trips/ScreenTrips.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/FormForTrips.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/formReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/reducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationReducer.js" />
         <option value="$PROJECT_DIR$/client/src/App.js" />
-        <option value="$PROJECT_DIR$/client/src/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/Loader.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/UserMessages/MessageReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Сommons/Alert.js" />
@@ -97,14 +116,16 @@
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsReducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Сommons/App.js" />
         <option value="$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
+        <option value="$PROJECT_DIR$/client/src/index.js" />
+        <option value="$PROJECT_DIR$/client/src/css.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Сommons/App.js" />
         <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js" />
       </list>
     </option>
   </component>
@@ -128,7 +149,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/client/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
@@ -223,23 +244,7 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Locations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Trips" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Сommons" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -480,7 +485,7 @@
       <workItem from="1509292875560" duration="51788000" />
       <workItem from="1509434770911" duration="32830000" />
       <workItem from="1509512059718" duration="102117000" />
-      <workItem from="1509892033823" duration="105859000" />
+      <workItem from="1509892033823" duration="108922000" />
     </task>
     <servers />
   </component>
@@ -517,7 +522,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="638909000" />
+    <option name="totallyTimeSpent" value="641972000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -529,9 +534,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="23" width="1280" height="773" extended-state="1" />
+    <frame x="-1" y="23" width="1280" height="773" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16136725" sideWeight="0.60627675" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16136725" sideWeight="0.60627675" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32722145" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3041096" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325811" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -611,14 +617,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/node_modules/lodash/_arrayFilter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/1.js" />
     <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/oldPaging.js" />
     <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/Paging.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -838,14 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="214" column="61" lean-forward="false" selection-start-line="214" selection-start-column="61" selection-end-line="214" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsActionCreators.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
@@ -886,14 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="29" column="2" lean-forward="true" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -910,35 +892,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-            <marker date="1510256398000" expanded="true" signature="512:1781" ph="..." />
-            <marker date="1510256398000" expanded="true" signature="531:1766" ph="..." />
-            <marker date="1510256398000" expanded="true" signature="618:863" ph="..." />
-            <marker date="1510256398000" expanded="true" signature="936:1237" ph="..." />
-            <marker date="1510256398000" expanded="true" signature="1317:1691" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationsScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
           <folding>
             <element signature="e#0#26#0" expanded="false" />
           </folding>
@@ -1002,10 +959,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2563">
+          <caret line="214" column="61" lean-forward="false" selection-start-line="214" selection-start-column="61" selection-end-line="214" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/css.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Сommons/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="7" column="77" lean-forward="false" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="50" column="42" lean-forward="true" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+        <state relative-caret-position="235">
+          <caret line="56" column="50" lean-forward="true" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -1014,37 +1009,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2092">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="763">
+          <caret line="107" column="23" lean-forward="true" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
           <folding>
-            <marker date="1510346704000" expanded="true" signature="2299:4054" ph="..." />
-            <marker date="1510346704000" expanded="true" signature="2314:3240" ph="..." />
-            <marker date="1510346704000" expanded="true" signature="2328:2634" ph="..." />
-            <marker date="1510346704000" expanded="true" signature="2479:2509" ph="..." />
-            <marker date="1510346704000" expanded="true" signature="2648:2952" ph="..." />
-            <marker date="1510346704000" expanded="true" signature="2799:2829" ph="..." />
-            <marker date="1510346704000" expanded="true" signature="3283:4020" ph="..." />
-            <marker date="1510346704000" expanded="true" signature="3328:3428" ph="..." />
-            <marker date="1510346704000" expanded="true" signature="3884:3911" ph="..." />
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1510424201000" expanded="true" signature="2191:3884" ph="..." />
+            <marker date="1510424201000" expanded="true" signature="2206:3132" ph="..." />
+            <marker date="1510424201000" expanded="true" signature="2220:2526" ph="..." />
+            <marker date="1510424201000" expanded="true" signature="2371:2401" ph="..." />
+            <marker date="1510424201000" expanded="true" signature="2540:2844" ph="..." />
+            <marker date="1510424201000" expanded="true" signature="2691:2721" ph="..." />
+            <marker date="1510424201000" expanded="true" signature="3175:3850" ph="..." />
+            <marker date="1510424201000" expanded="true" signature="3220:3289" ph="..." />
+            <marker date="1510424201000" expanded="true" signature="3714:3741" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1672">
-          <caret line="76" column="2" lean-forward="false" selection-start-line="76" selection-start-column="2" selection-end-line="76" selection-end-column="2" />
+        <state relative-caret-position="547">
+          <caret line="138" column="61" lean-forward="false" selection-start-line="138" selection-start-column="61" selection-end-line="138" selection-end-column="61" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1510347033000" expanded="true" signature="2781:5035" ph="..." />
-            <marker date="1510347033000" expanded="true" signature="2798:4159" ph="..." />
-            <marker date="1510347033000" expanded="true" signature="2814:3119" ph="..." />
-            <marker date="1510347033000" expanded="true" signature="2958:3039" ph="..." />
-            <marker date="1510347033000" expanded="true" signature="3120:3417" ph="..." />
-            <marker date="1510347033000" expanded="true" signature="3417:3781" ph="..." />
-            <marker date="1510347033000" expanded="true" signature="3505:3780" ph="..." />
-            <marker date="1510347033000" expanded="true" signature="3781:4142" ph="..." />
-            <marker date="1510347033000" expanded="true" signature="3872:4141" ph="..." />
+            <marker date="1510424366000" expanded="true" signature="2676:4876" ph="..." />
+            <marker date="1510424366000" expanded="true" signature="2693:4054" ph="..." />
+            <marker date="1510424366000" expanded="true" signature="2709:3014" ph="..." />
+            <marker date="1510424366000" expanded="true" signature="2853:2934" ph="..." />
+            <marker date="1510424366000" expanded="true" signature="3015:3312" ph="..." />
+            <marker date="1510424366000" expanded="true" signature="3312:3676" ph="..." />
+            <marker date="1510424366000" expanded="true" signature="3400:3675" ph="..." />
+            <marker date="1510424366000" expanded="true" signature="3676:4037" ph="..." />
+            <marker date="1510424366000" expanded="true" signature="3767:4036" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Customers/CustomersScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="39" column="76" lean-forward="true" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1510424582000" expanded="true" signature="512:1851" ph="..." />
+            <marker date="1510424582000" expanded="true" signature="531:1836" ph="..." />
+            <marker date="1510424582000" expanded="true" signature="618:863" ph="..." />
+            <marker date="1510424582000" expanded="true" signature="936:1296" ph="..." />
+            <marker date="1510424582000" expanded="true" signature="1376:1800" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Trips/TripsScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="34" column="44" lean-forward="true" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

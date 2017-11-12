@@ -2,7 +2,6 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Select from 'react-select';
 import moment from 'moment';
-import 'react-select/dist/react-select.css';
 import _ from "lodash";
 
 class CustomerForm extends React.Component {
@@ -11,17 +10,14 @@ class CustomerForm extends React.Component {
     this.state = {
       firstName: this.props.customer && this.props.customer.firstName || "",
       lastName: this.props.customer && this.props.customer.lastName || "",
-      customersTripsID: this.props.customer && this.props.customer.customersTripsID || [],
-      disabled: false,
-      selId: ""
+      customersTripsID: this.props.customer && this.props.customer.customersTripsID || []
     }
   }
 
   getCustomersTripsID = (item) => {
     let selTripId = item.value;
-    console.log(item.value);
     this.setState(({customersTripsID}) =>
-      ({customersTripsID: [...customersTripsID, selTripId], disabled: true})
+      ({customersTripsID: [...customersTripsID, selTripId]})
     );
   };
 
@@ -36,9 +32,10 @@ class CustomerForm extends React.Component {
         </thead>
         <tbody>
         {customersTripsID.map((id, index) => {
-          for (let i = 0; i < Object.values(trips).length; i++) {
-            if (id !== Object.values(trips)[i].id) continue;
-            return <tr key={index}>
+          let arrTrips = Object.values(trips);
+          for (let i = 0; i < arrTrips.length; i++) {
+            if (id !== arrTrips[i].id) continue;
+            return <tr key={id}>
               <td>{`${trips[id].tripName} - ${moment(trips[id].dateDeparture).format("DD-MM-YYYY")}`}</td>
               <td>
                 <button className="del" onClick={e => {
@@ -60,7 +57,7 @@ class CustomerForm extends React.Component {
   };
 
   select = (trips) => {
-    let arr = _.without(Object.keys(trips), ...this.state.customersTripsID);
+    const arr = _.without(Object.keys(trips), ...this.state.customersTripsID);
     return arr.map(id => {
       return {
         label: `${trips[id].tripName} - ${moment(trips[id].dateDeparture).format("DD-MM-YYYY")}`,
@@ -100,7 +97,7 @@ class CustomerForm extends React.Component {
         </form>
         <div className="customersButtons">
           <Link className="addEditCustomer"
-                to={`/customers?page=${String(this.props.currentPage)}`}
+                to={this.props.returnUrl}
                 onClick={() => {
                   this.props.onSaveCustomer({
                     id: this.props.customer && this.props.customer.id || null,
@@ -110,7 +107,7 @@ class CustomerForm extends React.Component {
                   })
                 }}>Save
           </Link>
-          <Link className="cancel" to={`/customers?page=${String(this.props.currentPage)}`}
+          <Link className="cancel" to={this.props.returnUrl}
                 onClick={() => {
                   this.props.getCustomers();
                 }}

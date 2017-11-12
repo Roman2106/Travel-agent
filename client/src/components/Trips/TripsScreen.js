@@ -26,6 +26,7 @@ export const TripsScreen = withRouter(
             locations={this.props.locations}
             onSaveTrip={this.props.onSaveTrip}
             showMessage={this.props.showMessage}
+            returnUrl={`/trips?page=${currentPage}`}
           />}/>
           <Route path="/trips/:id" render={({match}) => <TripsForm
             trips={this.props.trips}
@@ -34,7 +35,8 @@ export const TripsScreen = withRouter(
             locations={this.props.locations}
             onSaveTrip={this.props.onSaveTrip}
             showMessage={this.props.showMessage}
-            trip={Object.values(this.props.trips.listTrips).find(item => item.id === match.params.id)}
+            returnUrl={`/trips?page=${currentPage}`}
+            trip={this.props.trips.listTrips[match.params.id]}
           />}/>
         </Switch>
       )

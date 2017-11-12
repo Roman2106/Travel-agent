@@ -27,6 +27,7 @@ export const CustomersScreen = withRouter(
               showMessage={this.props.showMessage}
               getCustomers={this.props.getCustomers}
               onSaveCustomer={this.props.onSaveCustomer}
+              returnUrl={`/customers?page=${currentPage}`}
             />}/>
             <Route path="/customers/:id" render={({match}) => <CustomerForm
               trips={this.props.trips}
@@ -35,7 +36,8 @@ export const CustomersScreen = withRouter(
               showMessage={this.props.showMessage}
               getCustomers={this.props.getCustomers}
               onSaveCustomer={this.props.onSaveCustomer}
-              customer={Object.values(this.props.customers.listCustomers).find(customer => customer.id === match.params.id)}
+              returnUrl={`/customers?page=${currentPage}`}
+              customer={this.props.customers.listCustomers[match.params.id]}
             />}/>
           </Switch>
         </div>
