@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 const CustomersSchema = mongoose.Schema({
   firstName: String,
   lastName: String,
-  customersTrips: Array
+  customersTripsID: Array
 });
 
 const CustomersModel = mongoose.model("Customer", CustomersSchema);

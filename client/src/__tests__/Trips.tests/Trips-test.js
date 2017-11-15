@@ -1,7 +1,7 @@
 import React from "react";
 import {configure} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import TripsForm from "../../components/Trips/FormForTrips";
+import TripsForm from "../../components/Trips/TripsForm";
 import {mount} from "enzyme";
 import {MemoryRouter} from "react-router-dom";
 import * as api from "../../api/api";

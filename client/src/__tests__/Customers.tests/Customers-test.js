@@ -1,8 +1,8 @@
 import React from "react";
 import {configure} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import CustomerForm from "../../components/Customers/FormForCustomers";
-import Customers from "../../components/Customers/Customers";
+import CustomerForm from "../../components/Customers/CustomersForm";
+import Customers from "../../components/Customers/CustomersTable";
 import {mount} from "enzyme";
 import {MemoryRouter} from "react-router-dom";
 import * as api from "../../api/api";
@@ -81,8 +81,6 @@ beforeEach(() => {
       ]
     }
   ]);
-  // noinspection JSAnnotator
-  api.getAll = () => customersFormPromise;
   // noinspection JSAnnotator
   api.getAll = () => customersPromise;
 });

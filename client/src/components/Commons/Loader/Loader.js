@@ -1,6 +1,6 @@
 import React from "react";
 
-function Loader() {
+export function Loader() {
   return (
     <div>Loading data ...</div>
   )

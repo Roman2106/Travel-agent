@@ -1,0 +1,56 @@
+.ulMenu {
+    text-align: right;
+    position: relative;
+    z-index: 1;
+    left: 0;
+    margin: 55px auto 0 auto;
+    padding: 0;
+}
+
+.ulMenu li a{
+    padding: 10px 42px 8px 42px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+}
+
+.ulMenu li {
+    position: relative;
+    display: inline-block;
+    padding: 10px 1px 8px 1px;
+    color: inherit;
+    border-collapse: collapse;
+}
+
+.ulMenu li:hover{
+    cursor: pointer;
+}
+
+.ulMenu li a::before {
+    color: black;
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    border:1px solid #d3d3d3;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    background: #00878F;
+    transform-origin: bottom;
+    box-shadow: 3px -3px 5px -3px rgba(0, 0, 0, 0.3), -3px -3px 5px -3px rgba(0, 0, 0, 0.3);
+}
+
+.ulMenu li a.isActive {
+    color: black;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.ulMenu li a.isActive::before {
+    color: black;
+    background-color: white;
+    margin-bottom: -.08em;
+}
+
+
+

@@ -8,12 +8,7 @@ const transformId = trip => {
   delete obj.__v;
   delete obj._id;
   return obj;
-}
-
-// const transformId = trip =>{
-//   const obj = trip.toObject();
-//   return obj;
-// }
+};
 
 router.get("/trips", (req, res, next) => {
   TripModel.find().then(data => res.json(data.map(transformId)), next);
@@ -33,9 +28,9 @@ router.get("/trips/:id", (req, res, next) => {
 router.put("/trips/:id", (req, res, next) => {
   TripModel.findById(req.params.id).then(tripModel => {
     if (tripModel) {
-      const {tripName, routName, dateDeparture, dateArrival} = req.body;
+      const {tripName, tripsLocationsID, dateDeparture, dateArrival} = req.body;
       tripModel.tripName = tripName && tripName.trim() ? tripName.trim() : tripModel.tripName;
-      tripModel.routName = routName;
+      tripModel.tripsLocationsID = tripsLocationsID;
       tripModel.dateDeparture = dateDeparture && dateDeparture.trim() ? dateDeparture.trim() : tripModel.dateDeparture;
       tripModel.dateArrival = dateArrival && dateArrival.trim() ? dateArrival.trim() : tripModel.dateArrival;
       tripModel.save().then(model => res.json(transformId(model)), next);
@@ -59,10 +54,10 @@ router.delete("/trips/:id", (req, res, next) => {
 });
 
 router.post("/trips", (req, res, next) => {
-  const {tripName, routName, dateDeparture, dateArrival} = req.body;
+  const {tripName, tripsLocationsID, dateDeparture, dateArrival} = req.body;
   const trip = new TripModel({
     tripName,
-    routName,
+    tripsLocationsID,
     dateDeparture,
     dateArrival
   });

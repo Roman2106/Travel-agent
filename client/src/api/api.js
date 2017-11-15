@@ -7,7 +7,7 @@ const checkOk = response => {
   } else {
     throw new Error("Network problems");
   }
-}
+};
 
 const makeRequestWithBody = (url, method, bodyObject) => {
   const body = JSON.stringify(bodyObject);

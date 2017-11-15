@@ -1,0 +1,25 @@
+.alert-danger {
+    position: absolute;
+    top: -55px;
+    width: 100%;
+    margin-top: 5px;
+    background: rgba(195, 70, 64, .8);
+    border-radius: 3px;
+    text-align: center;
+    height: 45px;
+}
+
+.alert-success {
+    position: absolute;
+    top: -55px;
+    width: 100%;
+    margin-top: 5px;
+    height: 45px;
+    background: rgba(120, 205, 80, .8);
+    border-radius: 3px;
+    text-align: center;
+}
+
+.alertText {
+    margin-top: 12px;
+}
