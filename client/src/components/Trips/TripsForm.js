@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {Loader} from "../Сommons/Loader";
+import {Loader} from "../Commons/Loader/Loader";
 import DatePicker from 'react-datepicker';
 import Select from 'react-select';
 import moment from 'moment';
@@ -29,27 +29,25 @@ class TripsForm extends React.Component {
     });
   };
 
-
   getTripsLocationsID = item => {
     let selLocationId = item.value;
-    console.log(item.value);
     this.setState(({tripsLocationsID}) =>
       ({tripsLocationsID: [...tripsLocationsID, selLocationId]})
     );
   };
 
   tripsLocationsTable = (tripsLocationsID, locations) => {
+    let arrLocations = Object.values(locations);
     return (
-      <table>
+      <table className="tripsLocationsTable">
         <thead>
         <tr>
-          <th>Все локации путешествия</th>
-          <th>Удалить</th>
+          <th>All locations in travel</th>
+          <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {tripsLocationsID.map((id, index) => {
-            let arrLocations = Object.values(locations);
             for (let i = 0; i < arrLocations.length; i++) {
               if (id !== arrLocations[i].id) continue;
               return <tr key={id}>
@@ -90,14 +88,14 @@ class TripsForm extends React.Component {
       return (
         <div className="tripsForm">
           <form>
-            <p>
-              <label htmlFor="tripName">Название тура:</label>
+            <p className="tripName">
+              <label htmlFor="tripName">Trip name:</label>
               <input type="text" name="tripName" id="tripName" title="tripName"
                      value={this.state.tripName}
                      onChange={e => this.setState({tripName: e.target.value})}
               />
             </p>
-            <label htmlFor="routName">Маршрут:</label>
+            <label htmlFor="routName">Route:</label>
             <Select
               placeholder={"Search"}
               options={this.select(this.props.locations.listLocations)}
@@ -105,27 +103,31 @@ class TripsForm extends React.Component {
                 this.getTripsLocationsID(item)
               }}
             />
-            <label htmlFor="dateDeparture">Дата выезда:</label>
-            <DatePicker
-              selected={this.state.dateDeparture}
-              selectsStart
-              startDate={this.state.dateDeparture}
-              endDate={this.state.dateArrival}
-              onChange={this.handleChangeStart}
-              dateFormat="DD-MM-YYYY"
-            />
-            <label htmlFor="dateArrival">Дата возвращения:</label>
-            <DatePicker
-              selected={this.state.dateArrival}
-              selectsEnd
-              startDate={this.state.dateDeparture}
-              endDate={this.state.dateArrival}
-              onChange={this.handleChangeEnd}
-              dateFormat="DD-MM-YYYY"
-            />
+            <div className="datePicker">
+              <label htmlFor="dateDeparture">Date of departure:</label>
+              <DatePicker
+                selected={this.state.dateDeparture}
+                selectsStart
+                startDate={this.state.dateDeparture}
+                endDate={this.state.dateArrival}
+                onChange={this.handleChangeStart}
+                dateFormat="DD-MM-YYYY"
+              />
+            </div>
+            <div className="datePicker">
+              <label htmlFor="dateArrival">Arrival date:</label>
+              <DatePicker
+                selected={this.state.dateArrival}
+                selectsEnd
+                startDate={this.state.dateDeparture}
+                endDate={this.state.dateArrival}
+                onChange={this.handleChangeEnd}
+                dateFormat="DD-MM-YYYY"
+              />
+            </div>
           </form>
           <div className="tripsButtons">
-            <Link className="addEditTrips" to={this.props.returnUrl}
+            <Link className="save" to={this.props.returnUrl}
                   onClick={() => {
                     this.props.onSaveTrip({
                       id: this.props.trip && this.props.trip.id || null,

@@ -30,7 +30,7 @@ class LocationForm extends React.Component {
           </p>
         </form>
         <div className="locationsButtons">
-          <Link className="addLocations" to={`/locations?page=${String(this.props.currentPage)}`}
+          <Link className="save" to={`/locations?page=${this.props.currentPage}`}
                 onClick={() => {
                   this.props.onSaveLocation({
                     id: this.props.location && this.props.location.id || null,
@@ -39,7 +39,7 @@ class LocationForm extends React.Component {
                   })
                 }}>Save
           </Link>
-          <Link to={`/locations?page=${String(this.props.currentPage)}`} className="cancel">Cancel</Link>
+          <Link to={`/locations?page=${this.props.currentPage}`} className="cancel">Cancel</Link>
         </div>
       </div>
     )

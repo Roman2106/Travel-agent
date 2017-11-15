@@ -3,8 +3,9 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {CustomersScreen} from "../Customers/CustomersScreen";
 import {LocationsScreen} from "../Locations/LocationsScreen";
 import {TripsScreen} from "../Trips/TripsScreen";
-import Alert from "./Alert";
-import {Menu} from "./Menu";
+import Alert from "./Alerts/Alert";
+import {Menu} from "./Menu/Menu";
+import {StartPage} from "../StartPage/StartPage";
 
 export class AppRouter extends React.Component {
   constructor(props) {
@@ -22,11 +23,6 @@ export class AppRouter extends React.Component {
     return (
       <Router>
         <div className="wrapper">
-          <Route path="/" render={() => <Menu items={[
-            {id: "trips", title: "Trips", key: "trips"},
-            {id: "customers", title: "Customers", key: "customers"},
-            {id: "locations", title: "Locations", key: "locations"}
-          ]}/>}/>
           {this.props.messages ? <Alert
             hideAfter={3}
             type={this.props.messages.type}
@@ -34,29 +30,41 @@ export class AppRouter extends React.Component {
             delMessage={this.props.delMessage}
             onHide={() => this.setState({message: null})}
           /> : null}
+          <Menu items={[
+            {id: "trips", title: "Trips", key: "trips"},
+            {id: "customers", title: "Customers", key: "customers"},
+            {id: "locations", title: "Locations", key: "locations"}
+          ]}/>
           <Switch>
+            <Route exact path="/" component={StartPage}/>
             <Route path="/trips" render={() => <TripsScreen
               trips={this.props.trips}
               getTrips={this.props.getTrips}
               locations={this.props.locations}
               onSaveTrip={this.props.onSaveTrip}
-              onDeleteTrip={this.props.onDeleteTrip}
               showMessage={this.props.showMessage}
+              onDeleteTrip={this.props.onDeleteTrip}
+              onRemoveClass={this.props.onRemoveClass}
+              onSortChangeTrips={this.props.onSortChangeTrips}
             />}/>
             <Route path="/customers" render={() => <CustomersScreen
               trips={this.props.trips}
+              getTrips={this.props.getTrips}
               customers={this.props.customers}
-              getTrips = {this.props.getTrips}
               showMessage={this.props.showMessage}
               getCustomers={this.props.getCustomers}
               onSaveCustomer={this.props.onSaveCustomer}
               onDeleteCustomer={this.props.onDeleteCustomer}
+              onRemoveClassCustomer={this.props.onRemoveClassCustomer}
+              onChangeSortOrderCustomers={this.props.onChangeSortOrderCustomers}
             />}/>
             <Route path="/locations" render={() => <LocationsScreen
               locations={this.props.locations}
               getLocations={this.props.getLocations}
               onSaveLocation={this.props.onSaveLocation}
               onDeleteLocation={this.props.onDeleteLocation}
+              onRemoveClassLocation={this.props.onRemoveClassLocation}
+              onChangeSortOrderLocations={this.props.onChangeSortOrderLocations}
             />}/>
           </Switch>
         </div>

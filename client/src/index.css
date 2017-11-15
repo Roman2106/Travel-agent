@@ -1,218 +1,364 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Saira', sans-serif;
+}
+
 #root {
     max-width: 100%;
+    height: 100%;
 }
 
 .app {
     max-width: 100%;
+    height: 100%;
 }
 
-.wrapper {
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-.menu li {
-    display: inline-block;
-    position: relative;
+li {
     list-style-type: none;
 }
 
-.menu li:nth-child(n+2) {
-    margin-left: 40px;
-}
-
-.ulMenu {
-    text-align: center;
-    padding: 0;
-}
-
-nav a {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 16px;
-    color: #303130;
-}
-
-nav a {
-    transition: transform .5s;
-}
-
-nav a:hover {
-    transform: scale(1.1);
-}
-
-.isActive{
-    font-size: 22px;
+.wrapper {
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
 }
 
 table {
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    border: 1px solid #393B37;
-}
-
-h4 {
-    text-align: center;
-}
-
-table td, table th {
-    padding: 5px;
-    text-align: center;
-    border: 1px solid #393B37;
-}
-
-form {
-    width: 65%;
-    margin: 0 auto;
-}
-
-form p {
-    display: block;
-}
-
-label {
-    display: inline-block;
-    width: 130px;
-    vertical-align: top;
-}
-
-input {
-    width: 75%;
-    height: 25px;
-    border: 1px solid #DCDEDC;
-    border-radius: 3px;
-    outline: none;
-}
-
-button {
-    padding: 5px;
-    border: 1px solid #DCDEDC;
-    border-radius: 3px;
     width: 100%;
+    overflow: hidden;
+    border: 1px solid #d3d3d3;
+    background: #fefefe;
+    margin: 0 auto;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    border-collapse: collapse;
 }
 
-.btnAddTrips {
-    width: 150px;
-    float: right;
-    margin-top: 10px;
-    margin-right: 10%;
+.tdForButton {
+    width: 200px;
 }
 
-.tripsButtons {
+th, td {
+    padding: 10px 4px;
     text-align: center;
 }
 
-.addEditTrips, .cancel {
-    width: 65%;
-    margin: 5px auto 0 auto;
+th {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-shadow: 1px 1px 1px #fff;
+    background: white;
+}
+
+td {
+    border-top: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+}
+
+td.last {
+    border-right: none;
+}
+
+tr {
+    background: white;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+tr:hover {
+    background: #009DA7;
+}
+
+.liInTr {
+    list-style-type: decimal;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.containerliInTr {
+    margin: 0;
+    padding: 0 0 0 30px;
 }
 
 .del {
-    width: 35%;
+    box-shadow: inset 0 1px 0 0 #f7c5c0;
+    background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc8d83', endColorstr='#e4685d', GradientType=0);
+    background-color: #fc8d83;
+    border-radius: 5px;
+    border: 1px solid #d83526;
+    display: inline-block;
+    cursor: pointer;
+    color: white !important;
+    font-size: 15px;
+    padding: 6px 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    outline: none;
+}
+
+.del:hover {
+    background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4685d', endColorstr='#fc8d83', GradientType=0);
+    background-color: #e4685d;
+}
+
+.del:active {
+    position: relative;
+    top: 1px;
 }
 
 .edit {
-    width: 60%;
-    margin-left: 3px;
+    box-shadow: inset 0 1px 0 0 #fff6af;
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23', GradientType=0);
+    background-color: #ffec64;
+    border-radius: 5px;
+    border: 1px solid #ffaa22;
+    display: inline-block;
+    cursor: pointer;
+    color: white !important;
+    font-size: 15px;
+    padding: 6px 25px;
+    text-decoration: none;
+    outline: none;
 }
 
-.addLocations {
-    width: 65%;
+.edit:hover {
+    background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64', GradientType=0);
+    background-color: #ffab23;
 }
 
-.locationsButtons {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
+.edit:active {
+    position: relative;
+    top: 1px;
 }
 
-div.locations form {
-    text-align: center;
-}
-
-div.locations button.del {
-    width: 90%;
-}
-
-.btnAddCustomer {
-    width: 65%;
-    margin: 5px auto 0 auto;
-}
-
-.customers {
-    text-align: center;
-}
-
-.customers th:last-child {
-    width: 180px;
-}
-
-.btnAddCustomer {
-    width: 150px;
+.btnAdd {
+    box-shadow: inset 0 1px 0 0 #d9fbbe;
+    background: linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8e356', endColorstr='#a5cc52', GradientType=0);
+    background-color: #b8e356;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 5px;
+    border: 1px solid #83c41a;
+    display: inline-block;
+    cursor: pointer;
+    color: white !important;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 50px;
+    text-decoration: none;
     float: right;
-    margin-top: 10px;
-    margin-right: 10%;
+    margin-top: 16px;
+    margin-right: 22px;
 }
 
-.addEditCustomer, .cancel {
-    width: 65%;
-    margin: 5px auto 0 auto;
+.btnAdd:hover {
+    background: linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a5cc52', endColorstr='#b8e356', GradientType=0);
+    background-color: #a5cc52;
 }
 
-.customersButtons {
-    text-align: center;
+.btnAdd:active {
+    position: relative;
+    top: 1px;
 }
 
-.customersForm textarea {
-    width: 80%;
-    height: 100px;
+a:visited {
+    color: black;
 }
 
-.alert-danger {
-    width: 80%;
-    height: 50px;
-    margin: 10px auto 10px auto;
-    background: rgba(195, 70, 64, .8);
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+.tripsLocationsTable, .customerTripsTable {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.tripsForm, .customersForm, .locationsForm {
+    border: 1px solid #d3d3d3;
     border-radius: 5px;
-    text-align: center;
+    border-top-right-radius: 0;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-.alert-success {
-    width: 80%;
-    height: 50px;
-    margin: 10px auto 10px auto;
-    background: rgba(120, 205, 80, .8);
+.tripsForm form, .customersForm form, .locationsForm form {
+    width: 70%;
+    margin: 30px auto 20px auto;
+}
+
+.Select-control {
     border-radius: 5px;
+}
+
+.tripsForm input#tripName {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    height: 36px;
+    outline: none;
+    overflow: hidden;
+    font-family: 'Saira', sans-serif;
+    font-size: inherit;
+}
+
+.datePicker {
+    display: inline-block;
+    margin-top: 20px;
+    width: 48%;
+}
+
+.react-datepicker__input-container input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    height: 36px;
+    outline: none;
+    font-family: 'Saira', sans-serif;
+    font-size: inherit;
     text-align: center;
 }
 
-.alertText {
-    padding-top: 16px;
+.customersForm input#firstName, .customersForm input#lastName {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    height: 36px;
+    outline: none;
+    overflow: hidden;
+    font-family: 'Saira', sans-serif;
+    font-size: inherit;
 }
 
-.dark-theme {
-    --styled-select-placeholder__color: #999;
-    --styled-select__color: white;
-    --styled-select__background-color: #555;
-    --styled-select__border-color: black;
-    --styled-select__border-width: 3px;
-    --styled-select__border-radius: 5px;
-
-    --styled-select-menu-outer__margin: 10px 0 0 0;
-    --styled-select-menu-outer__padding: 0;
-    --styled-select-menu-outer__background-color: #555;
-    --styled-select-menu-outer__border-color: black;
-    --styled-select-menu-outer__border-style: solid;
-    --styled-select-menu-outer__border-width: 3px;
-
-    --styled-select-option__background-color: #444;
-
-    --styled-select-option__color--focused: #eee;
-    --styled-select-option__background-color--focused: #333;
-
-    --styled-select-option__color--selected: #eee;
-    --styled-select-option__background-color--selected: #444;
+.locationsForm input {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    height: 36px;
+    outline: none;
+    overflow: hidden;
+    font-family: 'Saira', sans-serif;
+    font-size: inherit;
 }
 
+.tripsButtons, .customersButtons, .locationsButtons {
+    text-align: center;
+}
 
+.save {
+    box-shadow: inset 0 1px 0 0 #d9fbbe;
+    background: linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8e356', endColorstr='#a5cc52', GradientType=0);
+    background-color: #b8e356;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 5px;
+    border: 1px solid #83c41a;
+    display: inline-block;
+    cursor: pointer;
+    color: white !important;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 50px;
+    text-decoration: none;
+    margin-right: 22px;
+    margin-bottom: 20px;
+}
+
+.save:hover {
+    background: linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a5cc52', endColorstr='#b8e356', GradientType=0);
+    background-color: #a5cc52;
+}
+
+.save:active {
+    position: relative;
+    top: 1px;
+}
+
+.cancel {
+    box-shadow: inset 0 1px 0 0 #f7c5c0;
+    background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc8d83', endColorstr='#e4685d', GradientType=0);
+    background-color: #fc8d83;
+    border-radius: 5px;
+    border: 1px solid #d83526;
+    display: inline-block;
+    cursor: pointer;
+    color: white !important;
+    font-size: 15px;
+    padding: 6px 50px;
+    margin-left: 10px;
+    text-decoration: none;
+    outline: none;
+}
+
+.cancel:hover {
+    background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4685d', endColorstr='#fc8d83', GradientType=0);
+    background-color: #e4685d;
+}
+
+.cancel:active {
+    position: relative;
+    top: 1px;
+}
+
+.thTripName, .thDateOfDeparture, .thArivalDate, .thFirstName, .thLastName, .thCountry, .thCity {
+    cursor: pointer;
+    background-image: url("../src/components/Commons/icons/arrowDown.svg");
+    background-repeat: no-repeat;
+    background-position: right 4% top 22px;
+    background-color: white;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+.thTripName:hover, .thDateOfDeparture:hover, .thArivalDate:hover,
+.thFirstName:hover, .thLastName:hover, .thCountry:hover, .thCity:hover {
+    background-color: #009DA7;
+}
+
+.asc {
+    background-image: url("../src/components/Commons/icons/arrowUp.svg");
+    background-repeat: no-repeat;
+    background-position: right 4% top 22px;
+}
+
+.desc {
+    background-image: url("../src/components/Commons/icons/arrowDown.svg");
+    background-repeat: no-repeat;
+    background-position: right 4% top 22px;
+}
+
+@keyframes to-green {
+    to {
+        background: #83C31B;
+    }
+}
+
+.updateItem {
+    animation: to-green 0.225s cubic-bezier(0.9, 0.3, 0.2, 1) 8 alternate;
+}

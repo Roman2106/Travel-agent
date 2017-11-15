@@ -14,11 +14,13 @@ export const CustomersScreen = withRouter(
         <div>
           <Switch>
             <Route exact path="/customers" render={() => <CustomersTable
-              trips={this.props.trips.listTrips}
               currentPage={currentPage}
               customers={this.props.customers}
               getTrips = {this.props.getTrips}
+              trips={this.props.trips.listTrips}
               onDeleteCustomer={this.props.onDeleteCustomer}
+              onRemoveClassCustomer={this.props.onRemoveClassCustomer}
+              onChangeSortOrderCustomers={this.props.onChangeSortOrderCustomers}
             />}/>
             <Route path="/customers/add" render={() => <CustomerForm
               trips={this.props.trips}

@@ -16,6 +16,8 @@ export const LocationsScreen = withRouter(
             currentPage={currentPage}
             locations={this.props.locations}
             onDeleteLocation={this.props.onDeleteLocation}
+            onRemoveClassLocation={this.props.onRemoveClassLocation}
+            onChangeSortOrderLocations={this.props.onChangeSortOrderLocations}
           />}/>
           <Route path="/locations/add" render={() => <LocationForm
             currentPage={currentPage}

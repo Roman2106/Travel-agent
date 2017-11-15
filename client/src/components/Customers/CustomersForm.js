@@ -22,17 +22,17 @@ class CustomerForm extends React.Component {
   };
 
   customerTripsTable = (customersTripsID, trips) => {
+    let arrTrips = Object.values(trips);
     return (
-      <table>
+      <table className="customerTripsTable">
         <thead>
         <tr>
-          <th>Все путешествия клиента</th>
-          <th>Удалить</th>
+          <th>All travels of the customer</th>
+          <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {customersTripsID.map((id, index) => {
-          let arrTrips = Object.values(trips);
           for (let i = 0; i < arrTrips.length; i++) {
             if (id !== arrTrips[i].id) continue;
             return <tr key={id}>
@@ -73,20 +73,20 @@ class CustomerForm extends React.Component {
       <div className="customersForm">
         <form>
           <p>
-            <label htmlFor="firstName">Введите имя:</label>
+            <label htmlFor="firstName">Enter your name:</label>
             <input type="text" name="firstName" id="firstName" title="firstName" required
                    onChange={e => this.setState({firstName: e.target.value})}
                    value={this.state.firstName}
             />
           </p>
           <p>
-            <label htmlFor="lastName">Введите фамилию:</label>
+            <label htmlFor="lastName">Enter last name:</label>
             <input type="text" name="lastName" id="lastName" title="lastName" required
                    onChange={e => this.setState({lastName: e.target.value})}
                    value={this.state.lastName}
             />
           </p>
-          <label htmlFor="customersTrips">Выберите путешествие:</label>
+          <label htmlFor="customersTrips">Choose a trip:</label>
           <Select
             options={this.select(trips)}
             placeholder={"Search"}
@@ -96,7 +96,7 @@ class CustomerForm extends React.Component {
           />
         </form>
         <div className="customersButtons">
-          <Link className="addEditCustomer"
+          <Link className="save"
                 to={this.props.returnUrl}
                 onClick={() => {
                   this.props.onSaveCustomer({

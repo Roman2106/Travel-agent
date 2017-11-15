@@ -25,10 +25,10 @@ const getPages = (totalPages, currentPage) => {
   return _.range(startPage, endPage + 1);
 };
 
-export const setPageWithItems = (items, currentPage, pageSize, totalItems) =>{
+export const setPageWithItems = (items, currentPage, pageSize, totalItems) => {
   let startIndex = (currentPage - 1) * pageSize;
   let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
-  let newItems = Object.keys(items).reduce((arr, key) => ([...arr, { ...items[key] }]), []);
+  let newItems = Object.keys(items).reduce((arr, key) => ([...arr, {...items[key]}]), []);
   return newItems.slice(startIndex, endIndex + 1);
 };
 
@@ -38,40 +38,40 @@ export const Paging = ({urlPrefix, totalItems, currentPage, pageSize}) => {
     <div className="paging">
       <ul className="pages-list">
         <li>
-          <Link to={urlPrefix + "?page=" + String(1)} className="link-for-page">
-            First
+          <Link to={urlPrefix + "?page=" + String(1)}>
+            {"<<"}
           </Link>
         </li>
         <li>
           <Link to={urlPrefix + "?page=" + String(currentPage - 1)}
-                className="link-for-page"
+
                 onClick={e => {
                   if (currentPage === 1) {
-                    e.preventDefault()
+                    e.preventDefault();
                   }
                 }}>
-            Previous
+            {"<"}
           </Link>
         </li>
         {getPages(totalPages, currentPage).map((page, index) =>
           <li key={index}>
-            <Link to={urlPrefix + "?page=" + String(page)}>{page}</Link>
+            <Link className={`${currentPage === page ? "activePage" : ""}`}
+                  to={urlPrefix + "?page=" + String(page)}>{page}</Link>
           </li>
         )}
         <li>
-          <Link to={urlPrefix + "?page=" + String(currentPage + 1)} className="link-for-page"
+          <Link to={urlPrefix + "?page=" + String(currentPage + 1)}
                 onClick={e => {
                   if (currentPage === totalPages) {
                     e.preventDefault();
                   }
                 }}>
-            Next
+            {">"}
           </Link>
         </li>
         <li>
-          <Link to={urlPrefix + "?page=" + String(totalPages)}
-                className="link-for-page">
-            Last
+          <Link to={urlPrefix + "?page=" + String(totalPages)}>
+            {">>"}
           </Link>
         </li>
       </ul>

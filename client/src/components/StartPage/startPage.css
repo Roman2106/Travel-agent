@@ -1,0 +1,86 @@
+.startPage {
+    max-width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.startPageCenter {
+    height: 490px;
+    background-image: url("images/BG3-01.svg");
+    background-color: #00878E;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-left: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.startPageCenter h2 {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    background-color: lightgray;
+    position: relative;
+    border-left: 1px solid #d9d3d3;
+    border-right: 1px solid #d9d3d3;
+    border-bottom: 1px solid #d9d3d3;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+footer h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.socIcons {
+    text-align: center;
+}
+
+.socIcons a {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 5px;
+    width: 25px;
+    height: 25px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    transition-property: background-color;
+    transition-duration: .4s;
+}
+
+.twit {
+    background-image: url("images/twit.svg");
+    background-size: cover;
+}
+
+.fbook {
+    background-image: url("images/fbook.svg");
+    background-size: cover;
+}
+
+.insta {
+    background-image: url("images/insta.svg");
+    background-size: cover;
+}
+
+.socIcons a:hover {
+    background-color: grey;
+}
+
+.logo {
+    width: 220px;
+    height: 70px;
+    background-image: url("images/logo-Boeing_777.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    left: 20px;
+    top: 25px;
+}

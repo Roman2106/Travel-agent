@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {Loader} from "../Сommons/Loader";
-import {Paging, setPageWithItems} from "../Сommons/Paging";
-import {ConfirmationDelete} from "../Сommons/Confirmation/ConfirmationDelete";
+import {Loader} from "../Commons/Loader/Loader";
+import {Paging, setPageWithItems} from "../Commons/Paging/Paging";
+import {ConfirmationDelete} from "../Commons/Confirmation/ConfirmationDelete";
 import moment from 'moment';
 
 class TripsTable extends React.Component {
@@ -10,13 +10,16 @@ class TripsTable extends React.Component {
     super(props);
     this.state = {
       pageSize: 3,
-      tripToDelete: null
+      tripToDelete: null,
+      tripNameClass: "thTripName",
+      dateOfDepartureClass: "thDateOfDeparture",
+      arrivalDateClass: "thArivalDate"
     };
   };
 
   render() {
     if (this.props.trips.showLoading === false && this.props.locations) {
-      let locations = this.props.locations.listLocations;
+      const locations = this.props.locations.listLocations;
       return (
         <div className="trips">
           {this.state.tripToDelete ? <ConfirmationDelete
@@ -30,11 +33,35 @@ class TripsTable extends React.Component {
           <table>
             <thead>
             <tr>
-              <th>Название тура</th>
-              <th>Маршрут</th>
-              <th>Дата выезда</th>
-              <th>Дата возвращения</th>
-              <th>Удалить / изменить</th>
+              <th className={this.state.tripNameClass} onClick={() => {
+                this.props.onSortChangeTrips("tripName");
+                this.setState({
+                  tripNameClass: `thTripName ${this.props.trips.sortOrder}`,
+                  dateOfDepartureClass: "thDateOfDeparture",
+                  arrivalDateClass: "thArivalDate"
+                });
+              }}>Trip name
+              </th>
+              <th>Route</th>
+              <th className={this.state.dateOfDepartureClass} onClick={() => {
+                this.props.onSortChangeTrips("dateDeparture");
+                this.setState({
+                  dateOfDepartureClass: `thDateOfDeparture ${this.props.trips.sortOrder}`,
+                  tripNameClass: "thTripName",
+                  arrivalDateClass: "thArivalDate"
+                });
+              }}>Date of departure
+              </th>
+              <th className={this.state.arrivalDateClass} onClick={() => {
+                this.props.onSortChangeTrips("dateArrival");
+                this.setState({
+                  arrivalDateClass: `thArivalDate ${this.props.trips.sortOrder}`,
+                  tripNameClass: "thTripName",
+                  dateOfDepartureClass: "thDateOfDeparture",
+                });
+              }}>Arrival date
+              </th>
+              <th>Edit / Del</th>
             </tr>
             </thead>
             <tbody>
@@ -42,28 +69,34 @@ class TripsTable extends React.Component {
               this.props.currentPage,
               this.state.pageSize,
               Object.keys(this.props.trips.listTrips).length).map((item, index) =>
-              <tr key={item.id}>
+              <tr key={item.id} className={item.className} onAnimationEnd={()=>this.props.onRemoveClass(item.id)}>
                 <td>{item.tripName}</td>
-                <td>{item.tripsLocationsID.map((id, index) => {
-                  for (let i = 0; i < Object.values(locations).length; i++) {
-                    if (id !== Object.values(locations)[i].id) continue;
-                    return <p key={index}>{`${locations[id].city} - ${locations[id].country}`}</p>
-                  }
-                })}</td>
+                <td>
+                  <ul className="containerliInTr">{item.tripsLocationsID.map((id, index) => {
+                    for (let i = 0; i < Object.values(locations).length; i++) {
+                      if (id !== Object.values(locations)[i].id) continue;
+                      return <li className="liInTr"
+                                 key={index}>{`${locations[id].city} - ${locations[id].country}`}</li>
+                    }
+                  })}</ul>
+                </td>
                 <td>{moment(item.dateDeparture).format("DD-MM-YYYY")}</td>
                 <td>{moment(item.dateArrival).format("DD-MM-YYYY")}</td>
-                <td>
-                  <button className="del" onClick={() => {
+                <td className="tdForButton">
+                  <Link className="edit"
+                        to={`/trips/${item.id}?page=${this.props.currentPage}`}>Edit</Link>
+                  <a className="del" onClick={() => {
                     this.setState({tripToDelete: item})
                   }}>X
-                  </button>
-                  <Link className="edit" to={`/trips/${item.id}?page=${String(this.props.currentPage)}`}>Edit</Link>
+                  </a>
                 </td>
               </tr>
             )}
             </tbody>
           </table>
-          <Link className="btnAddTrips" to={`trips/add?page=${String(this.props.currentPage)}`}>Add trip</Link>
+          <Link className="btnAdd"
+                to={`trips/add?page=${this.props.currentPage}`}>Add
+            trip</Link>
           <Paging
             urlPrefix={"/trips"}
             totalItems={Object.keys(this.props.trips.listTrips)}

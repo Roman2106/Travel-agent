@@ -3,7 +3,7 @@ import {composeWithDevTools} from "redux-devtools-extension";
 import {TripsReducer} from "./components/Trips/TripsReducer";
 import {LocationsReducer} from "./components/Locations/LocationsReducer";
 import {CustomersReducer} from "./components/Customers/CustomersReducer";
-import {MessagesReducer} from "./components/Сommons/UserMessages/MessageReducer";
+import {MessagesReducer} from "./components/Commons/UserMessages/MessageReducer";
 import {enableBatching} from 'redux-batched-actions';
 import thunk from "redux-thunk";
 

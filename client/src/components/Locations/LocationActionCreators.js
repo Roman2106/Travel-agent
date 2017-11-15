@@ -1,5 +1,5 @@
 import {getAll, add, update, remove} from "../../api/api";
-import {setError, setMessage} from "../Сommons/UserMessages/MessageReducer";
+import {setError, setMessage} from "../Commons/UserMessages/MessageReducer";
 import {batchActions} from 'redux-batched-actions';
 import {ActionType} from "./LocationsConst";
 
@@ -7,14 +7,16 @@ export const showLocations = locations => ({type: ActionType.LOADED_LOCATIONS, p
 export const addLocation = location => ({type: ActionType.ADD_LOCATION, payload: {location}});
 export const editLocation = location => ({type: ActionType.EDIT_LOCATION, payload: {location}});
 export const deleteLocation = (id, location) => ({type: ActionType.DELETE_LOCATION, payload: id});
+export const removeClassLocation = locationId => ({type: ActionType.REMOVE_CLASS_LOCATION, payload: {locationId}});
+export const changeSortOrderLocations = field => ({type: ActionType.CHANGE_SORT_ORDER_LOCATIONS, payload: {field}});
 
 export const LocationActionCreators = {
 
   getLocations: () => {
     return dispatch => {
       getAll("locations").then(locations => {
-          dispatch(showLocations(locations))
-      }).catch(error=>dispatch(setError(error.message, "danger")));
+        dispatch(showLocations(locations))
+      }).catch(error => dispatch(setError(error.message, "danger")));
     }
   },
 
@@ -38,6 +40,18 @@ export const LocationActionCreators = {
       remove("locations", id).then(id =>
         dispatch(batchActions([deleteLocation(id), setMessage(`${location.country} - ${location.city} was successfully deleted.`, "success")]))
       ).catch(error => dispatch(setError(error.message, "danger")));
+    }
+  },
+
+  onRemoveClassLocation: locationId => {
+    return dispatch => {
+      dispatch(removeClassLocation(locationId))
+    }
+  },
+
+  onChangeSortOrderLocations: field => {
+    return dispatch => {
+      dispatch(changeSortOrderLocations(field))
     }
   }
 

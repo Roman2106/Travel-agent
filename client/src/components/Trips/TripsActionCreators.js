@@ -1,5 +1,5 @@
 import {getAll, add, update, remove} from "../../api/api";
-import {setError, setMessage} from "../Сommons/UserMessages/MessageReducer";
+import {setError, setMessage} from "../Commons/UserMessages/MessageReducer";
 import {batchActions} from 'redux-batched-actions';
 import {ActionType} from "./TripsConst";
 
@@ -7,8 +7,11 @@ export const showTrips = trips => ({type: ActionType.LOADED_TRIPS, payload: {tri
 export const addTrip = trip => ({type: ActionType.ADD_TRIP, payload: {trip}});
 export const editTrip = trip => ({type: ActionType.EDIT_TRIP, payload: {trip}});
 export const deleteTrip = (id, trip) => ({type: ActionType.DELETE_TRIP, payload: id});
+export const changeSortOrder = field => ({type: ActionType.CHANGE_SORT_ORDER_TRIPS, payload: {field}});
+export const removeClass = tripId =>({type: ActionType.REMOVE_CLASS, payload: {tripId}});
 
 export const TripsActionCreators = {
+
   getTrips: () => {
     return dispatch => {
       getAll("trips").then(trips => {
@@ -38,5 +41,18 @@ export const TripsActionCreators = {
         dispatch(batchActions([deleteTrip(id), setMessage(`${tripName} was successfully deleted.`, "success")]))
       ).catch(error => dispatch(setError(error.message, "danger")));
     }
+  },
+
+  onRemoveClass: tripId =>{
+    return dispatch =>{
+      dispatch(removeClass(tripId))
+    }
+  },
+
+  onSortChangeTrips: field =>{
+    return dispatch =>{
+      dispatch(changeSortOrder(field))
+    }
   }
+
 };

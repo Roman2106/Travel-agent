@@ -18,6 +18,8 @@ export const TripsScreen = withRouter(
             currentPage={currentPage}
             locations={this.props.locations}
             onDeleteTrip={this.props.onDeleteTrip}
+            onRemoveClass={this.props.onRemoveClass}
+            onSortChangeTrips={this.props.onSortChangeTrips}
           />}/>
           <Route path="/trips/add" render={() => <TripsForm
             trips={this.props.trips}
