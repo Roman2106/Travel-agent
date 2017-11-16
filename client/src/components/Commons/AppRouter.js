@@ -6,6 +6,7 @@ import {TripsScreen} from "../Trips/TripsScreen";
 import Alert from "./Alerts/Alert";
 import {Menu} from "./Menu/Menu";
 import {StartPage} from "../StartPage/StartPage";
+import {Login} from "../Login/LoginContainer";
 
 export class AppRouter extends React.Component {
   constructor(props) {

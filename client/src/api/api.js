@@ -9,7 +9,7 @@ const checkOk = response => {
   }
 };
 
-const makeRequestWithBody = (url, method, bodyObject) => {
+export const makeRequestWithBody = (url, method, bodyObject) => {
   const body = JSON.stringify(bodyObject);
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
