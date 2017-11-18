@@ -362,3 +362,46 @@ a:active {
 .updateItem {
     animation: to-green 0.225s cubic-bezier(0.9, 0.3, 0.2, 1) 8 alternate;
 }
+
+.wrapperLogin{
+    text-align: center;
+    width: 500px;
+    margin: 60px auto;
+}
+
+.wrapperLogin .alert-danger{
+    width: 500px;
+}
+
+.wrapperLogin input{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    height: 36px;
+    outline: none;
+    overflow: hidden;
+    font-family: 'Saira', sans-serif;
+    font-size: inherit;
+}
+
+.loginFormSend{
+    box-shadow: inset 0 1px 0 0 #d9fbbe;
+    background: linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8e356', endColorstr='#a5cc52', GradientType=0);
+    background-color: #b8e356;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 5px;
+    border: 1px solid #83c41a;
+    display: inline-block;
+    cursor: pointer;
+    color: white !important;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 50px;
+    text-decoration: none;
+    margin-right: 22px;
+    margin-bottom: 20px;
+}

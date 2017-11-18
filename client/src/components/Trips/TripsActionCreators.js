@@ -15,7 +15,7 @@ export const TripsActionCreators = {
   getTrips: () => {
     return dispatch => {
       getAll("trips").then(trips => {
-        dispatch(batchActions([showTrips(trips), setMessage(`Data was successfully loaded.`, "success")]));
+        dispatch(showTrips(trips));
       }).catch(error => dispatch(setError(error.message, "danger")));
     };
   },

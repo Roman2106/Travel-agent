@@ -14,11 +14,15 @@
     "testRegex": "(/tests/.*\\.tests)\\.(js)$"
   },
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.17.2",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
     "jest": "^21.2.1",
-    "mongoose": "^4.11.11"
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.11.11",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "cross-env": "^5.1.0",

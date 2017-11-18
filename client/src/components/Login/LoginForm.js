@@ -33,7 +33,7 @@ export class LoginForm extends React.Component {
                    value={this.state.password}
             />
           </p>
-          <button className="loginFormSend" "submit">Send</button>
+          <button className="loginFormSend" type="submit">Send</button>
         </form>
       </div>
     )
