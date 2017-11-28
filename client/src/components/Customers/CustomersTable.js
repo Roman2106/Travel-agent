@@ -65,9 +65,9 @@ class Customers extends React.Component {
                   <ul className="containerliInTr">{customer.customersTripsID.map((id, index) => {
                     for (let i = 0; i < Object.values(this.props.trips).length; i++) {
                       if (id !== Object.values(this.props.trips)[i].id) continue;
-                      return <li className="liInTr" key={index}>
+                      return (<li className="liInTr" key={index}>
                         {`${this.props.trips[id].tripName} - ${moment(this.props.trips[id].dateDeparture).format("DD-MM-YYYY")}`}
-                      </li>
+                      </li>)
                     }
                   })}</ul>
                 </td>

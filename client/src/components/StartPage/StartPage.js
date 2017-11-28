@@ -10,9 +10,9 @@ export const StartPage = () => {
         <p>Copyright 2017. All rigts Reserved</p>
         <div className="logo"/>
         <div className="socIcons">
-          <a className="twit" href="#" alt="twit"/>
-          <a className="fbook" href="#" alt="fbook"/>
-          <a className="insta" href="#" alt="insta"/>
+          <a className="twit" alt="twit"> </a>
+          <a className="fbook" alt="fbook"> </a>
+          <a className="insta" alt="insta"> </a>
         </div>
       </footer>
     </div>

@@ -9,9 +9,10 @@ const checkOk = response => {
     return response.json();
   } else {
     if (response.status === 401) {
-      return history.replace("/login");
+      history.replace("/login");
+      throw new Error("Invalid password or login!");
     }
-    throw new Error("Network problems");
+    throw new Error("Invalid password or login!");
   }
 };
 

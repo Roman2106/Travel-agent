@@ -8,9 +8,9 @@ class CustomerForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: this.props.customer && this.props.customer.firstName || "",
-      lastName: this.props.customer && this.props.customer.lastName || "",
-      customersTripsID: this.props.customer && this.props.customer.customersTripsID || []
+      firstName: (this.props.customer && this.props.customer.firstName) || "",
+      lastName: (this.props.customer && this.props.customer.lastName) || "",
+      customersTripsID: (this.props.customer && this.props.customer.customersTripsID) || []
     }
   }
 
@@ -100,7 +100,7 @@ class CustomerForm extends React.Component {
                 to={this.props.returnUrl}
                 onClick={() => {
                   this.props.onSaveCustomer({
-                    id: this.props.customer && this.props.customer.id || null,
+                    id: (this.props.customer && this.props.customer.id) || null,
                     firstName: this.state.firstName,
                     lastName: this.state.lastName,
                     customersTripsID: this.state.customersTripsID

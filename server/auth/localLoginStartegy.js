@@ -26,7 +26,7 @@ module.exports = new Strategy({
       const data = {
         sub: user.id
       };
-      jwt.sign(data, jwtSecret, {expiresIn: "12h"}, (error, token) => {
+      jwt.sign(data, jwtSecret, {expiresIn: "24h"}, (error, token) => {
         done(null, token);
       })
     })
