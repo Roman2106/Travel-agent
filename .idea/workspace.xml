@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3c5e847-63f8-42ff-ae5f-cc36983e7a29" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/api/api.js" afterPath="$PROJECT_DIR$/client/src/api/api.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/api/login.js" afterPath="$PROJECT_DIR$/client/src/api/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" afterPath="$PROJECT_DIR$/client/src/components/Customers/CustomersTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Locations/LocationForm.js" afterPath="$PROJECT_DIR$/client/src/components/Locations/LocationForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Login/LoginForm.js" afterPath="$PROJECT_DIR$/client/src/components/Login/LoginForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/StartPage/StartPage.js" afterPath="$PROJECT_DIR$/client/src/components/StartPage/StartPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" afterPath="$PROJECT_DIR$/client/src/components/Trips/TripsTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/auth/localLoginStartegy.js" afterPath="$PROJECT_DIR$/server/auth/localLoginStartegy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/index.html" afterPath="$PROJECT_DIR$/client/public/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,7 +18,18 @@
     <favorites_list name="secondProgect" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -50,7 +51,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/public/index.html" />
         <option value="$PROJECT_DIR$/client/src/components/StartPage/images/BG3-01.svg" />
         <option value="$PROJECT_DIR$/client/src/components/StartPage/startPage.css" />
         <option value="$PROJECT_DIR$/client/src/components/Commons/Menu/menu.css" />
@@ -101,6 +101,7 @@
         <option value="$PROJECT_DIR$/client/src/components/Login/LoginForm.js" />
         <option value="$PROJECT_DIR$/client/src/api/login.js" />
         <option value="$PROJECT_DIR$/client/src/api/api.js" />
+        <option value="$PROJECT_DIR$/client/public/index.html" />
       </list>
     </option>
   </component>
@@ -197,45 +198,7 @@
               <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
               <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Commons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Trips" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -486,7 +449,7 @@
       <workItem from="1510859221510" duration="2443000" />
       <workItem from="1510908802290" duration="53761000" />
       <workItem from="1511027712581" duration="3035000" />
-      <workItem from="1511799033694" duration="12755000" />
+      <workItem from="1511799033694" duration="12844000" />
     </task>
     <servers />
   </component>
@@ -523,7 +486,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="804742000" />
+    <option name="totallyTimeSpent" value="804831000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -536,8 +499,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="22" width="1280" height="774" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17488076" sideWeight="0.60627675" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17488076" sideWeight="0.60627675" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32722145" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303244" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325811" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -657,13 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
           <caret line="64" column="3" lean-forward="true" selection-start-line="64" selection-start-column="3" selection-end-line="64" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1022,6 +979,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
         </state>
       </provider>
