@@ -402,6 +402,5 @@ a:active {
     font-weight: bold;
     padding: 6px 50px;
     text-decoration: none;
-    margin-right: 22px;
-    margin-bottom: 20px;
+    margin: 15px 22px 20px auto;
 }

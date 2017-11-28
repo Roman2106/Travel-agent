@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3c5e847-63f8-42ff-ae5f-cc36983e7a29" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/index.html" afterPath="$PROJECT_DIR$/client/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.css" afterPath="$PROJECT_DIR$/client/src/index.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,18 +18,7 @@
     <favorites_list name="secondProgect" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -81,7 +70,6 @@
         <option value="$PROJECT_DIR$/server/routes/api.js" />
         <option value="$PROJECT_DIR$/server/auth/authMiddelware.js" />
         <option value="$PROJECT_DIR$/client/src/components/Commons/Confirmation/confirmationDelete.css" />
-        <option value="$PROJECT_DIR$/client/src/index.css" />
         <option value="$PROJECT_DIR$/client/src/history.js" />
         <option value="$PROJECT_DIR$/client/src/components/Commons/App.js" />
         <option value="$PROJECT_DIR$/server/routes/auth.js" />
@@ -102,6 +90,7 @@
         <option value="$PROJECT_DIR$/client/src/api/login.js" />
         <option value="$PROJECT_DIR$/client/src/api/api.js" />
         <option value="$PROJECT_DIR$/client/public/index.html" />
+        <option value="$PROJECT_DIR$/client/src/index.css" />
       </list>
     </option>
   </component>
@@ -193,12 +182,6 @@
               <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
               <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -449,7 +432,7 @@
       <workItem from="1510859221510" duration="2443000" />
       <workItem from="1510908802290" duration="53761000" />
       <workItem from="1511027712581" duration="3035000" />
-      <workItem from="1511799033694" duration="12844000" />
+      <workItem from="1511799033694" duration="12996000" />
     </task>
     <servers />
   </component>
@@ -486,7 +469,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="804831000" />
+    <option name="totallyTimeSpent" value="804983000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -499,9 +482,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="22" width="1280" height="774" extended-state="1" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17488076" sideWeight="0.60627675" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17488076" sideWeight="0.60627675" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32722145" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303244" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325811" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -581,14 +563,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="405" column="24" lean-forward="true" selection-start-line="405" selection-start-column="24" selection-end-line="405" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Locations/LocationActionCreators.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="683">
@@ -987,6 +961,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="405" column="1" lean-forward="true" selection-start-line="405" selection-start-column="1" selection-end-line="405" selection-end-column="1" />
           <folding />
         </state>
       </provider>
