@@ -179,6 +179,11 @@
               <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
               <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="secondProgect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="secondProgect" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -428,7 +433,7 @@
       <workItem from="1510859221510" duration="2443000" />
       <workItem from="1510908802290" duration="53761000" />
       <workItem from="1511027712581" duration="3035000" />
-      <workItem from="1511799033694" duration="13174000" />
+      <workItem from="1511799033694" duration="13414000" />
     </task>
     <servers />
   </component>
@@ -465,7 +470,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="805161000" />
+    <option name="totallyTimeSpent" value="805401000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
