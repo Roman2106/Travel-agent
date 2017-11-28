@@ -5,8 +5,8 @@ class LocationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      country: this.props.location && this.props.location.country || "",
-      city: this.props.location && this.props.location.city || ""
+      country: (this.props.location && this.props.location.country) || "",
+      city: (this.props.location && this.props.location.city) || ""
     };
   };
 
@@ -33,7 +33,7 @@ class LocationForm extends React.Component {
           <Link className="save" to={`/locations?page=${this.props.currentPage}`}
                 onClick={() => {
                   this.props.onSaveLocation({
-                    id: this.props.location && this.props.location.id || null,
+                    id: (this.props.location && this.props.location.id) || null,
                     country: this.state.country,
                     city: this.state.city
                   })

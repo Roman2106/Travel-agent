@@ -15,7 +15,9 @@ export const CustomersActionCreators = {
     return dispatch => {
       getAll("customers").then(customers => {
         dispatch(showCustomers(customers))
-      }).catch(error => dispatch(setError(error.message, "danger")));
+      }).catch(error => {
+        dispatch(setError(error.message, "danger"))
+      });
     }
   },
 
@@ -28,9 +30,9 @@ export const CustomersActionCreators = {
         : add("customers", customer).then(customer => {
           dispatch(batchActions([addCustomer(customer), setMessage(`${customer.firstName} - ${customer.lastName} was successfully add.`, "success")]))
         });
-      promise.catch(error =>
-        dispatch(setError(error.message, "danger"))
-      )
+      promise.catch(error => {
+        dispatch(setError(error.message, "danger"));
+      })
     }
   },
 

@@ -16,7 +16,6 @@ class LocationTable extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (this.props.locations.showLoading === false) {
       return (
         <div className="locations">

@@ -10,10 +10,10 @@ class TripsForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tripName: this.props.trip && this.props.trip.tripName || "",
-      dateDeparture: this.props.trip && moment(this.props.trip.dateDeparture) || moment(),
-      dateArrival: this.props.trip && moment(this.props.trip.dateArrival) || moment(),
-      tripsLocationsID: this.props.trip && this.props.trip.tripsLocationsID || []
+      tripName: (this.props.trip && this.props.trip.tripName) || "",
+      dateDeparture: (this.props.trip && moment(this.props.trip.dateDeparture)) || moment(),
+      dateArrival: (this.props.trip && moment(this.props.trip.dateArrival)) || moment(),
+      tripsLocationsID: (this.props.trip && this.props.trip.tripsLocationsID) || []
     };
   };
 
@@ -48,7 +48,7 @@ class TripsForm extends React.Component {
         </thead>
         <tbody>
         {tripsLocationsID.map((id, index) => {
-            for (let i = 0; i < arrLocations.length; i++) {
+          for (let i = 0; i < arrLocations.length; i++) {
               if (id !== arrLocations[i].id) continue;
               return <tr key={id}>
                 <td>{`${locations[id].country} - ${locations[id].city}`}</td>
@@ -130,7 +130,7 @@ class TripsForm extends React.Component {
             <Link className="save" to={this.props.returnUrl}
                   onClick={() => {
                     this.props.onSaveTrip({
-                      id: this.props.trip && this.props.trip.id || null,
+                      id: (this.props.trip && this.props.trip.id) || null,
                       tripName: this.state.tripName,
                       tripsLocationsID: this.state.tripsLocationsID,
                       dateDeparture: this.state.dateDeparture,

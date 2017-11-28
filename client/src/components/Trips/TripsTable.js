@@ -69,14 +69,14 @@ class TripsTable extends React.Component {
               this.props.currentPage,
               this.state.pageSize,
               Object.keys(this.props.trips.listTrips).length).map((item, index) =>
-              <tr key={item.id} className={item.className} onAnimationEnd={()=>this.props.onRemoveClass(item.id)}>
+              <tr key={item.id} className={item.className} onAnimationEnd={() => this.props.onRemoveClass(item.id)}>
                 <td>{item.tripName}</td>
                 <td>
                   <ul className="containerliInTr">{item.tripsLocationsID.map((id, index) => {
                     for (let i = 0; i < Object.values(locations).length; i++) {
                       if (id !== Object.values(locations)[i].id) continue;
-                      return <li className="liInTr"
-                                 key={index}>{`${locations[id].city} - ${locations[id].country}`}</li>
+                      return (<li className="liInTr"
+                                  key={index}>{`${locations[id].city} - ${locations[id].country}`}</li>)
                     }
                   })}</ul>
                 </td>
